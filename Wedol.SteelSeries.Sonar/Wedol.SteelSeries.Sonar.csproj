@@ -14,7 +14,7 @@
 		<PackageReference Include="System.Text.Json" Version="10.0.3" />
 	</ItemGroup>
 
-	<Target Name="NSwag" BeforeTargets="PreBuildEvent">
+	<Target Name="NSwag" BeforeTargets="PreBuildEvent" Condition=" '$(Configuration)' == 'Debug' ">
 		<Exec WorkingDirectory="$(ProjectDir)" Command="$(NSwagExe) run nswag.json /variables:Configuration=$(Configuration)" />
 	</Target>
 </Project>
