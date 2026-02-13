@@ -77,7 +77,7 @@ namespace Wedol.SteelSeries.Sonar
         partial void ProcessResponse(System.Net.Http.HttpClient client, System.Net.Http.HttpResponseMessage response);
 
         /// <returns>OK</returns>
-        /// <exception cref="ApiException">A server side error occurred.</exception>
+        /// <exception cref="SonarApiException">A server side error occurred.</exception>
         public virtual System.Threading.Tasks.Task TrackAsync(AnalyticsEvent? body)
         {
             return TrackAsync(body, System.Threading.CancellationToken.None);
@@ -85,7 +85,7 @@ namespace Wedol.SteelSeries.Sonar
 
         /// <param name="cancellationToken">A cancellation token that can be used by other objects or threads to receive notice of cancellation.</param>
         /// <returns>OK</returns>
-        /// <exception cref="ApiException">A server side error occurred.</exception>
+        /// <exception cref="SonarApiException">A server side error occurred.</exception>
         public virtual async System.Threading.Tasks.Task TrackAsync(AnalyticsEvent? body, System.Threading.CancellationToken cancellationToken)
         {
             var client_ = _httpClient;
@@ -135,7 +135,7 @@ namespace Wedol.SteelSeries.Sonar
                         else
                         {
                             var responseData_ = response_.Content == null ? null : await ReadAsStringAsync(response_.Content, cancellationToken).ConfigureAwait(false);
-                            throw new ApiException("The HTTP status code of the response was not expected (" + status_ + ").", status_, responseData_, headers_, null);
+                            throw new SonarApiException("The HTTP status code of the response was not expected (" + status_ + ").", status_, responseData_, headers_, null);
                         }
                     }
                     finally
@@ -153,7 +153,7 @@ namespace Wedol.SteelSeries.Sonar
         }
 
         /// <returns>OK</returns>
-        /// <exception cref="ApiException">A server side error occurred.</exception>
+        /// <exception cref="SonarApiException">A server side error occurred.</exception>
         public virtual System.Threading.Tasks.Task<System.Collections.Generic.ICollection<DeviceAudioSessions>> AudioDeviceRoutingAllAsync()
         {
             return AudioDeviceRoutingAllAsync(System.Threading.CancellationToken.None);
@@ -161,7 +161,7 @@ namespace Wedol.SteelSeries.Sonar
 
         /// <param name="cancellationToken">A cancellation token that can be used by other objects or threads to receive notice of cancellation.</param>
         /// <returns>OK</returns>
-        /// <exception cref="ApiException">A server side error occurred.</exception>
+        /// <exception cref="SonarApiException">A server side error occurred.</exception>
         public virtual async System.Threading.Tasks.Task<System.Collections.Generic.ICollection<DeviceAudioSessions>> AudioDeviceRoutingAllAsync(System.Threading.CancellationToken cancellationToken)
         {
             var client_ = _httpClient;
@@ -206,14 +206,14 @@ namespace Wedol.SteelSeries.Sonar
                             var objectResponse_ = await ReadObjectResponseAsync<System.Collections.Generic.ICollection<DeviceAudioSessions>>(response_, headers_, cancellationToken).ConfigureAwait(false);
                             if (objectResponse_.Object == null)
                             {
-                                throw new ApiException("Response was null which was not expected.", status_, objectResponse_.Text, headers_, null);
+                                throw new SonarApiException("Response was null which was not expected.", status_, objectResponse_.Text, headers_, null);
                             }
                             return objectResponse_.Object;
                         }
                         else
                         {
                             var responseData_ = response_.Content == null ? null : await ReadAsStringAsync(response_.Content, cancellationToken).ConfigureAwait(false);
-                            throw new ApiException("The HTTP status code of the response was not expected (" + status_ + ").", status_, responseData_, headers_, null);
+                            throw new SonarApiException("The HTTP status code of the response was not expected (" + status_ + ").", status_, responseData_, headers_, null);
                         }
                     }
                     finally
@@ -231,7 +231,7 @@ namespace Wedol.SteelSeries.Sonar
         }
 
         /// <returns>OK</returns>
-        /// <exception cref="ApiException">A server side error occurred.</exception>
+        /// <exception cref="SonarApiException">A server side error occurred.</exception>
         public virtual System.Threading.Tasks.Task<string> AudioDeviceRoutingGETAsync(DeviceDataFlow deviceDataFlow, int processId)
         {
             return AudioDeviceRoutingGETAsync(deviceDataFlow, processId, System.Threading.CancellationToken.None);
@@ -239,7 +239,7 @@ namespace Wedol.SteelSeries.Sonar
 
         /// <param name="cancellationToken">A cancellation token that can be used by other objects or threads to receive notice of cancellation.</param>
         /// <returns>OK</returns>
-        /// <exception cref="ApiException">A server side error occurred.</exception>
+        /// <exception cref="SonarApiException">A server side error occurred.</exception>
         public virtual async System.Threading.Tasks.Task<string> AudioDeviceRoutingGETAsync(DeviceDataFlow deviceDataFlow, int processId, System.Threading.CancellationToken cancellationToken)
         {
             if (deviceDataFlow == null)
@@ -293,14 +293,14 @@ namespace Wedol.SteelSeries.Sonar
                             var objectResponse_ = await ReadObjectResponseAsync<string>(response_, headers_, cancellationToken).ConfigureAwait(false);
                             if (objectResponse_.Object == null)
                             {
-                                throw new ApiException("Response was null which was not expected.", status_, objectResponse_.Text, headers_, null);
+                                throw new SonarApiException("Response was null which was not expected.", status_, objectResponse_.Text, headers_, null);
                             }
                             return objectResponse_.Object;
                         }
                         else
                         {
                             var responseData_ = response_.Content == null ? null : await ReadAsStringAsync(response_.Content, cancellationToken).ConfigureAwait(false);
-                            throw new ApiException("The HTTP status code of the response was not expected (" + status_ + ").", status_, responseData_, headers_, null);
+                            throw new SonarApiException("The HTTP status code of the response was not expected (" + status_ + ").", status_, responseData_, headers_, null);
                         }
                     }
                     finally
@@ -318,7 +318,7 @@ namespace Wedol.SteelSeries.Sonar
         }
 
         /// <returns>OK</returns>
-        /// <exception cref="ApiException">A server side error occurred.</exception>
+        /// <exception cref="SonarApiException">A server side error occurred.</exception>
         public virtual System.Threading.Tasks.Task AudioDeviceRoutingPUTAsync(DeviceDataFlow deviceDataFlow, string deviceId, int processId)
         {
             return AudioDeviceRoutingPUTAsync(deviceDataFlow, deviceId, processId, System.Threading.CancellationToken.None);
@@ -326,7 +326,7 @@ namespace Wedol.SteelSeries.Sonar
 
         /// <param name="cancellationToken">A cancellation token that can be used by other objects or threads to receive notice of cancellation.</param>
         /// <returns>OK</returns>
-        /// <exception cref="ApiException">A server side error occurred.</exception>
+        /// <exception cref="SonarApiException">A server side error occurred.</exception>
         public virtual async System.Threading.Tasks.Task AudioDeviceRoutingPUTAsync(DeviceDataFlow deviceDataFlow, string deviceId, int processId, System.Threading.CancellationToken cancellationToken)
         {
             if (deviceDataFlow == null)
@@ -387,7 +387,7 @@ namespace Wedol.SteelSeries.Sonar
                         else
                         {
                             var responseData_ = response_.Content == null ? null : await ReadAsStringAsync(response_.Content, cancellationToken).ConfigureAwait(false);
-                            throw new ApiException("The HTTP status code of the response was not expected (" + status_ + ").", status_, responseData_, headers_, null);
+                            throw new SonarApiException("The HTTP status code of the response was not expected (" + status_ + ").", status_, responseData_, headers_, null);
                         }
                     }
                     finally
@@ -405,7 +405,7 @@ namespace Wedol.SteelSeries.Sonar
         }
 
         /// <returns>OK</returns>
-        /// <exception cref="ApiException">A server side error occurred.</exception>
+        /// <exception cref="SonarApiException">A server side error occurred.</exception>
         public virtual System.Threading.Tasks.Task<System.Collections.Generic.ICollection<AudioDevice>> AudioDevicesAsync(DeviceDataFlow? deviceDataFlow, bool? onlySteelSeriesVAD, bool? removeSteelSeriesVAD)
         {
             return AudioDevicesAsync(deviceDataFlow, onlySteelSeriesVAD, removeSteelSeriesVAD, System.Threading.CancellationToken.None);
@@ -413,7 +413,7 @@ namespace Wedol.SteelSeries.Sonar
 
         /// <param name="cancellationToken">A cancellation token that can be used by other objects or threads to receive notice of cancellation.</param>
         /// <returns>OK</returns>
-        /// <exception cref="ApiException">A server side error occurred.</exception>
+        /// <exception cref="SonarApiException">A server side error occurred.</exception>
         public virtual async System.Threading.Tasks.Task<System.Collections.Generic.ICollection<AudioDevice>> AudioDevicesAsync(DeviceDataFlow? deviceDataFlow, bool? onlySteelSeriesVAD, bool? removeSteelSeriesVAD, System.Threading.CancellationToken cancellationToken)
         {
             var client_ = _httpClient;
@@ -472,14 +472,14 @@ namespace Wedol.SteelSeries.Sonar
                             var objectResponse_ = await ReadObjectResponseAsync<System.Collections.Generic.ICollection<AudioDevice>>(response_, headers_, cancellationToken).ConfigureAwait(false);
                             if (objectResponse_.Object == null)
                             {
-                                throw new ApiException("Response was null which was not expected.", status_, objectResponse_.Text, headers_, null);
+                                throw new SonarApiException("Response was null which was not expected.", status_, objectResponse_.Text, headers_, null);
                             }
                             return objectResponse_.Object;
                         }
                         else
                         {
                             var responseData_ = response_.Content == null ? null : await ReadAsStringAsync(response_.Content, cancellationToken).ConfigureAwait(false);
-                            throw new ApiException("The HTTP status code of the response was not expected (" + status_ + ").", status_, responseData_, headers_, null);
+                            throw new SonarApiException("The HTTP status code of the response was not expected (" + status_ + ").", status_, responseData_, headers_, null);
                         }
                     }
                     finally
@@ -497,7 +497,7 @@ namespace Wedol.SteelSeries.Sonar
         }
 
         /// <returns>OK</returns>
-        /// <exception cref="ApiException">A server side error occurred.</exception>
+        /// <exception cref="SonarApiException">A server side error occurred.</exception>
         public virtual System.Threading.Tasks.Task IsEnabledPUTAsync(DeviceRole role, bool isEnabled)
         {
             return IsEnabledPUTAsync(role, isEnabled, System.Threading.CancellationToken.None);
@@ -505,7 +505,7 @@ namespace Wedol.SteelSeries.Sonar
 
         /// <param name="cancellationToken">A cancellation token that can be used by other objects or threads to receive notice of cancellation.</param>
         /// <returns>OK</returns>
-        /// <exception cref="ApiException">A server side error occurred.</exception>
+        /// <exception cref="SonarApiException">A server side error occurred.</exception>
         public virtual async System.Threading.Tasks.Task IsEnabledPUTAsync(DeviceRole role, bool isEnabled, System.Threading.CancellationToken cancellationToken)
         {
             if (role == null)
@@ -561,7 +561,7 @@ namespace Wedol.SteelSeries.Sonar
                         else
                         {
                             var responseData_ = response_.Content == null ? null : await ReadAsStringAsync(response_.Content, cancellationToken).ConfigureAwait(false);
-                            throw new ApiException("The HTTP status code of the response was not expected (" + status_ + ").", status_, responseData_, headers_, null);
+                            throw new SonarApiException("The HTTP status code of the response was not expected (" + status_ + ").", status_, responseData_, headers_, null);
                         }
                     }
                     finally
@@ -579,7 +579,7 @@ namespace Wedol.SteelSeries.Sonar
         }
 
         /// <returns>OK</returns>
-        /// <exception cref="ApiException">A server side error occurred.</exception>
+        /// <exception cref="SonarApiException">A server side error occurred.</exception>
         public virtual System.Threading.Tasks.Task<System.Collections.Generic.ICollection<AudioSample>> SamplesAsync(DeviceRole? role)
         {
             return SamplesAsync(role, System.Threading.CancellationToken.None);
@@ -587,7 +587,7 @@ namespace Wedol.SteelSeries.Sonar
 
         /// <param name="cancellationToken">A cancellation token that can be used by other objects or threads to receive notice of cancellation.</param>
         /// <returns>OK</returns>
-        /// <exception cref="ApiException">A server side error occurred.</exception>
+        /// <exception cref="SonarApiException">A server side error occurred.</exception>
         public virtual async System.Threading.Tasks.Task<System.Collections.Generic.ICollection<AudioSample>> SamplesAsync(DeviceRole? role, System.Threading.CancellationToken cancellationToken)
         {
             var client_ = _httpClient;
@@ -638,14 +638,14 @@ namespace Wedol.SteelSeries.Sonar
                             var objectResponse_ = await ReadObjectResponseAsync<System.Collections.Generic.ICollection<AudioSample>>(response_, headers_, cancellationToken).ConfigureAwait(false);
                             if (objectResponse_.Object == null)
                             {
-                                throw new ApiException("Response was null which was not expected.", status_, objectResponse_.Text, headers_, null);
+                                throw new SonarApiException("Response was null which was not expected.", status_, objectResponse_.Text, headers_, null);
                             }
                             return objectResponse_.Object;
                         }
                         else
                         {
                             var responseData_ = response_.Content == null ? null : await ReadAsStringAsync(response_.Content, cancellationToken).ConfigureAwait(false);
-                            throw new ApiException("The HTTP status code of the response was not expected (" + status_ + ").", status_, responseData_, headers_, null);
+                            throw new SonarApiException("The HTTP status code of the response was not expected (" + status_ + ").", status_, responseData_, headers_, null);
                         }
                     }
                     finally
@@ -663,7 +663,7 @@ namespace Wedol.SteelSeries.Sonar
         }
 
         /// <returns>OK</returns>
-        /// <exception cref="ApiException">A server side error occurred.</exception>
+        /// <exception cref="SonarApiException">A server side error occurred.</exception>
         public virtual System.Threading.Tasks.Task AudioSamplesAsync(DeviceRole role, string sampleId)
         {
             return AudioSamplesAsync(role, sampleId, System.Threading.CancellationToken.None);
@@ -671,7 +671,7 @@ namespace Wedol.SteelSeries.Sonar
 
         /// <param name="cancellationToken">A cancellation token that can be used by other objects or threads to receive notice of cancellation.</param>
         /// <returns>OK</returns>
-        /// <exception cref="ApiException">A server side error occurred.</exception>
+        /// <exception cref="SonarApiException">A server side error occurred.</exception>
         public virtual async System.Threading.Tasks.Task AudioSamplesAsync(DeviceRole role, string sampleId, System.Threading.CancellationToken cancellationToken)
         {
             if (role == null)
@@ -727,7 +727,7 @@ namespace Wedol.SteelSeries.Sonar
                         else
                         {
                             var responseData_ = response_.Content == null ? null : await ReadAsStringAsync(response_.Content, cancellationToken).ConfigureAwait(false);
-                            throw new ApiException("The HTTP status code of the response was not expected (" + status_ + ").", status_, responseData_, headers_, null);
+                            throw new SonarApiException("The HTTP status code of the response was not expected (" + status_ + ").", status_, responseData_, headers_, null);
                         }
                     }
                     finally
@@ -745,7 +745,7 @@ namespace Wedol.SteelSeries.Sonar
         }
 
         /// <returns>OK</returns>
-        /// <exception cref="ApiException">A server side error occurred.</exception>
+        /// <exception cref="SonarApiException">A server side error occurred.</exception>
         public virtual System.Threading.Tasks.Task<System.Collections.Generic.ICollection<AudioSample>> StopAsync(DeviceRole role)
         {
             return StopAsync(role, System.Threading.CancellationToken.None);
@@ -753,7 +753,7 @@ namespace Wedol.SteelSeries.Sonar
 
         /// <param name="cancellationToken">A cancellation token that can be used by other objects or threads to receive notice of cancellation.</param>
         /// <returns>OK</returns>
-        /// <exception cref="ApiException">A server side error occurred.</exception>
+        /// <exception cref="SonarApiException">A server side error occurred.</exception>
         public virtual async System.Threading.Tasks.Task<System.Collections.Generic.ICollection<AudioSample>> StopAsync(DeviceRole role, System.Threading.CancellationToken cancellationToken)
         {
             if (role == null)
@@ -803,14 +803,14 @@ namespace Wedol.SteelSeries.Sonar
                             var objectResponse_ = await ReadObjectResponseAsync<System.Collections.Generic.ICollection<AudioSample>>(response_, headers_, cancellationToken).ConfigureAwait(false);
                             if (objectResponse_.Object == null)
                             {
-                                throw new ApiException("Response was null which was not expected.", status_, objectResponse_.Text, headers_, null);
+                                throw new SonarApiException("Response was null which was not expected.", status_, objectResponse_.Text, headers_, null);
                             }
                             return objectResponse_.Object;
                         }
                         else
                         {
                             var responseData_ = response_.Content == null ? null : await ReadAsStringAsync(response_.Content, cancellationToken).ConfigureAwait(false);
-                            throw new ApiException("The HTTP status code of the response was not expected (" + status_ + ").", status_, responseData_, headers_, null);
+                            throw new SonarApiException("The HTTP status code of the response was not expected (" + status_ + ").", status_, responseData_, headers_, null);
                         }
                     }
                     finally
@@ -828,7 +828,7 @@ namespace Wedol.SteelSeries.Sonar
         }
 
         /// <returns>OK</returns>
-        /// <exception cref="ApiException">A server side error occurred.</exception>
+        /// <exception cref="SonarApiException">A server side error occurred.</exception>
         public virtual System.Threading.Tasks.Task<bool> IsRecordingAsync()
         {
             return IsRecordingAsync(System.Threading.CancellationToken.None);
@@ -836,7 +836,7 @@ namespace Wedol.SteelSeries.Sonar
 
         /// <param name="cancellationToken">A cancellation token that can be used by other objects or threads to receive notice of cancellation.</param>
         /// <returns>OK</returns>
-        /// <exception cref="ApiException">A server side error occurred.</exception>
+        /// <exception cref="SonarApiException">A server side error occurred.</exception>
         public virtual async System.Threading.Tasks.Task<bool> IsRecordingAsync(System.Threading.CancellationToken cancellationToken)
         {
             var client_ = _httpClient;
@@ -881,14 +881,14 @@ namespace Wedol.SteelSeries.Sonar
                             var objectResponse_ = await ReadObjectResponseAsync<bool>(response_, headers_, cancellationToken).ConfigureAwait(false);
                             if (objectResponse_.Object == null)
                             {
-                                throw new ApiException("Response was null which was not expected.", status_, objectResponse_.Text, headers_, null);
+                                throw new SonarApiException("Response was null which was not expected.", status_, objectResponse_.Text, headers_, null);
                             }
                             return objectResponse_.Object;
                         }
                         else
                         {
                             var responseData_ = response_.Content == null ? null : await ReadAsStringAsync(response_.Content, cancellationToken).ConfigureAwait(false);
-                            throw new ApiException("The HTTP status code of the response was not expected (" + status_ + ").", status_, responseData_, headers_, null);
+                            throw new SonarApiException("The HTTP status code of the response was not expected (" + status_ + ").", status_, responseData_, headers_, null);
                         }
                     }
                     finally
@@ -906,7 +906,7 @@ namespace Wedol.SteelSeries.Sonar
         }
 
         /// <returns>OK</returns>
-        /// <exception cref="ApiException">A server side error occurred.</exception>
+        /// <exception cref="SonarApiException">A server side error occurred.</exception>
         public virtual System.Threading.Tasks.Task<bool> StartRecordAsync()
         {
             return StartRecordAsync(System.Threading.CancellationToken.None);
@@ -914,7 +914,7 @@ namespace Wedol.SteelSeries.Sonar
 
         /// <param name="cancellationToken">A cancellation token that can be used by other objects or threads to receive notice of cancellation.</param>
         /// <returns>OK</returns>
-        /// <exception cref="ApiException">A server side error occurred.</exception>
+        /// <exception cref="SonarApiException">A server side error occurred.</exception>
         public virtual async System.Threading.Tasks.Task<bool> StartRecordAsync(System.Threading.CancellationToken cancellationToken)
         {
             var client_ = _httpClient;
@@ -960,14 +960,14 @@ namespace Wedol.SteelSeries.Sonar
                             var objectResponse_ = await ReadObjectResponseAsync<bool>(response_, headers_, cancellationToken).ConfigureAwait(false);
                             if (objectResponse_.Object == null)
                             {
-                                throw new ApiException("Response was null which was not expected.", status_, objectResponse_.Text, headers_, null);
+                                throw new SonarApiException("Response was null which was not expected.", status_, objectResponse_.Text, headers_, null);
                             }
                             return objectResponse_.Object;
                         }
                         else
                         {
                             var responseData_ = response_.Content == null ? null : await ReadAsStringAsync(response_.Content, cancellationToken).ConfigureAwait(false);
-                            throw new ApiException("The HTTP status code of the response was not expected (" + status_ + ").", status_, responseData_, headers_, null);
+                            throw new SonarApiException("The HTTP status code of the response was not expected (" + status_ + ").", status_, responseData_, headers_, null);
                         }
                     }
                     finally
@@ -985,7 +985,7 @@ namespace Wedol.SteelSeries.Sonar
         }
 
         /// <returns>OK</returns>
-        /// <exception cref="ApiException">A server side error occurred.</exception>
+        /// <exception cref="SonarApiException">A server side error occurred.</exception>
         public virtual System.Threading.Tasks.Task StopRecordAsync()
         {
             return StopRecordAsync(System.Threading.CancellationToken.None);
@@ -993,7 +993,7 @@ namespace Wedol.SteelSeries.Sonar
 
         /// <param name="cancellationToken">A cancellation token that can be used by other objects or threads to receive notice of cancellation.</param>
         /// <returns>OK</returns>
-        /// <exception cref="ApiException">A server side error occurred.</exception>
+        /// <exception cref="SonarApiException">A server side error occurred.</exception>
         public virtual async System.Threading.Tasks.Task StopRecordAsync(System.Threading.CancellationToken cancellationToken)
         {
             var client_ = _httpClient;
@@ -1040,7 +1040,7 @@ namespace Wedol.SteelSeries.Sonar
                         else
                         {
                             var responseData_ = response_.Content == null ? null : await ReadAsStringAsync(response_.Content, cancellationToken).ConfigureAwait(false);
-                            throw new ApiException("The HTTP status code of the response was not expected (" + status_ + ").", status_, responseData_, headers_, null);
+                            throw new SonarApiException("The HTTP status code of the response was not expected (" + status_ + ").", status_, responseData_, headers_, null);
                         }
                     }
                     finally
@@ -1058,7 +1058,7 @@ namespace Wedol.SteelSeries.Sonar
         }
 
         /// <returns>OK</returns>
-        /// <exception cref="ApiException">A server side error occurred.</exception>
+        /// <exception cref="SonarApiException">A server side error occurred.</exception>
         public virtual System.Threading.Tasks.Task<System.Collections.Generic.ICollection<ClassicRedirection>> ClassicRedirectionsAsync()
         {
             return ClassicRedirectionsAsync(System.Threading.CancellationToken.None);
@@ -1066,7 +1066,7 @@ namespace Wedol.SteelSeries.Sonar
 
         /// <param name="cancellationToken">A cancellation token that can be used by other objects or threads to receive notice of cancellation.</param>
         /// <returns>OK</returns>
-        /// <exception cref="ApiException">A server side error occurred.</exception>
+        /// <exception cref="SonarApiException">A server side error occurred.</exception>
         public virtual async System.Threading.Tasks.Task<System.Collections.Generic.ICollection<ClassicRedirection>> ClassicRedirectionsAsync(System.Threading.CancellationToken cancellationToken)
         {
             var client_ = _httpClient;
@@ -1111,14 +1111,14 @@ namespace Wedol.SteelSeries.Sonar
                             var objectResponse_ = await ReadObjectResponseAsync<System.Collections.Generic.ICollection<ClassicRedirection>>(response_, headers_, cancellationToken).ConfigureAwait(false);
                             if (objectResponse_.Object == null)
                             {
-                                throw new ApiException("Response was null which was not expected.", status_, objectResponse_.Text, headers_, null);
+                                throw new SonarApiException("Response was null which was not expected.", status_, objectResponse_.Text, headers_, null);
                             }
                             return objectResponse_.Object;
                         }
                         else
                         {
                             var responseData_ = response_.Content == null ? null : await ReadAsStringAsync(response_.Content, cancellationToken).ConfigureAwait(false);
-                            throw new ApiException("The HTTP status code of the response was not expected (" + status_ + ").", status_, responseData_, headers_, null);
+                            throw new SonarApiException("The HTTP status code of the response was not expected (" + status_ + ").", status_, responseData_, headers_, null);
                         }
                     }
                     finally
@@ -1136,7 +1136,7 @@ namespace Wedol.SteelSeries.Sonar
         }
 
         /// <returns>OK</returns>
-        /// <exception cref="ApiException">A server side error occurred.</exception>
+        /// <exception cref="SonarApiException">A server side error occurred.</exception>
         public virtual System.Threading.Tasks.Task<ClassicRedirection> DeviceIdPUTAsync(RedirectionId id, string deviceId)
         {
             return DeviceIdPUTAsync(id, deviceId, System.Threading.CancellationToken.None);
@@ -1144,7 +1144,7 @@ namespace Wedol.SteelSeries.Sonar
 
         /// <param name="cancellationToken">A cancellation token that can be used by other objects or threads to receive notice of cancellation.</param>
         /// <returns>OK</returns>
-        /// <exception cref="ApiException">A server side error occurred.</exception>
+        /// <exception cref="SonarApiException">A server side error occurred.</exception>
         public virtual async System.Threading.Tasks.Task<ClassicRedirection> DeviceIdPUTAsync(RedirectionId id, string deviceId, System.Threading.CancellationToken cancellationToken)
         {
             if (id == null)
@@ -1199,14 +1199,14 @@ namespace Wedol.SteelSeries.Sonar
                             var objectResponse_ = await ReadObjectResponseAsync<ClassicRedirection>(response_, headers_, cancellationToken).ConfigureAwait(false);
                             if (objectResponse_.Object == null)
                             {
-                                throw new ApiException("Response was null which was not expected.", status_, objectResponse_.Text, headers_, null);
+                                throw new SonarApiException("Response was null which was not expected.", status_, objectResponse_.Text, headers_, null);
                             }
                             return objectResponse_.Object;
                         }
                         else
                         {
                             var responseData_ = response_.Content == null ? null : await ReadAsStringAsync(response_.Content, cancellationToken).ConfigureAwait(false);
-                            throw new ApiException("The HTTP status code of the response was not expected (" + status_ + ").", status_, responseData_, headers_, null);
+                            throw new SonarApiException("The HTTP status code of the response was not expected (" + status_ + ").", status_, responseData_, headers_, null);
                         }
                     }
                     finally
@@ -1224,7 +1224,7 @@ namespace Wedol.SteelSeries.Sonar
         }
 
         /// <returns>OK</returns>
-        /// <exception cref="ApiException">A server side error occurred.</exception>
+        /// <exception cref="SonarApiException">A server side error occurred.</exception>
         public virtual System.Threading.Tasks.Task<System.Collections.Generic.ICollection<ClassicRedirection>> DeviceIdAllAsync(string deviceId)
         {
             return DeviceIdAllAsync(deviceId, System.Threading.CancellationToken.None);
@@ -1232,7 +1232,7 @@ namespace Wedol.SteelSeries.Sonar
 
         /// <param name="cancellationToken">A cancellation token that can be used by other objects or threads to receive notice of cancellation.</param>
         /// <returns>OK</returns>
-        /// <exception cref="ApiException">A server side error occurred.</exception>
+        /// <exception cref="SonarApiException">A server side error occurred.</exception>
         public virtual async System.Threading.Tasks.Task<System.Collections.Generic.ICollection<ClassicRedirection>> DeviceIdAllAsync(string deviceId, System.Threading.CancellationToken cancellationToken)
         {
             if (deviceId == null)
@@ -1282,14 +1282,14 @@ namespace Wedol.SteelSeries.Sonar
                             var objectResponse_ = await ReadObjectResponseAsync<System.Collections.Generic.ICollection<ClassicRedirection>>(response_, headers_, cancellationToken).ConfigureAwait(false);
                             if (objectResponse_.Object == null)
                             {
-                                throw new ApiException("Response was null which was not expected.", status_, objectResponse_.Text, headers_, null);
+                                throw new SonarApiException("Response was null which was not expected.", status_, objectResponse_.Text, headers_, null);
                             }
                             return objectResponse_.Object;
                         }
                         else
                         {
                             var responseData_ = response_.Content == null ? null : await ReadAsStringAsync(response_.Content, cancellationToken).ConfigureAwait(false);
-                            throw new ApiException("The HTTP status code of the response was not expected (" + status_ + ").", status_, responseData_, headers_, null);
+                            throw new SonarApiException("The HTTP status code of the response was not expected (" + status_ + ").", status_, responseData_, headers_, null);
                         }
                     }
                     finally
@@ -1307,7 +1307,7 @@ namespace Wedol.SteelSeries.Sonar
         }
 
         /// <returns>OK</returns>
-        /// <exception cref="ApiException">A server side error occurred.</exception>
+        /// <exception cref="SonarApiException">A server side error occurred.</exception>
         public virtual System.Threading.Tasks.Task<ClassicRedirection> DeviceIdDELETEAsync(RedirectionId id)
         {
             return DeviceIdDELETEAsync(id, System.Threading.CancellationToken.None);
@@ -1315,7 +1315,7 @@ namespace Wedol.SteelSeries.Sonar
 
         /// <param name="cancellationToken">A cancellation token that can be used by other objects or threads to receive notice of cancellation.</param>
         /// <returns>OK</returns>
-        /// <exception cref="ApiException">A server side error occurred.</exception>
+        /// <exception cref="SonarApiException">A server side error occurred.</exception>
         public virtual async System.Threading.Tasks.Task<ClassicRedirection> DeviceIdDELETEAsync(RedirectionId id, System.Threading.CancellationToken cancellationToken)
         {
             if (id == null)
@@ -1365,14 +1365,14 @@ namespace Wedol.SteelSeries.Sonar
                             var objectResponse_ = await ReadObjectResponseAsync<ClassicRedirection>(response_, headers_, cancellationToken).ConfigureAwait(false);
                             if (objectResponse_.Object == null)
                             {
-                                throw new ApiException("Response was null which was not expected.", status_, objectResponse_.Text, headers_, null);
+                                throw new SonarApiException("Response was null which was not expected.", status_, objectResponse_.Text, headers_, null);
                             }
                             return objectResponse_.Object;
                         }
                         else
                         {
                             var responseData_ = response_.Content == null ? null : await ReadAsStringAsync(response_.Content, cancellationToken).ConfigureAwait(false);
-                            throw new ApiException("The HTTP status code of the response was not expected (" + status_ + ").", status_, responseData_, headers_, null);
+                            throw new SonarApiException("The HTTP status code of the response was not expected (" + status_ + ").", status_, responseData_, headers_, null);
                         }
                     }
                     finally
@@ -1390,7 +1390,7 @@ namespace Wedol.SteelSeries.Sonar
         }
 
         /// <returns>OK</returns>
-        /// <exception cref="ApiException">A server side error occurred.</exception>
+        /// <exception cref="SonarApiException">A server side error occurred.</exception>
         public virtual System.Threading.Tasks.Task<ExportedConfigLink> ExportAsync(System.Guid id, ExportRequestData? body)
         {
             return ExportAsync(id, body, System.Threading.CancellationToken.None);
@@ -1398,7 +1398,7 @@ namespace Wedol.SteelSeries.Sonar
 
         /// <param name="cancellationToken">A cancellation token that can be used by other objects or threads to receive notice of cancellation.</param>
         /// <returns>OK</returns>
-        /// <exception cref="ApiException">A server side error occurred.</exception>
+        /// <exception cref="SonarApiException">A server side error occurred.</exception>
         public virtual async System.Threading.Tasks.Task<ExportedConfigLink> ExportAsync(System.Guid id, ExportRequestData? body, System.Threading.CancellationToken cancellationToken)
         {
             if (id == null)
@@ -1452,14 +1452,14 @@ namespace Wedol.SteelSeries.Sonar
                             var objectResponse_ = await ReadObjectResponseAsync<ExportedConfigLink>(response_, headers_, cancellationToken).ConfigureAwait(false);
                             if (objectResponse_.Object == null)
                             {
-                                throw new ApiException("Response was null which was not expected.", status_, objectResponse_.Text, headers_, null);
+                                throw new SonarApiException("Response was null which was not expected.", status_, objectResponse_.Text, headers_, null);
                             }
                             return objectResponse_.Object;
                         }
                         else
                         {
                             var responseData_ = response_.Content == null ? null : await ReadAsStringAsync(response_.Content, cancellationToken).ConfigureAwait(false);
-                            throw new ApiException("The HTTP status code of the response was not expected (" + status_ + ").", status_, responseData_, headers_, null);
+                            throw new SonarApiException("The HTTP status code of the response was not expected (" + status_ + ").", status_, responseData_, headers_, null);
                         }
                     }
                     finally
@@ -1477,7 +1477,7 @@ namespace Wedol.SteelSeries.Sonar
         }
 
         /// <returns>OK</returns>
-        /// <exception cref="ApiException">A server side error occurred.</exception>
+        /// <exception cref="SonarApiException">A server side error occurred.</exception>
         public virtual System.Threading.Tasks.Task<SharedConfig> RetrieveFromUrlHashAsync(string? hash)
         {
             return RetrieveFromUrlHashAsync(hash, System.Threading.CancellationToken.None);
@@ -1485,7 +1485,7 @@ namespace Wedol.SteelSeries.Sonar
 
         /// <param name="cancellationToken">A cancellation token that can be used by other objects or threads to receive notice of cancellation.</param>
         /// <returns>OK</returns>
-        /// <exception cref="ApiException">A server side error occurred.</exception>
+        /// <exception cref="SonarApiException">A server side error occurred.</exception>
         public virtual async System.Threading.Tasks.Task<SharedConfig> RetrieveFromUrlHashAsync(string? hash, System.Threading.CancellationToken cancellationToken)
         {
             var client_ = _httpClient;
@@ -1536,14 +1536,14 @@ namespace Wedol.SteelSeries.Sonar
                             var objectResponse_ = await ReadObjectResponseAsync<SharedConfig>(response_, headers_, cancellationToken).ConfigureAwait(false);
                             if (objectResponse_.Object == null)
                             {
-                                throw new ApiException("Response was null which was not expected.", status_, objectResponse_.Text, headers_, null);
+                                throw new SonarApiException("Response was null which was not expected.", status_, objectResponse_.Text, headers_, null);
                             }
                             return objectResponse_.Object;
                         }
                         else
                         {
                             var responseData_ = response_.Content == null ? null : await ReadAsStringAsync(response_.Content, cancellationToken).ConfigureAwait(false);
-                            throw new ApiException("The HTTP status code of the response was not expected (" + status_ + ").", status_, responseData_, headers_, null);
+                            throw new SonarApiException("The HTTP status code of the response was not expected (" + status_ + ").", status_, responseData_, headers_, null);
                         }
                     }
                     finally
@@ -1561,7 +1561,7 @@ namespace Wedol.SteelSeries.Sonar
         }
 
         /// <returns>OK</returns>
-        /// <exception cref="ApiException">A server side error occurred.</exception>
+        /// <exception cref="SonarApiException">A server side error occurred.</exception>
         public virtual System.Threading.Tasks.Task<System.Collections.Generic.ICollection<Config>> ConfigsAllGETAsync(VirtualAudioDevice? vad)
         {
             return ConfigsAllGETAsync(vad, System.Threading.CancellationToken.None);
@@ -1569,7 +1569,7 @@ namespace Wedol.SteelSeries.Sonar
 
         /// <param name="cancellationToken">A cancellation token that can be used by other objects or threads to receive notice of cancellation.</param>
         /// <returns>OK</returns>
-        /// <exception cref="ApiException">A server side error occurred.</exception>
+        /// <exception cref="SonarApiException">A server side error occurred.</exception>
         public virtual async System.Threading.Tasks.Task<System.Collections.Generic.ICollection<Config>> ConfigsAllGETAsync(VirtualAudioDevice? vad, System.Threading.CancellationToken cancellationToken)
         {
             var client_ = _httpClient;
@@ -1620,14 +1620,14 @@ namespace Wedol.SteelSeries.Sonar
                             var objectResponse_ = await ReadObjectResponseAsync<System.Collections.Generic.ICollection<Config>>(response_, headers_, cancellationToken).ConfigureAwait(false);
                             if (objectResponse_.Object == null)
                             {
-                                throw new ApiException("Response was null which was not expected.", status_, objectResponse_.Text, headers_, null);
+                                throw new SonarApiException("Response was null which was not expected.", status_, objectResponse_.Text, headers_, null);
                             }
                             return objectResponse_.Object;
                         }
                         else
                         {
                             var responseData_ = response_.Content == null ? null : await ReadAsStringAsync(response_.Content, cancellationToken).ConfigureAwait(false);
-                            throw new ApiException("The HTTP status code of the response was not expected (" + status_ + ").", status_, responseData_, headers_, null);
+                            throw new SonarApiException("The HTTP status code of the response was not expected (" + status_ + ").", status_, responseData_, headers_, null);
                         }
                     }
                     finally
@@ -1645,7 +1645,7 @@ namespace Wedol.SteelSeries.Sonar
         }
 
         /// <returns>OK</returns>
-        /// <exception cref="ApiException">A server side error occurred.</exception>
+        /// <exception cref="SonarApiException">A server side error occurred.</exception>
         public virtual System.Threading.Tasks.Task<Config> ConfigsPOSTAsync(Config? body)
         {
             return ConfigsPOSTAsync(body, System.Threading.CancellationToken.None);
@@ -1653,7 +1653,7 @@ namespace Wedol.SteelSeries.Sonar
 
         /// <param name="cancellationToken">A cancellation token that can be used by other objects or threads to receive notice of cancellation.</param>
         /// <returns>OK</returns>
-        /// <exception cref="ApiException">A server side error occurred.</exception>
+        /// <exception cref="SonarApiException">A server side error occurred.</exception>
         public virtual async System.Threading.Tasks.Task<Config> ConfigsPOSTAsync(Config? body, System.Threading.CancellationToken cancellationToken)
         {
             var client_ = _httpClient;
@@ -1702,14 +1702,14 @@ namespace Wedol.SteelSeries.Sonar
                             var objectResponse_ = await ReadObjectResponseAsync<Config>(response_, headers_, cancellationToken).ConfigureAwait(false);
                             if (objectResponse_.Object == null)
                             {
-                                throw new ApiException("Response was null which was not expected.", status_, objectResponse_.Text, headers_, null);
+                                throw new SonarApiException("Response was null which was not expected.", status_, objectResponse_.Text, headers_, null);
                             }
                             return objectResponse_.Object;
                         }
                         else
                         {
                             var responseData_ = response_.Content == null ? null : await ReadAsStringAsync(response_.Content, cancellationToken).ConfigureAwait(false);
-                            throw new ApiException("The HTTP status code of the response was not expected (" + status_ + ").", status_, responseData_, headers_, null);
+                            throw new SonarApiException("The HTTP status code of the response was not expected (" + status_ + ").", status_, responseData_, headers_, null);
                         }
                     }
                     finally
@@ -1727,7 +1727,7 @@ namespace Wedol.SteelSeries.Sonar
         }
 
         /// <returns>OK</returns>
-        /// <exception cref="ApiException">A server side error occurred.</exception>
+        /// <exception cref="SonarApiException">A server side error occurred.</exception>
         public virtual System.Threading.Tasks.Task<Config> ConfigsPUTAsync(Config? body)
         {
             return ConfigsPUTAsync(body, System.Threading.CancellationToken.None);
@@ -1735,7 +1735,7 @@ namespace Wedol.SteelSeries.Sonar
 
         /// <param name="cancellationToken">A cancellation token that can be used by other objects or threads to receive notice of cancellation.</param>
         /// <returns>OK</returns>
-        /// <exception cref="ApiException">A server side error occurred.</exception>
+        /// <exception cref="SonarApiException">A server side error occurred.</exception>
         public virtual async System.Threading.Tasks.Task<Config> ConfigsPUTAsync(Config? body, System.Threading.CancellationToken cancellationToken)
         {
             var client_ = _httpClient;
@@ -1784,14 +1784,14 @@ namespace Wedol.SteelSeries.Sonar
                             var objectResponse_ = await ReadObjectResponseAsync<Config>(response_, headers_, cancellationToken).ConfigureAwait(false);
                             if (objectResponse_.Object == null)
                             {
-                                throw new ApiException("Response was null which was not expected.", status_, objectResponse_.Text, headers_, null);
+                                throw new SonarApiException("Response was null which was not expected.", status_, objectResponse_.Text, headers_, null);
                             }
                             return objectResponse_.Object;
                         }
                         else
                         {
                             var responseData_ = response_.Content == null ? null : await ReadAsStringAsync(response_.Content, cancellationToken).ConfigureAwait(false);
-                            throw new ApiException("The HTTP status code of the response was not expected (" + status_ + ").", status_, responseData_, headers_, null);
+                            throw new SonarApiException("The HTTP status code of the response was not expected (" + status_ + ").", status_, responseData_, headers_, null);
                         }
                     }
                     finally
@@ -1809,7 +1809,7 @@ namespace Wedol.SteelSeries.Sonar
         }
 
         /// <returns>OK</returns>
-        /// <exception cref="ApiException">A server side error occurred.</exception>
+        /// <exception cref="SonarApiException">A server side error occurred.</exception>
         public virtual System.Threading.Tasks.Task<System.Collections.Generic.ICollection<Config>> ConfigsAllDELETEAsync(System.Guid id)
         {
             return ConfigsAllDELETEAsync(id, System.Threading.CancellationToken.None);
@@ -1817,7 +1817,7 @@ namespace Wedol.SteelSeries.Sonar
 
         /// <param name="cancellationToken">A cancellation token that can be used by other objects or threads to receive notice of cancellation.</param>
         /// <returns>OK</returns>
-        /// <exception cref="ApiException">A server side error occurred.</exception>
+        /// <exception cref="SonarApiException">A server side error occurred.</exception>
         public virtual async System.Threading.Tasks.Task<System.Collections.Generic.ICollection<Config>> ConfigsAllDELETEAsync(System.Guid id, System.Threading.CancellationToken cancellationToken)
         {
             if (id == null)
@@ -1866,14 +1866,14 @@ namespace Wedol.SteelSeries.Sonar
                             var objectResponse_ = await ReadObjectResponseAsync<System.Collections.Generic.ICollection<Config>>(response_, headers_, cancellationToken).ConfigureAwait(false);
                             if (objectResponse_.Object == null)
                             {
-                                throw new ApiException("Response was null which was not expected.", status_, objectResponse_.Text, headers_, null);
+                                throw new SonarApiException("Response was null which was not expected.", status_, objectResponse_.Text, headers_, null);
                             }
                             return objectResponse_.Object;
                         }
                         else
                         {
                             var responseData_ = response_.Content == null ? null : await ReadAsStringAsync(response_.Content, cancellationToken).ConfigureAwait(false);
-                            throw new ApiException("The HTTP status code of the response was not expected (" + status_ + ").", status_, responseData_, headers_, null);
+                            throw new SonarApiException("The HTTP status code of the response was not expected (" + status_ + ").", status_, responseData_, headers_, null);
                         }
                     }
                     finally
@@ -1891,7 +1891,7 @@ namespace Wedol.SteelSeries.Sonar
         }
 
         /// <returns>OK</returns>
-        /// <exception cref="ApiException">A server side error occurred.</exception>
+        /// <exception cref="SonarApiException">A server side error occurred.</exception>
         public virtual System.Threading.Tasks.Task<System.Collections.Generic.ICollection<Config>> SelectedAllAsync()
         {
             return SelectedAllAsync(System.Threading.CancellationToken.None);
@@ -1899,7 +1899,7 @@ namespace Wedol.SteelSeries.Sonar
 
         /// <param name="cancellationToken">A cancellation token that can be used by other objects or threads to receive notice of cancellation.</param>
         /// <returns>OK</returns>
-        /// <exception cref="ApiException">A server side error occurred.</exception>
+        /// <exception cref="SonarApiException">A server side error occurred.</exception>
         public virtual async System.Threading.Tasks.Task<System.Collections.Generic.ICollection<Config>> SelectedAllAsync(System.Threading.CancellationToken cancellationToken)
         {
             var client_ = _httpClient;
@@ -1944,14 +1944,14 @@ namespace Wedol.SteelSeries.Sonar
                             var objectResponse_ = await ReadObjectResponseAsync<System.Collections.Generic.ICollection<Config>>(response_, headers_, cancellationToken).ConfigureAwait(false);
                             if (objectResponse_.Object == null)
                             {
-                                throw new ApiException("Response was null which was not expected.", status_, objectResponse_.Text, headers_, null);
+                                throw new SonarApiException("Response was null which was not expected.", status_, objectResponse_.Text, headers_, null);
                             }
                             return objectResponse_.Object;
                         }
                         else
                         {
                             var responseData_ = response_.Content == null ? null : await ReadAsStringAsync(response_.Content, cancellationToken).ConfigureAwait(false);
-                            throw new ApiException("The HTTP status code of the response was not expected (" + status_ + ").", status_, responseData_, headers_, null);
+                            throw new SonarApiException("The HTTP status code of the response was not expected (" + status_ + ").", status_, responseData_, headers_, null);
                         }
                     }
                     finally
@@ -1969,7 +1969,7 @@ namespace Wedol.SteelSeries.Sonar
         }
 
         /// <returns>OK</returns>
-        /// <exception cref="ApiException">A server side error occurred.</exception>
+        /// <exception cref="SonarApiException">A server side error occurred.</exception>
         public virtual System.Threading.Tasks.Task<Config> SelectAsync(System.Guid id)
         {
             return SelectAsync(id, System.Threading.CancellationToken.None);
@@ -1977,7 +1977,7 @@ namespace Wedol.SteelSeries.Sonar
 
         /// <param name="cancellationToken">A cancellation token that can be used by other objects or threads to receive notice of cancellation.</param>
         /// <returns>OK</returns>
-        /// <exception cref="ApiException">A server side error occurred.</exception>
+        /// <exception cref="SonarApiException">A server side error occurred.</exception>
         public virtual async System.Threading.Tasks.Task<Config> SelectAsync(System.Guid id, System.Threading.CancellationToken cancellationToken)
         {
             if (id == null)
@@ -2028,14 +2028,14 @@ namespace Wedol.SteelSeries.Sonar
                             var objectResponse_ = await ReadObjectResponseAsync<Config>(response_, headers_, cancellationToken).ConfigureAwait(false);
                             if (objectResponse_.Object == null)
                             {
-                                throw new ApiException("Response was null which was not expected.", status_, objectResponse_.Text, headers_, null);
+                                throw new SonarApiException("Response was null which was not expected.", status_, objectResponse_.Text, headers_, null);
                             }
                             return objectResponse_.Object;
                         }
                         else
                         {
                             var responseData_ = response_.Content == null ? null : await ReadAsStringAsync(response_.Content, cancellationToken).ConfigureAwait(false);
-                            throw new ApiException("The HTTP status code of the response was not expected (" + status_ + ").", status_, responseData_, headers_, null);
+                            throw new SonarApiException("The HTTP status code of the response was not expected (" + status_ + ").", status_, responseData_, headers_, null);
                         }
                     }
                     finally
@@ -2053,7 +2053,7 @@ namespace Wedol.SteelSeries.Sonar
         }
 
         /// <returns>OK</returns>
-        /// <exception cref="ApiException">A server side error occurred.</exception>
+        /// <exception cref="SonarApiException">A server side error occurred.</exception>
         public virtual System.Threading.Tasks.Task<VadConfig> DefaultAsync(VirtualAudioDevice? virtualAudioDevice)
         {
             return DefaultAsync(virtualAudioDevice, System.Threading.CancellationToken.None);
@@ -2061,7 +2061,7 @@ namespace Wedol.SteelSeries.Sonar
 
         /// <param name="cancellationToken">A cancellation token that can be used by other objects or threads to receive notice of cancellation.</param>
         /// <returns>OK</returns>
-        /// <exception cref="ApiException">A server side error occurred.</exception>
+        /// <exception cref="SonarApiException">A server side error occurred.</exception>
         public virtual async System.Threading.Tasks.Task<VadConfig> DefaultAsync(VirtualAudioDevice? virtualAudioDevice, System.Threading.CancellationToken cancellationToken)
         {
             var client_ = _httpClient;
@@ -2112,14 +2112,14 @@ namespace Wedol.SteelSeries.Sonar
                             var objectResponse_ = await ReadObjectResponseAsync<VadConfig>(response_, headers_, cancellationToken).ConfigureAwait(false);
                             if (objectResponse_.Object == null)
                             {
-                                throw new ApiException("Response was null which was not expected.", status_, objectResponse_.Text, headers_, null);
+                                throw new SonarApiException("Response was null which was not expected.", status_, objectResponse_.Text, headers_, null);
                             }
                             return objectResponse_.Object;
                         }
                         else
                         {
                             var responseData_ = response_.Content == null ? null : await ReadAsStringAsync(response_.Content, cancellationToken).ConfigureAwait(false);
-                            throw new ApiException("The HTTP status code of the response was not expected (" + status_ + ").", status_, responseData_, headers_, null);
+                            throw new SonarApiException("The HTTP status code of the response was not expected (" + status_ + ").", status_, responseData_, headers_, null);
                         }
                     }
                     finally
@@ -2137,7 +2137,7 @@ namespace Wedol.SteelSeries.Sonar
         }
 
         /// <returns>OK</returns>
-        /// <exception cref="ApiException">A server side error occurred.</exception>
+        /// <exception cref="SonarApiException">A server side error occurred.</exception>
         public virtual System.Threading.Tasks.Task<System.Collections.Generic.ICollection<Config>> IsFavoriteAsync(System.Guid id, bool isFavorite)
         {
             return IsFavoriteAsync(id, isFavorite, System.Threading.CancellationToken.None);
@@ -2145,7 +2145,7 @@ namespace Wedol.SteelSeries.Sonar
 
         /// <param name="cancellationToken">A cancellation token that can be used by other objects or threads to receive notice of cancellation.</param>
         /// <returns>OK</returns>
-        /// <exception cref="ApiException">A server side error occurred.</exception>
+        /// <exception cref="SonarApiException">A server side error occurred.</exception>
         public virtual async System.Threading.Tasks.Task<System.Collections.Generic.ICollection<Config>> IsFavoriteAsync(System.Guid id, bool isFavorite, System.Threading.CancellationToken cancellationToken)
         {
             if (id == null)
@@ -2200,14 +2200,14 @@ namespace Wedol.SteelSeries.Sonar
                             var objectResponse_ = await ReadObjectResponseAsync<System.Collections.Generic.ICollection<Config>>(response_, headers_, cancellationToken).ConfigureAwait(false);
                             if (objectResponse_.Object == null)
                             {
-                                throw new ApiException("Response was null which was not expected.", status_, objectResponse_.Text, headers_, null);
+                                throw new SonarApiException("Response was null which was not expected.", status_, objectResponse_.Text, headers_, null);
                             }
                             return objectResponse_.Object;
                         }
                         else
                         {
                             var responseData_ = response_.Content == null ? null : await ReadAsStringAsync(response_.Content, cancellationToken).ConfigureAwait(false);
-                            throw new ApiException("The HTTP status code of the response was not expected (" + status_ + ").", status_, responseData_, headers_, null);
+                            throw new SonarApiException("The HTTP status code of the response was not expected (" + status_ + ").", status_, responseData_, headers_, null);
                         }
                     }
                     finally
@@ -2225,7 +2225,7 @@ namespace Wedol.SteelSeries.Sonar
         }
 
         /// <returns>OK</returns>
-        /// <exception cref="ApiException">A server side error occurred.</exception>
+        /// <exception cref="SonarApiException">A server side error occurred.</exception>
         public virtual System.Threading.Tasks.Task<System.Collections.Generic.ICollection<Config>> SetFavoritePositionAsync(System.Guid id, int position)
         {
             return SetFavoritePositionAsync(id, position, System.Threading.CancellationToken.None);
@@ -2233,7 +2233,7 @@ namespace Wedol.SteelSeries.Sonar
 
         /// <param name="cancellationToken">A cancellation token that can be used by other objects or threads to receive notice of cancellation.</param>
         /// <returns>OK</returns>
-        /// <exception cref="ApiException">A server side error occurred.</exception>
+        /// <exception cref="SonarApiException">A server side error occurred.</exception>
         public virtual async System.Threading.Tasks.Task<System.Collections.Generic.ICollection<Config>> SetFavoritePositionAsync(System.Guid id, int position, System.Threading.CancellationToken cancellationToken)
         {
             if (id == null)
@@ -2288,14 +2288,14 @@ namespace Wedol.SteelSeries.Sonar
                             var objectResponse_ = await ReadObjectResponseAsync<System.Collections.Generic.ICollection<Config>>(response_, headers_, cancellationToken).ConfigureAwait(false);
                             if (objectResponse_.Object == null)
                             {
-                                throw new ApiException("Response was null which was not expected.", status_, objectResponse_.Text, headers_, null);
+                                throw new SonarApiException("Response was null which was not expected.", status_, objectResponse_.Text, headers_, null);
                             }
                             return objectResponse_.Object;
                         }
                         else
                         {
                             var responseData_ = response_.Content == null ? null : await ReadAsStringAsync(response_.Content, cancellationToken).ConfigureAwait(false);
-                            throw new ApiException("The HTTP status code of the response was not expected (" + status_ + ").", status_, responseData_, headers_, null);
+                            throw new SonarApiException("The HTTP status code of the response was not expected (" + status_ + ").", status_, responseData_, headers_, null);
                         }
                     }
                     finally
@@ -2313,7 +2313,7 @@ namespace Wedol.SteelSeries.Sonar
         }
 
         /// <returns>OK</returns>
-        /// <exception cref="ApiException">A server side error occurred.</exception>
+        /// <exception cref="SonarApiException">A server side error occurred.</exception>
         public virtual System.Threading.Tasks.Task<System.Collections.Generic.ICollection<ConfigOption>> OptionsAsync()
         {
             return OptionsAsync(System.Threading.CancellationToken.None);
@@ -2321,7 +2321,7 @@ namespace Wedol.SteelSeries.Sonar
 
         /// <param name="cancellationToken">A cancellation token that can be used by other objects or threads to receive notice of cancellation.</param>
         /// <returns>OK</returns>
-        /// <exception cref="ApiException">A server side error occurred.</exception>
+        /// <exception cref="SonarApiException">A server side error occurred.</exception>
         public virtual async System.Threading.Tasks.Task<System.Collections.Generic.ICollection<ConfigOption>> OptionsAsync(System.Threading.CancellationToken cancellationToken)
         {
             var client_ = _httpClient;
@@ -2366,14 +2366,14 @@ namespace Wedol.SteelSeries.Sonar
                             var objectResponse_ = await ReadObjectResponseAsync<System.Collections.Generic.ICollection<ConfigOption>>(response_, headers_, cancellationToken).ConfigureAwait(false);
                             if (objectResponse_.Object == null)
                             {
-                                throw new ApiException("Response was null which was not expected.", status_, objectResponse_.Text, headers_, null);
+                                throw new SonarApiException("Response was null which was not expected.", status_, objectResponse_.Text, headers_, null);
                             }
                             return objectResponse_.Object;
                         }
                         else
                         {
                             var responseData_ = response_.Content == null ? null : await ReadAsStringAsync(response_.Content, cancellationToken).ConfigureAwait(false);
-                            throw new ApiException("The HTTP status code of the response was not expected (" + status_ + ").", status_, responseData_, headers_, null);
+                            throw new SonarApiException("The HTTP status code of the response was not expected (" + status_ + ").", status_, responseData_, headers_, null);
                         }
                     }
                     finally
@@ -2391,7 +2391,7 @@ namespace Wedol.SteelSeries.Sonar
         }
 
         /// <returns>OK</returns>
-        /// <exception cref="ApiException">A server side error occurred.</exception>
+        /// <exception cref="SonarApiException">A server side error occurred.</exception>
         public virtual System.Threading.Tasks.Task<InAppToastMessage> InAppToastMessageAsync()
         {
             return InAppToastMessageAsync(System.Threading.CancellationToken.None);
@@ -2399,7 +2399,7 @@ namespace Wedol.SteelSeries.Sonar
 
         /// <param name="cancellationToken">A cancellation token that can be used by other objects or threads to receive notice of cancellation.</param>
         /// <returns>OK</returns>
-        /// <exception cref="ApiException">A server side error occurred.</exception>
+        /// <exception cref="SonarApiException">A server side error occurred.</exception>
         public virtual async System.Threading.Tasks.Task<InAppToastMessage> InAppToastMessageAsync(System.Threading.CancellationToken cancellationToken)
         {
             var client_ = _httpClient;
@@ -2444,14 +2444,14 @@ namespace Wedol.SteelSeries.Sonar
                             var objectResponse_ = await ReadObjectResponseAsync<InAppToastMessage>(response_, headers_, cancellationToken).ConfigureAwait(false);
                             if (objectResponse_.Object == null)
                             {
-                                throw new ApiException("Response was null which was not expected.", status_, objectResponse_.Text, headers_, null);
+                                throw new SonarApiException("Response was null which was not expected.", status_, objectResponse_.Text, headers_, null);
                             }
                             return objectResponse_.Object;
                         }
                         else
                         {
                             var responseData_ = response_.Content == null ? null : await ReadAsStringAsync(response_.Content, cancellationToken).ConfigureAwait(false);
-                            throw new ApiException("The HTTP status code of the response was not expected (" + status_ + ").", status_, responseData_, headers_, null);
+                            throw new SonarApiException("The HTTP status code of the response was not expected (" + status_ + ").", status_, responseData_, headers_, null);
                         }
                     }
                     finally
@@ -2469,7 +2469,7 @@ namespace Wedol.SteelSeries.Sonar
         }
 
         /// <returns>OK</returns>
-        /// <exception cref="ApiException">A server side error occurred.</exception>
+        /// <exception cref="SonarApiException">A server side error occurred.</exception>
         public virtual System.Threading.Tasks.Task<DeviceOutData> DeviceOutAsync()
         {
             return DeviceOutAsync(System.Threading.CancellationToken.None);
@@ -2477,7 +2477,7 @@ namespace Wedol.SteelSeries.Sonar
 
         /// <param name="cancellationToken">A cancellation token that can be used by other objects or threads to receive notice of cancellation.</param>
         /// <returns>OK</returns>
-        /// <exception cref="ApiException">A server side error occurred.</exception>
+        /// <exception cref="SonarApiException">A server side error occurred.</exception>
         public virtual async System.Threading.Tasks.Task<DeviceOutData> DeviceOutAsync(System.Threading.CancellationToken cancellationToken)
         {
             var client_ = _httpClient;
@@ -2522,14 +2522,14 @@ namespace Wedol.SteelSeries.Sonar
                             var objectResponse_ = await ReadObjectResponseAsync<DeviceOutData>(response_, headers_, cancellationToken).ConfigureAwait(false);
                             if (objectResponse_.Object == null)
                             {
-                                throw new ApiException("Response was null which was not expected.", status_, objectResponse_.Text, headers_, null);
+                                throw new SonarApiException("Response was null which was not expected.", status_, objectResponse_.Text, headers_, null);
                             }
                             return objectResponse_.Object;
                         }
                         else
                         {
                             var responseData_ = response_.Content == null ? null : await ReadAsStringAsync(response_.Content, cancellationToken).ConfigureAwait(false);
-                            throw new ApiException("The HTTP status code of the response was not expected (" + status_ + ").", status_, responseData_, headers_, null);
+                            throw new SonarApiException("The HTTP status code of the response was not expected (" + status_ + ").", status_, responseData_, headers_, null);
                         }
                     }
                     finally
@@ -2547,7 +2547,7 @@ namespace Wedol.SteelSeries.Sonar
         }
 
         /// <returns>OK</returns>
-        /// <exception cref="ApiException">A server side error occurred.</exception>
+        /// <exception cref="SonarApiException">A server side error occurred.</exception>
         public virtual System.Threading.Tasks.Task<string> AudioPathGETAsync()
         {
             return AudioPathGETAsync(System.Threading.CancellationToken.None);
@@ -2555,7 +2555,7 @@ namespace Wedol.SteelSeries.Sonar
 
         /// <param name="cancellationToken">A cancellation token that can be used by other objects or threads to receive notice of cancellation.</param>
         /// <returns>OK</returns>
-        /// <exception cref="ApiException">A server side error occurred.</exception>
+        /// <exception cref="SonarApiException">A server side error occurred.</exception>
         public virtual async System.Threading.Tasks.Task<string> AudioPathGETAsync(System.Threading.CancellationToken cancellationToken)
         {
             var client_ = _httpClient;
@@ -2600,14 +2600,14 @@ namespace Wedol.SteelSeries.Sonar
                             var objectResponse_ = await ReadObjectResponseAsync<string>(response_, headers_, cancellationToken).ConfigureAwait(false);
                             if (objectResponse_.Object == null)
                             {
-                                throw new ApiException("Response was null which was not expected.", status_, objectResponse_.Text, headers_, null);
+                                throw new SonarApiException("Response was null which was not expected.", status_, objectResponse_.Text, headers_, null);
                             }
                             return objectResponse_.Object;
                         }
                         else
                         {
                             var responseData_ = response_.Content == null ? null : await ReadAsStringAsync(response_.Content, cancellationToken).ConfigureAwait(false);
-                            throw new ApiException("The HTTP status code of the response was not expected (" + status_ + ").", status_, responseData_, headers_, null);
+                            throw new SonarApiException("The HTTP status code of the response was not expected (" + status_ + ").", status_, responseData_, headers_, null);
                         }
                     }
                     finally
@@ -2625,7 +2625,7 @@ namespace Wedol.SteelSeries.Sonar
         }
 
         /// <returns>OK</returns>
-        /// <exception cref="ApiException">A server side error occurred.</exception>
+        /// <exception cref="SonarApiException">A server side error occurred.</exception>
         public virtual System.Threading.Tasks.Task<string> AudioPathPUTAsync(Feature feature)
         {
             return AudioPathPUTAsync(feature, System.Threading.CancellationToken.None);
@@ -2633,7 +2633,7 @@ namespace Wedol.SteelSeries.Sonar
 
         /// <param name="cancellationToken">A cancellation token that can be used by other objects or threads to receive notice of cancellation.</param>
         /// <returns>OK</returns>
-        /// <exception cref="ApiException">A server side error occurred.</exception>
+        /// <exception cref="SonarApiException">A server side error occurred.</exception>
         public virtual async System.Threading.Tasks.Task<string> AudioPathPUTAsync(Feature feature, System.Threading.CancellationToken cancellationToken)
         {
             if (feature == null)
@@ -2683,14 +2683,14 @@ namespace Wedol.SteelSeries.Sonar
                             var objectResponse_ = await ReadObjectResponseAsync<string>(response_, headers_, cancellationToken).ConfigureAwait(false);
                             if (objectResponse_.Object == null)
                             {
-                                throw new ApiException("Response was null which was not expected.", status_, objectResponse_.Text, headers_, null);
+                                throw new SonarApiException("Response was null which was not expected.", status_, objectResponse_.Text, headers_, null);
                             }
                             return objectResponse_.Object;
                         }
                         else
                         {
                             var responseData_ = response_.Content == null ? null : await ReadAsStringAsync(response_.Content, cancellationToken).ConfigureAwait(false);
-                            throw new ApiException("The HTTP status code of the response was not expected (" + status_ + ").", status_, responseData_, headers_, null);
+                            throw new SonarApiException("The HTTP status code of the response was not expected (" + status_ + ").", status_, responseData_, headers_, null);
                         }
                     }
                     finally
@@ -2708,7 +2708,7 @@ namespace Wedol.SteelSeries.Sonar
         }
 
         /// <returns>OK</returns>
-        /// <exception cref="ApiException">A server side error occurred.</exception>
+        /// <exception cref="SonarApiException">A server side error occurred.</exception>
         public virtual System.Threading.Tasks.Task<float> VolumeGETAsync(Feature feature)
         {
             return VolumeGETAsync(feature, System.Threading.CancellationToken.None);
@@ -2716,7 +2716,7 @@ namespace Wedol.SteelSeries.Sonar
 
         /// <param name="cancellationToken">A cancellation token that can be used by other objects or threads to receive notice of cancellation.</param>
         /// <returns>OK</returns>
-        /// <exception cref="ApiException">A server side error occurred.</exception>
+        /// <exception cref="SonarApiException">A server side error occurred.</exception>
         public virtual async System.Threading.Tasks.Task<float> VolumeGETAsync(Feature feature, System.Threading.CancellationToken cancellationToken)
         {
             if (feature == null)
@@ -2765,14 +2765,14 @@ namespace Wedol.SteelSeries.Sonar
                             var objectResponse_ = await ReadObjectResponseAsync<float>(response_, headers_, cancellationToken).ConfigureAwait(false);
                             if (objectResponse_.Object == null)
                             {
-                                throw new ApiException("Response was null which was not expected.", status_, objectResponse_.Text, headers_, null);
+                                throw new SonarApiException("Response was null which was not expected.", status_, objectResponse_.Text, headers_, null);
                             }
                             return objectResponse_.Object;
                         }
                         else
                         {
                             var responseData_ = response_.Content == null ? null : await ReadAsStringAsync(response_.Content, cancellationToken).ConfigureAwait(false);
-                            throw new ApiException("The HTTP status code of the response was not expected (" + status_ + ").", status_, responseData_, headers_, null);
+                            throw new SonarApiException("The HTTP status code of the response was not expected (" + status_ + ").", status_, responseData_, headers_, null);
                         }
                     }
                     finally
@@ -2790,7 +2790,7 @@ namespace Wedol.SteelSeries.Sonar
         }
 
         /// <returns>OK</returns>
-        /// <exception cref="ApiException">A server side error occurred.</exception>
+        /// <exception cref="SonarApiException">A server side error occurred.</exception>
         public virtual System.Threading.Tasks.Task<bool> MuteGETAsync(Feature feature)
         {
             return MuteGETAsync(feature, System.Threading.CancellationToken.None);
@@ -2798,7 +2798,7 @@ namespace Wedol.SteelSeries.Sonar
 
         /// <param name="cancellationToken">A cancellation token that can be used by other objects or threads to receive notice of cancellation.</param>
         /// <returns>OK</returns>
-        /// <exception cref="ApiException">A server side error occurred.</exception>
+        /// <exception cref="SonarApiException">A server side error occurred.</exception>
         public virtual async System.Threading.Tasks.Task<bool> MuteGETAsync(Feature feature, System.Threading.CancellationToken cancellationToken)
         {
             if (feature == null)
@@ -2847,14 +2847,14 @@ namespace Wedol.SteelSeries.Sonar
                             var objectResponse_ = await ReadObjectResponseAsync<bool>(response_, headers_, cancellationToken).ConfigureAwait(false);
                             if (objectResponse_.Object == null)
                             {
-                                throw new ApiException("Response was null which was not expected.", status_, objectResponse_.Text, headers_, null);
+                                throw new SonarApiException("Response was null which was not expected.", status_, objectResponse_.Text, headers_, null);
                             }
                             return objectResponse_.Object;
                         }
                         else
                         {
                             var responseData_ = response_.Content == null ? null : await ReadAsStringAsync(response_.Content, cancellationToken).ConfigureAwait(false);
-                            throw new ApiException("The HTTP status code of the response was not expected (" + status_ + ").", status_, responseData_, headers_, null);
+                            throw new SonarApiException("The HTTP status code of the response was not expected (" + status_ + ").", status_, responseData_, headers_, null);
                         }
                     }
                     finally
@@ -2872,7 +2872,7 @@ namespace Wedol.SteelSeries.Sonar
         }
 
         /// <returns>OK</returns>
-        /// <exception cref="ApiException">A server side error occurred.</exception>
+        /// <exception cref="SonarApiException">A server side error occurred.</exception>
         public virtual System.Threading.Tasks.Task<float> VolumePUTAsync(Feature feature, float volume)
         {
             return VolumePUTAsync(feature, volume, System.Threading.CancellationToken.None);
@@ -2880,7 +2880,7 @@ namespace Wedol.SteelSeries.Sonar
 
         /// <param name="cancellationToken">A cancellation token that can be used by other objects or threads to receive notice of cancellation.</param>
         /// <returns>OK</returns>
-        /// <exception cref="ApiException">A server side error occurred.</exception>
+        /// <exception cref="SonarApiException">A server side error occurred.</exception>
         public virtual async System.Threading.Tasks.Task<float> VolumePUTAsync(Feature feature, float volume, System.Threading.CancellationToken cancellationToken)
         {
             if (feature == null)
@@ -2935,14 +2935,14 @@ namespace Wedol.SteelSeries.Sonar
                             var objectResponse_ = await ReadObjectResponseAsync<float>(response_, headers_, cancellationToken).ConfigureAwait(false);
                             if (objectResponse_.Object == null)
                             {
-                                throw new ApiException("Response was null which was not expected.", status_, objectResponse_.Text, headers_, null);
+                                throw new SonarApiException("Response was null which was not expected.", status_, objectResponse_.Text, headers_, null);
                             }
                             return objectResponse_.Object;
                         }
                         else
                         {
                             var responseData_ = response_.Content == null ? null : await ReadAsStringAsync(response_.Content, cancellationToken).ConfigureAwait(false);
-                            throw new ApiException("The HTTP status code of the response was not expected (" + status_ + ").", status_, responseData_, headers_, null);
+                            throw new SonarApiException("The HTTP status code of the response was not expected (" + status_ + ").", status_, responseData_, headers_, null);
                         }
                     }
                     finally
@@ -2960,7 +2960,7 @@ namespace Wedol.SteelSeries.Sonar
         }
 
         /// <returns>OK</returns>
-        /// <exception cref="ApiException">A server side error occurred.</exception>
+        /// <exception cref="SonarApiException">A server side error occurred.</exception>
         public virtual System.Threading.Tasks.Task<bool> MutePUTAsync(Feature feature, bool mute)
         {
             return MutePUTAsync(feature, mute, System.Threading.CancellationToken.None);
@@ -2968,7 +2968,7 @@ namespace Wedol.SteelSeries.Sonar
 
         /// <param name="cancellationToken">A cancellation token that can be used by other objects or threads to receive notice of cancellation.</param>
         /// <returns>OK</returns>
-        /// <exception cref="ApiException">A server side error occurred.</exception>
+        /// <exception cref="SonarApiException">A server side error occurred.</exception>
         public virtual async System.Threading.Tasks.Task<bool> MutePUTAsync(Feature feature, bool mute, System.Threading.CancellationToken cancellationToken)
         {
             if (feature == null)
@@ -3023,14 +3023,14 @@ namespace Wedol.SteelSeries.Sonar
                             var objectResponse_ = await ReadObjectResponseAsync<bool>(response_, headers_, cancellationToken).ConfigureAwait(false);
                             if (objectResponse_.Object == null)
                             {
-                                throw new ApiException("Response was null which was not expected.", status_, objectResponse_.Text, headers_, null);
+                                throw new SonarApiException("Response was null which was not expected.", status_, objectResponse_.Text, headers_, null);
                             }
                             return objectResponse_.Object;
                         }
                         else
                         {
                             var responseData_ = response_.Content == null ? null : await ReadAsStringAsync(response_.Content, cancellationToken).ConfigureAwait(false);
-                            throw new ApiException("The HTTP status code of the response was not expected (" + status_ + ").", status_, responseData_, headers_, null);
+                            throw new SonarApiException("The HTTP status code of the response was not expected (" + status_ + ").", status_, responseData_, headers_, null);
                         }
                     }
                     finally
@@ -3048,7 +3048,7 @@ namespace Wedol.SteelSeries.Sonar
         }
 
         /// <returns>OK</returns>
-        /// <exception cref="ApiException">A server side error occurred.</exception>
+        /// <exception cref="SonarApiException">A server side error occurred.</exception>
         public virtual System.Threading.Tasks.Task<bool> IsEnabledGETAsync()
         {
             return IsEnabledGETAsync(System.Threading.CancellationToken.None);
@@ -3056,7 +3056,7 @@ namespace Wedol.SteelSeries.Sonar
 
         /// <param name="cancellationToken">A cancellation token that can be used by other objects or threads to receive notice of cancellation.</param>
         /// <returns>OK</returns>
-        /// <exception cref="ApiException">A server side error occurred.</exception>
+        /// <exception cref="SonarApiException">A server side error occurred.</exception>
         public virtual async System.Threading.Tasks.Task<bool> IsEnabledGETAsync(System.Threading.CancellationToken cancellationToken)
         {
             var client_ = _httpClient;
@@ -3101,14 +3101,14 @@ namespace Wedol.SteelSeries.Sonar
                             var objectResponse_ = await ReadObjectResponseAsync<bool>(response_, headers_, cancellationToken).ConfigureAwait(false);
                             if (objectResponse_.Object == null)
                             {
-                                throw new ApiException("Response was null which was not expected.", status_, objectResponse_.Text, headers_, null);
+                                throw new SonarApiException("Response was null which was not expected.", status_, objectResponse_.Text, headers_, null);
                             }
                             return objectResponse_.Object;
                         }
                         else
                         {
                             var responseData_ = response_.Content == null ? null : await ReadAsStringAsync(response_.Content, cancellationToken).ConfigureAwait(false);
-                            throw new ApiException("The HTTP status code of the response was not expected (" + status_ + ").", status_, responseData_, headers_, null);
+                            throw new SonarApiException("The HTTP status code of the response was not expected (" + status_ + ").", status_, responseData_, headers_, null);
                         }
                     }
                     finally
@@ -3126,7 +3126,7 @@ namespace Wedol.SteelSeries.Sonar
         }
 
         /// <returns>OK</returns>
-        /// <exception cref="ApiException">A server side error occurred.</exception>
+        /// <exception cref="SonarApiException">A server side error occurred.</exception>
         public virtual System.Threading.Tasks.Task<bool> IsEnabledPUT2Async(bool isEnabled)
         {
             return IsEnabledPUT2Async(isEnabled, System.Threading.CancellationToken.None);
@@ -3134,7 +3134,7 @@ namespace Wedol.SteelSeries.Sonar
 
         /// <param name="cancellationToken">A cancellation token that can be used by other objects or threads to receive notice of cancellation.</param>
         /// <returns>OK</returns>
-        /// <exception cref="ApiException">A server side error occurred.</exception>
+        /// <exception cref="SonarApiException">A server side error occurred.</exception>
         public virtual async System.Threading.Tasks.Task<bool> IsEnabledPUT2Async(bool isEnabled, System.Threading.CancellationToken cancellationToken)
         {
             if (isEnabled == null)
@@ -3184,14 +3184,14 @@ namespace Wedol.SteelSeries.Sonar
                             var objectResponse_ = await ReadObjectResponseAsync<bool>(response_, headers_, cancellationToken).ConfigureAwait(false);
                             if (objectResponse_.Object == null)
                             {
-                                throw new ApiException("Response was null which was not expected.", status_, objectResponse_.Text, headers_, null);
+                                throw new SonarApiException("Response was null which was not expected.", status_, objectResponse_.Text, headers_, null);
                             }
                             return objectResponse_.Object;
                         }
                         else
                         {
                             var responseData_ = response_.Content == null ? null : await ReadAsStringAsync(response_.Content, cancellationToken).ConfigureAwait(false);
-                            throw new ApiException("The HTTP status code of the response was not expected (" + status_ + ").", status_, responseData_, headers_, null);
+                            throw new SonarApiException("The HTTP status code of the response was not expected (" + status_ + ").", status_, responseData_, headers_, null);
                         }
                     }
                     finally
@@ -3209,7 +3209,7 @@ namespace Wedol.SteelSeries.Sonar
         }
 
         /// <returns>OK</returns>
-        /// <exception cref="ApiException">A server side error occurred.</exception>
+        /// <exception cref="SonarApiException">A server side error occurred.</exception>
         public virtual System.Threading.Tasks.Task<bool> IsWirelessTriggerEnabledGETAsync()
         {
             return IsWirelessTriggerEnabledGETAsync(System.Threading.CancellationToken.None);
@@ -3217,7 +3217,7 @@ namespace Wedol.SteelSeries.Sonar
 
         /// <param name="cancellationToken">A cancellation token that can be used by other objects or threads to receive notice of cancellation.</param>
         /// <returns>OK</returns>
-        /// <exception cref="ApiException">A server side error occurred.</exception>
+        /// <exception cref="SonarApiException">A server side error occurred.</exception>
         public virtual async System.Threading.Tasks.Task<bool> IsWirelessTriggerEnabledGETAsync(System.Threading.CancellationToken cancellationToken)
         {
             var client_ = _httpClient;
@@ -3262,14 +3262,14 @@ namespace Wedol.SteelSeries.Sonar
                             var objectResponse_ = await ReadObjectResponseAsync<bool>(response_, headers_, cancellationToken).ConfigureAwait(false);
                             if (objectResponse_.Object == null)
                             {
-                                throw new ApiException("Response was null which was not expected.", status_, objectResponse_.Text, headers_, null);
+                                throw new SonarApiException("Response was null which was not expected.", status_, objectResponse_.Text, headers_, null);
                             }
                             return objectResponse_.Object;
                         }
                         else
                         {
                             var responseData_ = response_.Content == null ? null : await ReadAsStringAsync(response_.Content, cancellationToken).ConfigureAwait(false);
-                            throw new ApiException("The HTTP status code of the response was not expected (" + status_ + ").", status_, responseData_, headers_, null);
+                            throw new SonarApiException("The HTTP status code of the response was not expected (" + status_ + ").", status_, responseData_, headers_, null);
                         }
                     }
                     finally
@@ -3287,7 +3287,7 @@ namespace Wedol.SteelSeries.Sonar
         }
 
         /// <returns>OK</returns>
-        /// <exception cref="ApiException">A server side error occurred.</exception>
+        /// <exception cref="SonarApiException">A server side error occurred.</exception>
         public virtual System.Threading.Tasks.Task<bool> IsWirelessTriggerEnabledPUTAsync(bool isEnabled)
         {
             return IsWirelessTriggerEnabledPUTAsync(isEnabled, System.Threading.CancellationToken.None);
@@ -3295,7 +3295,7 @@ namespace Wedol.SteelSeries.Sonar
 
         /// <param name="cancellationToken">A cancellation token that can be used by other objects or threads to receive notice of cancellation.</param>
         /// <returns>OK</returns>
-        /// <exception cref="ApiException">A server side error occurred.</exception>
+        /// <exception cref="SonarApiException">A server side error occurred.</exception>
         public virtual async System.Threading.Tasks.Task<bool> IsWirelessTriggerEnabledPUTAsync(bool isEnabled, System.Threading.CancellationToken cancellationToken)
         {
             if (isEnabled == null)
@@ -3345,14 +3345,14 @@ namespace Wedol.SteelSeries.Sonar
                             var objectResponse_ = await ReadObjectResponseAsync<bool>(response_, headers_, cancellationToken).ConfigureAwait(false);
                             if (objectResponse_.Object == null)
                             {
-                                throw new ApiException("Response was null which was not expected.", status_, objectResponse_.Text, headers_, null);
+                                throw new SonarApiException("Response was null which was not expected.", status_, objectResponse_.Text, headers_, null);
                             }
                             return objectResponse_.Object;
                         }
                         else
                         {
                             var responseData_ = response_.Content == null ? null : await ReadAsStringAsync(response_.Content, cancellationToken).ConfigureAwait(false);
-                            throw new ApiException("The HTTP status code of the response was not expected (" + status_ + ").", status_, responseData_, headers_, null);
+                            throw new SonarApiException("The HTTP status code of the response was not expected (" + status_ + ").", status_, responseData_, headers_, null);
                         }
                     }
                     finally
@@ -3370,7 +3370,7 @@ namespace Wedol.SteelSeries.Sonar
         }
 
         /// <returns>OK</returns>
-        /// <exception cref="ApiException">A server side error occurred.</exception>
+        /// <exception cref="SonarApiException">A server side error occurred.</exception>
         public virtual System.Threading.Tasks.Task<bool> IsFallbackOnRebootEnabledGETAsync()
         {
             return IsFallbackOnRebootEnabledGETAsync(System.Threading.CancellationToken.None);
@@ -3378,7 +3378,7 @@ namespace Wedol.SteelSeries.Sonar
 
         /// <param name="cancellationToken">A cancellation token that can be used by other objects or threads to receive notice of cancellation.</param>
         /// <returns>OK</returns>
-        /// <exception cref="ApiException">A server side error occurred.</exception>
+        /// <exception cref="SonarApiException">A server side error occurred.</exception>
         public virtual async System.Threading.Tasks.Task<bool> IsFallbackOnRebootEnabledGETAsync(System.Threading.CancellationToken cancellationToken)
         {
             var client_ = _httpClient;
@@ -3423,14 +3423,14 @@ namespace Wedol.SteelSeries.Sonar
                             var objectResponse_ = await ReadObjectResponseAsync<bool>(response_, headers_, cancellationToken).ConfigureAwait(false);
                             if (objectResponse_.Object == null)
                             {
-                                throw new ApiException("Response was null which was not expected.", status_, objectResponse_.Text, headers_, null);
+                                throw new SonarApiException("Response was null which was not expected.", status_, objectResponse_.Text, headers_, null);
                             }
                             return objectResponse_.Object;
                         }
                         else
                         {
                             var responseData_ = response_.Content == null ? null : await ReadAsStringAsync(response_.Content, cancellationToken).ConfigureAwait(false);
-                            throw new ApiException("The HTTP status code of the response was not expected (" + status_ + ").", status_, responseData_, headers_, null);
+                            throw new SonarApiException("The HTTP status code of the response was not expected (" + status_ + ").", status_, responseData_, headers_, null);
                         }
                     }
                     finally
@@ -3448,7 +3448,7 @@ namespace Wedol.SteelSeries.Sonar
         }
 
         /// <returns>OK</returns>
-        /// <exception cref="ApiException">A server side error occurred.</exception>
+        /// <exception cref="SonarApiException">A server side error occurred.</exception>
         public virtual System.Threading.Tasks.Task<bool> IsFallbackOnRebootEnabledPUTAsync(bool isEnabled)
         {
             return IsFallbackOnRebootEnabledPUTAsync(isEnabled, System.Threading.CancellationToken.None);
@@ -3456,7 +3456,7 @@ namespace Wedol.SteelSeries.Sonar
 
         /// <param name="cancellationToken">A cancellation token that can be used by other objects or threads to receive notice of cancellation.</param>
         /// <returns>OK</returns>
-        /// <exception cref="ApiException">A server side error occurred.</exception>
+        /// <exception cref="SonarApiException">A server side error occurred.</exception>
         public virtual async System.Threading.Tasks.Task<bool> IsFallbackOnRebootEnabledPUTAsync(bool isEnabled, System.Threading.CancellationToken cancellationToken)
         {
             if (isEnabled == null)
@@ -3506,14 +3506,14 @@ namespace Wedol.SteelSeries.Sonar
                             var objectResponse_ = await ReadObjectResponseAsync<bool>(response_, headers_, cancellationToken).ConfigureAwait(false);
                             if (objectResponse_.Object == null)
                             {
-                                throw new ApiException("Response was null which was not expected.", status_, objectResponse_.Text, headers_, null);
+                                throw new SonarApiException("Response was null which was not expected.", status_, objectResponse_.Text, headers_, null);
                             }
                             return objectResponse_.Object;
                         }
                         else
                         {
                             var responseData_ = response_.Content == null ? null : await ReadAsStringAsync(response_.Content, cancellationToken).ConfigureAwait(false);
-                            throw new ApiException("The HTTP status code of the response was not expected (" + status_ + ").", status_, responseData_, headers_, null);
+                            throw new SonarApiException("The HTTP status code of the response was not expected (" + status_ + ").", status_, responseData_, headers_, null);
                         }
                     }
                     finally
@@ -3531,7 +3531,7 @@ namespace Wedol.SteelSeries.Sonar
         }
 
         /// <returns>OK</returns>
-        /// <exception cref="ApiException">A server side error occurred.</exception>
+        /// <exception cref="SonarApiException">A server side error occurred.</exception>
         public virtual System.Threading.Tasks.Task<System.Collections.Generic.ICollection<DeviceRoleExtendedFallbackDeviceDataIEnumerableKeyValuePair>> ListsAsync()
         {
             return ListsAsync(System.Threading.CancellationToken.None);
@@ -3539,7 +3539,7 @@ namespace Wedol.SteelSeries.Sonar
 
         /// <param name="cancellationToken">A cancellation token that can be used by other objects or threads to receive notice of cancellation.</param>
         /// <returns>OK</returns>
-        /// <exception cref="ApiException">A server side error occurred.</exception>
+        /// <exception cref="SonarApiException">A server side error occurred.</exception>
         public virtual async System.Threading.Tasks.Task<System.Collections.Generic.ICollection<DeviceRoleExtendedFallbackDeviceDataIEnumerableKeyValuePair>> ListsAsync(System.Threading.CancellationToken cancellationToken)
         {
             var client_ = _httpClient;
@@ -3584,14 +3584,14 @@ namespace Wedol.SteelSeries.Sonar
                             var objectResponse_ = await ReadObjectResponseAsync<System.Collections.Generic.ICollection<DeviceRoleExtendedFallbackDeviceDataIEnumerableKeyValuePair>>(response_, headers_, cancellationToken).ConfigureAwait(false);
                             if (objectResponse_.Object == null)
                             {
-                                throw new ApiException("Response was null which was not expected.", status_, objectResponse_.Text, headers_, null);
+                                throw new SonarApiException("Response was null which was not expected.", status_, objectResponse_.Text, headers_, null);
                             }
                             return objectResponse_.Object;
                         }
                         else
                         {
                             var responseData_ = response_.Content == null ? null : await ReadAsStringAsync(response_.Content, cancellationToken).ConfigureAwait(false);
-                            throw new ApiException("The HTTP status code of the response was not expected (" + status_ + ").", status_, responseData_, headers_, null);
+                            throw new SonarApiException("The HTTP status code of the response was not expected (" + status_ + ").", status_, responseData_, headers_, null);
                         }
                     }
                     finally
@@ -3609,7 +3609,7 @@ namespace Wedol.SteelSeries.Sonar
         }
 
         /// <returns>OK</returns>
-        /// <exception cref="ApiException">A server side error occurred.</exception>
+        /// <exception cref="SonarApiException">A server side error occurred.</exception>
         public virtual System.Threading.Tasks.Task<System.Collections.Generic.ICollection<ExtendedFallbackDeviceData>> ExcludeDeviceAsync(DeviceRole role, string deviceId)
         {
             return ExcludeDeviceAsync(role, deviceId, System.Threading.CancellationToken.None);
@@ -3617,7 +3617,7 @@ namespace Wedol.SteelSeries.Sonar
 
         /// <param name="cancellationToken">A cancellation token that can be used by other objects or threads to receive notice of cancellation.</param>
         /// <returns>OK</returns>
-        /// <exception cref="ApiException">A server side error occurred.</exception>
+        /// <exception cref="SonarApiException">A server side error occurred.</exception>
         public virtual async System.Threading.Tasks.Task<System.Collections.Generic.ICollection<ExtendedFallbackDeviceData>> ExcludeDeviceAsync(DeviceRole role, string deviceId, System.Threading.CancellationToken cancellationToken)
         {
             if (role == null)
@@ -3672,14 +3672,14 @@ namespace Wedol.SteelSeries.Sonar
                             var objectResponse_ = await ReadObjectResponseAsync<System.Collections.Generic.ICollection<ExtendedFallbackDeviceData>>(response_, headers_, cancellationToken).ConfigureAwait(false);
                             if (objectResponse_.Object == null)
                             {
-                                throw new ApiException("Response was null which was not expected.", status_, objectResponse_.Text, headers_, null);
+                                throw new SonarApiException("Response was null which was not expected.", status_, objectResponse_.Text, headers_, null);
                             }
                             return objectResponse_.Object;
                         }
                         else
                         {
                             var responseData_ = response_.Content == null ? null : await ReadAsStringAsync(response_.Content, cancellationToken).ConfigureAwait(false);
-                            throw new ApiException("The HTTP status code of the response was not expected (" + status_ + ").", status_, responseData_, headers_, null);
+                            throw new SonarApiException("The HTTP status code of the response was not expected (" + status_ + ").", status_, responseData_, headers_, null);
                         }
                     }
                     finally
@@ -3697,7 +3697,7 @@ namespace Wedol.SteelSeries.Sonar
         }
 
         /// <returns>OK</returns>
-        /// <exception cref="ApiException">A server side error occurred.</exception>
+        /// <exception cref="SonarApiException">A server side error occurred.</exception>
         public virtual System.Threading.Tasks.Task<System.Collections.Generic.ICollection<ExtendedFallbackDeviceData>> IncludeDeviceAsync(DeviceRole role, string sourceDeviceId, string destinationDeviceId)
         {
             return IncludeDeviceAsync(role, sourceDeviceId, destinationDeviceId, System.Threading.CancellationToken.None);
@@ -3705,7 +3705,7 @@ namespace Wedol.SteelSeries.Sonar
 
         /// <param name="cancellationToken">A cancellation token that can be used by other objects or threads to receive notice of cancellation.</param>
         /// <returns>OK</returns>
-        /// <exception cref="ApiException">A server side error occurred.</exception>
+        /// <exception cref="SonarApiException">A server side error occurred.</exception>
         public virtual async System.Threading.Tasks.Task<System.Collections.Generic.ICollection<ExtendedFallbackDeviceData>> IncludeDeviceAsync(DeviceRole role, string sourceDeviceId, string destinationDeviceId, System.Threading.CancellationToken cancellationToken)
         {
             if (role == null)
@@ -3765,14 +3765,14 @@ namespace Wedol.SteelSeries.Sonar
                             var objectResponse_ = await ReadObjectResponseAsync<System.Collections.Generic.ICollection<ExtendedFallbackDeviceData>>(response_, headers_, cancellationToken).ConfigureAwait(false);
                             if (objectResponse_.Object == null)
                             {
-                                throw new ApiException("Response was null which was not expected.", status_, objectResponse_.Text, headers_, null);
+                                throw new SonarApiException("Response was null which was not expected.", status_, objectResponse_.Text, headers_, null);
                             }
                             return objectResponse_.Object;
                         }
                         else
                         {
                             var responseData_ = response_.Content == null ? null : await ReadAsStringAsync(response_.Content, cancellationToken).ConfigureAwait(false);
-                            throw new ApiException("The HTTP status code of the response was not expected (" + status_ + ").", status_, responseData_, headers_, null);
+                            throw new SonarApiException("The HTTP status code of the response was not expected (" + status_ + ").", status_, responseData_, headers_, null);
                         }
                     }
                     finally
@@ -3790,7 +3790,7 @@ namespace Wedol.SteelSeries.Sonar
         }
 
         /// <returns>OK</returns>
-        /// <exception cref="ApiException">A server side error occurred.</exception>
+        /// <exception cref="SonarApiException">A server side error occurred.</exception>
         public virtual System.Threading.Tasks.Task<System.Collections.Generic.ICollection<DeviceRoleExtendedFallbackDeviceDataIEnumerableKeyValuePair>> ExcludeDeviceFromAllAsync(string deviceId)
         {
             return ExcludeDeviceFromAllAsync(deviceId, System.Threading.CancellationToken.None);
@@ -3798,7 +3798,7 @@ namespace Wedol.SteelSeries.Sonar
 
         /// <param name="cancellationToken">A cancellation token that can be used by other objects or threads to receive notice of cancellation.</param>
         /// <returns>OK</returns>
-        /// <exception cref="ApiException">A server side error occurred.</exception>
+        /// <exception cref="SonarApiException">A server side error occurred.</exception>
         public virtual async System.Threading.Tasks.Task<System.Collections.Generic.ICollection<DeviceRoleExtendedFallbackDeviceDataIEnumerableKeyValuePair>> ExcludeDeviceFromAllAsync(string deviceId, System.Threading.CancellationToken cancellationToken)
         {
             if (deviceId == null)
@@ -3848,14 +3848,14 @@ namespace Wedol.SteelSeries.Sonar
                             var objectResponse_ = await ReadObjectResponseAsync<System.Collections.Generic.ICollection<DeviceRoleExtendedFallbackDeviceDataIEnumerableKeyValuePair>>(response_, headers_, cancellationToken).ConfigureAwait(false);
                             if (objectResponse_.Object == null)
                             {
-                                throw new ApiException("Response was null which was not expected.", status_, objectResponse_.Text, headers_, null);
+                                throw new SonarApiException("Response was null which was not expected.", status_, objectResponse_.Text, headers_, null);
                             }
                             return objectResponse_.Object;
                         }
                         else
                         {
                             var responseData_ = response_.Content == null ? null : await ReadAsStringAsync(response_.Content, cancellationToken).ConfigureAwait(false);
-                            throw new ApiException("The HTTP status code of the response was not expected (" + status_ + ").", status_, responseData_, headers_, null);
+                            throw new SonarApiException("The HTTP status code of the response was not expected (" + status_ + ").", status_, responseData_, headers_, null);
                         }
                     }
                     finally
@@ -3873,7 +3873,7 @@ namespace Wedol.SteelSeries.Sonar
         }
 
         /// <returns>OK</returns>
-        /// <exception cref="ApiException">A server side error occurred.</exception>
+        /// <exception cref="SonarApiException">A server side error occurred.</exception>
         public virtual System.Threading.Tasks.Task<System.Collections.Generic.ICollection<DeviceRoleExtendedFallbackDeviceDataIEnumerableKeyValuePair>> IncludeDeviceInAllAsync(string sourceDeviceId, string destinationDeviceId)
         {
             return IncludeDeviceInAllAsync(sourceDeviceId, destinationDeviceId, System.Threading.CancellationToken.None);
@@ -3881,7 +3881,7 @@ namespace Wedol.SteelSeries.Sonar
 
         /// <param name="cancellationToken">A cancellation token that can be used by other objects or threads to receive notice of cancellation.</param>
         /// <returns>OK</returns>
-        /// <exception cref="ApiException">A server side error occurred.</exception>
+        /// <exception cref="SonarApiException">A server side error occurred.</exception>
         public virtual async System.Threading.Tasks.Task<System.Collections.Generic.ICollection<DeviceRoleExtendedFallbackDeviceDataIEnumerableKeyValuePair>> IncludeDeviceInAllAsync(string sourceDeviceId, string destinationDeviceId, System.Threading.CancellationToken cancellationToken)
         {
             if (sourceDeviceId == null)
@@ -3936,14 +3936,14 @@ namespace Wedol.SteelSeries.Sonar
                             var objectResponse_ = await ReadObjectResponseAsync<System.Collections.Generic.ICollection<DeviceRoleExtendedFallbackDeviceDataIEnumerableKeyValuePair>>(response_, headers_, cancellationToken).ConfigureAwait(false);
                             if (objectResponse_.Object == null)
                             {
-                                throw new ApiException("Response was null which was not expected.", status_, objectResponse_.Text, headers_, null);
+                                throw new SonarApiException("Response was null which was not expected.", status_, objectResponse_.Text, headers_, null);
                             }
                             return objectResponse_.Object;
                         }
                         else
                         {
                             var responseData_ = response_.Content == null ? null : await ReadAsStringAsync(response_.Content, cancellationToken).ConfigureAwait(false);
-                            throw new ApiException("The HTTP status code of the response was not expected (" + status_ + ").", status_, responseData_, headers_, null);
+                            throw new SonarApiException("The HTTP status code of the response was not expected (" + status_ + ").", status_, responseData_, headers_, null);
                         }
                     }
                     finally
@@ -3961,7 +3961,7 @@ namespace Wedol.SteelSeries.Sonar
         }
 
         /// <returns>OK</returns>
-        /// <exception cref="ApiException">A server side error occurred.</exception>
+        /// <exception cref="SonarApiException">A server side error occurred.</exception>
         public virtual System.Threading.Tasks.Task<System.Collections.Generic.ICollection<ExtendedFallbackDeviceData>> SetDevicePositionAsync(DeviceRole role, string sourceDeviceId, string destinationDeviceId)
         {
             return SetDevicePositionAsync(role, sourceDeviceId, destinationDeviceId, System.Threading.CancellationToken.None);
@@ -3969,7 +3969,7 @@ namespace Wedol.SteelSeries.Sonar
 
         /// <param name="cancellationToken">A cancellation token that can be used by other objects or threads to receive notice of cancellation.</param>
         /// <returns>OK</returns>
-        /// <exception cref="ApiException">A server side error occurred.</exception>
+        /// <exception cref="SonarApiException">A server side error occurred.</exception>
         public virtual async System.Threading.Tasks.Task<System.Collections.Generic.ICollection<ExtendedFallbackDeviceData>> SetDevicePositionAsync(DeviceRole role, string sourceDeviceId, string destinationDeviceId, System.Threading.CancellationToken cancellationToken)
         {
             if (role == null)
@@ -4029,14 +4029,14 @@ namespace Wedol.SteelSeries.Sonar
                             var objectResponse_ = await ReadObjectResponseAsync<System.Collections.Generic.ICollection<ExtendedFallbackDeviceData>>(response_, headers_, cancellationToken).ConfigureAwait(false);
                             if (objectResponse_.Object == null)
                             {
-                                throw new ApiException("Response was null which was not expected.", status_, objectResponse_.Text, headers_, null);
+                                throw new SonarApiException("Response was null which was not expected.", status_, objectResponse_.Text, headers_, null);
                             }
                             return objectResponse_.Object;
                         }
                         else
                         {
                             var responseData_ = response_.Content == null ? null : await ReadAsStringAsync(response_.Content, cancellationToken).ConfigureAwait(false);
-                            throw new ApiException("The HTTP status code of the response was not expected (" + status_ + ").", status_, responseData_, headers_, null);
+                            throw new SonarApiException("The HTTP status code of the response was not expected (" + status_ + ").", status_, responseData_, headers_, null);
                         }
                     }
                     finally
@@ -4054,7 +4054,7 @@ namespace Wedol.SteelSeries.Sonar
         }
 
         /// <returns>OK</returns>
-        /// <exception cref="ApiException">A server side error occurred.</exception>
+        /// <exception cref="SonarApiException">A server side error occurred.</exception>
         public virtual System.Threading.Tasks.Task<System.Collections.Generic.ICollection<DeviceRoleExtendedFallbackDeviceDataIEnumerableKeyValuePair>> SetDevicePositionInAllAsync(string sourceDeviceId, string destinationDeviceId)
         {
             return SetDevicePositionInAllAsync(sourceDeviceId, destinationDeviceId, System.Threading.CancellationToken.None);
@@ -4062,7 +4062,7 @@ namespace Wedol.SteelSeries.Sonar
 
         /// <param name="cancellationToken">A cancellation token that can be used by other objects or threads to receive notice of cancellation.</param>
         /// <returns>OK</returns>
-        /// <exception cref="ApiException">A server side error occurred.</exception>
+        /// <exception cref="SonarApiException">A server side error occurred.</exception>
         public virtual async System.Threading.Tasks.Task<System.Collections.Generic.ICollection<DeviceRoleExtendedFallbackDeviceDataIEnumerableKeyValuePair>> SetDevicePositionInAllAsync(string sourceDeviceId, string destinationDeviceId, System.Threading.CancellationToken cancellationToken)
         {
             if (sourceDeviceId == null)
@@ -4117,14 +4117,14 @@ namespace Wedol.SteelSeries.Sonar
                             var objectResponse_ = await ReadObjectResponseAsync<System.Collections.Generic.ICollection<DeviceRoleExtendedFallbackDeviceDataIEnumerableKeyValuePair>>(response_, headers_, cancellationToken).ConfigureAwait(false);
                             if (objectResponse_.Object == null)
                             {
-                                throw new ApiException("Response was null which was not expected.", status_, objectResponse_.Text, headers_, null);
+                                throw new SonarApiException("Response was null which was not expected.", status_, objectResponse_.Text, headers_, null);
                             }
                             return objectResponse_.Object;
                         }
                         else
                         {
                             var responseData_ = response_.Content == null ? null : await ReadAsStringAsync(response_.Content, cancellationToken).ConfigureAwait(false);
-                            throw new ApiException("The HTTP status code of the response was not expected (" + status_ + ").", status_, responseData_, headers_, null);
+                            throw new SonarApiException("The HTTP status code of the response was not expected (" + status_ + ").", status_, responseData_, headers_, null);
                         }
                     }
                     finally
@@ -4142,7 +4142,7 @@ namespace Wedol.SteelSeries.Sonar
         }
 
         /// <returns>OK</returns>
-        /// <exception cref="ApiException">A server side error occurred.</exception>
+        /// <exception cref="SonarApiException">A server side error occurred.</exception>
         public virtual System.Threading.Tasks.Task<System.Collections.Generic.ICollection<FeatureData>> DevelopmentAsync()
         {
             return DevelopmentAsync(System.Threading.CancellationToken.None);
@@ -4150,7 +4150,7 @@ namespace Wedol.SteelSeries.Sonar
 
         /// <param name="cancellationToken">A cancellation token that can be used by other objects or threads to receive notice of cancellation.</param>
         /// <returns>OK</returns>
-        /// <exception cref="ApiException">A server side error occurred.</exception>
+        /// <exception cref="SonarApiException">A server side error occurred.</exception>
         public virtual async System.Threading.Tasks.Task<System.Collections.Generic.ICollection<FeatureData>> DevelopmentAsync(System.Threading.CancellationToken cancellationToken)
         {
             var client_ = _httpClient;
@@ -4195,14 +4195,14 @@ namespace Wedol.SteelSeries.Sonar
                             var objectResponse_ = await ReadObjectResponseAsync<System.Collections.Generic.ICollection<FeatureData>>(response_, headers_, cancellationToken).ConfigureAwait(false);
                             if (objectResponse_.Object == null)
                             {
-                                throw new ApiException("Response was null which was not expected.", status_, objectResponse_.Text, headers_, null);
+                                throw new SonarApiException("Response was null which was not expected.", status_, objectResponse_.Text, headers_, null);
                             }
                             return objectResponse_.Object;
                         }
                         else
                         {
                             var responseData_ = response_.Content == null ? null : await ReadAsStringAsync(response_.Content, cancellationToken).ConfigureAwait(false);
-                            throw new ApiException("The HTTP status code of the response was not expected (" + status_ + ").", status_, responseData_, headers_, null);
+                            throw new SonarApiException("The HTTP status code of the response was not expected (" + status_ + ").", status_, responseData_, headers_, null);
                         }
                     }
                     finally
@@ -4220,7 +4220,7 @@ namespace Wedol.SteelSeries.Sonar
         }
 
         /// <returns>OK</returns>
-        /// <exception cref="ApiException">A server side error occurred.</exception>
+        /// <exception cref="SonarApiException">A server side error occurred.</exception>
         public virtual System.Threading.Tasks.Task<System.Collections.Generic.ICollection<FeatureData>> FeaturesAllAsync()
         {
             return FeaturesAllAsync(System.Threading.CancellationToken.None);
@@ -4228,7 +4228,7 @@ namespace Wedol.SteelSeries.Sonar
 
         /// <param name="cancellationToken">A cancellation token that can be used by other objects or threads to receive notice of cancellation.</param>
         /// <returns>OK</returns>
-        /// <exception cref="ApiException">A server side error occurred.</exception>
+        /// <exception cref="SonarApiException">A server side error occurred.</exception>
         public virtual async System.Threading.Tasks.Task<System.Collections.Generic.ICollection<FeatureData>> FeaturesAllAsync(System.Threading.CancellationToken cancellationToken)
         {
             var client_ = _httpClient;
@@ -4273,14 +4273,14 @@ namespace Wedol.SteelSeries.Sonar
                             var objectResponse_ = await ReadObjectResponseAsync<System.Collections.Generic.ICollection<FeatureData>>(response_, headers_, cancellationToken).ConfigureAwait(false);
                             if (objectResponse_.Object == null)
                             {
-                                throw new ApiException("Response was null which was not expected.", status_, objectResponse_.Text, headers_, null);
+                                throw new SonarApiException("Response was null which was not expected.", status_, objectResponse_.Text, headers_, null);
                             }
                             return objectResponse_.Object;
                         }
                         else
                         {
                             var responseData_ = response_.Content == null ? null : await ReadAsStringAsync(response_.Content, cancellationToken).ConfigureAwait(false);
-                            throw new ApiException("The HTTP status code of the response was not expected (" + status_ + ").", status_, responseData_, headers_, null);
+                            throw new SonarApiException("The HTTP status code of the response was not expected (" + status_ + ").", status_, responseData_, headers_, null);
                         }
                     }
                     finally
@@ -4298,7 +4298,7 @@ namespace Wedol.SteelSeries.Sonar
         }
 
         /// <returns>OK</returns>
-        /// <exception cref="ApiException">A server side error occurred.</exception>
+        /// <exception cref="SonarApiException">A server side error occurred.</exception>
         public virtual System.Threading.Tasks.Task<FeatureData> FeaturesGETAsync(Feature feature)
         {
             return FeaturesGETAsync(feature, System.Threading.CancellationToken.None);
@@ -4306,7 +4306,7 @@ namespace Wedol.SteelSeries.Sonar
 
         /// <param name="cancellationToken">A cancellation token that can be used by other objects or threads to receive notice of cancellation.</param>
         /// <returns>OK</returns>
-        /// <exception cref="ApiException">A server side error occurred.</exception>
+        /// <exception cref="SonarApiException">A server side error occurred.</exception>
         public virtual async System.Threading.Tasks.Task<FeatureData> FeaturesGETAsync(Feature feature, System.Threading.CancellationToken cancellationToken)
         {
             if (feature == null)
@@ -4355,14 +4355,14 @@ namespace Wedol.SteelSeries.Sonar
                             var objectResponse_ = await ReadObjectResponseAsync<FeatureData>(response_, headers_, cancellationToken).ConfigureAwait(false);
                             if (objectResponse_.Object == null)
                             {
-                                throw new ApiException("Response was null which was not expected.", status_, objectResponse_.Text, headers_, null);
+                                throw new SonarApiException("Response was null which was not expected.", status_, objectResponse_.Text, headers_, null);
                             }
                             return objectResponse_.Object;
                         }
                         else
                         {
                             var responseData_ = response_.Content == null ? null : await ReadAsStringAsync(response_.Content, cancellationToken).ConfigureAwait(false);
-                            throw new ApiException("The HTTP status code of the response was not expected (" + status_ + ").", status_, responseData_, headers_, null);
+                            throw new SonarApiException("The HTTP status code of the response was not expected (" + status_ + ").", status_, responseData_, headers_, null);
                         }
                     }
                     finally
@@ -4380,7 +4380,7 @@ namespace Wedol.SteelSeries.Sonar
         }
 
         /// <returns>OK</returns>
-        /// <exception cref="ApiException">A server side error occurred.</exception>
+        /// <exception cref="SonarApiException">A server side error occurred.</exception>
         public virtual System.Threading.Tasks.Task FeaturesPUTAsync(Feature feature)
         {
             return FeaturesPUTAsync(feature, System.Threading.CancellationToken.None);
@@ -4388,7 +4388,7 @@ namespace Wedol.SteelSeries.Sonar
 
         /// <param name="cancellationToken">A cancellation token that can be used by other objects or threads to receive notice of cancellation.</param>
         /// <returns>OK</returns>
-        /// <exception cref="ApiException">A server side error occurred.</exception>
+        /// <exception cref="SonarApiException">A server side error occurred.</exception>
         public virtual async System.Threading.Tasks.Task FeaturesPUTAsync(Feature feature, System.Threading.CancellationToken cancellationToken)
         {
             if (feature == null)
@@ -4439,7 +4439,7 @@ namespace Wedol.SteelSeries.Sonar
                         else
                         {
                             var responseData_ = response_.Content == null ? null : await ReadAsStringAsync(response_.Content, cancellationToken).ConfigureAwait(false);
-                            throw new ApiException("The HTTP status code of the response was not expected (" + status_ + ").", status_, responseData_, headers_, null);
+                            throw new SonarApiException("The HTTP status code of the response was not expected (" + status_ + ").", status_, responseData_, headers_, null);
                         }
                     }
                     finally
@@ -4457,7 +4457,7 @@ namespace Wedol.SteelSeries.Sonar
         }
 
         /// <returns>OK</returns>
-        /// <exception cref="ApiException">A server side error occurred.</exception>
+        /// <exception cref="SonarApiException">A server side error occurred.</exception>
         public virtual System.Threading.Tasks.Task IsEnabledPUT3Async(Feature feature, bool isEnabled)
         {
             return IsEnabledPUT3Async(feature, isEnabled, System.Threading.CancellationToken.None);
@@ -4465,7 +4465,7 @@ namespace Wedol.SteelSeries.Sonar
 
         /// <param name="cancellationToken">A cancellation token that can be used by other objects or threads to receive notice of cancellation.</param>
         /// <returns>OK</returns>
-        /// <exception cref="ApiException">A server side error occurred.</exception>
+        /// <exception cref="SonarApiException">A server side error occurred.</exception>
         public virtual async System.Threading.Tasks.Task IsEnabledPUT3Async(Feature feature, bool isEnabled, System.Threading.CancellationToken cancellationToken)
         {
             if (feature == null)
@@ -4521,7 +4521,7 @@ namespace Wedol.SteelSeries.Sonar
                         else
                         {
                             var responseData_ = response_.Content == null ? null : await ReadAsStringAsync(response_.Content, cancellationToken).ConfigureAwait(false);
-                            throw new ApiException("The HTTP status code of the response was not expected (" + status_ + ").", status_, responseData_, headers_, null);
+                            throw new SonarApiException("The HTTP status code of the response was not expected (" + status_ + ").", status_, responseData_, headers_, null);
                         }
                     }
                     finally
@@ -4539,7 +4539,7 @@ namespace Wedol.SteelSeries.Sonar
         }
 
         /// <returns>OK</returns>
-        /// <exception cref="ApiException">A server side error occurred.</exception>
+        /// <exception cref="SonarApiException">A server side error occurred.</exception>
         public virtual System.Threading.Tasks.Task<ChatMix> ChatMixGETAsync()
         {
             return ChatMixGETAsync(System.Threading.CancellationToken.None);
@@ -4547,7 +4547,7 @@ namespace Wedol.SteelSeries.Sonar
 
         /// <param name="cancellationToken">A cancellation token that can be used by other objects or threads to receive notice of cancellation.</param>
         /// <returns>OK</returns>
-        /// <exception cref="ApiException">A server side error occurred.</exception>
+        /// <exception cref="SonarApiException">A server side error occurred.</exception>
         public virtual async System.Threading.Tasks.Task<ChatMix> ChatMixGETAsync(System.Threading.CancellationToken cancellationToken)
         {
             var client_ = _httpClient;
@@ -4592,14 +4592,14 @@ namespace Wedol.SteelSeries.Sonar
                             var objectResponse_ = await ReadObjectResponseAsync<ChatMix>(response_, headers_, cancellationToken).ConfigureAwait(false);
                             if (objectResponse_.Object == null)
                             {
-                                throw new ApiException("Response was null which was not expected.", status_, objectResponse_.Text, headers_, null);
+                                throw new SonarApiException("Response was null which was not expected.", status_, objectResponse_.Text, headers_, null);
                             }
                             return objectResponse_.Object;
                         }
                         else
                         {
                             var responseData_ = response_.Content == null ? null : await ReadAsStringAsync(response_.Content, cancellationToken).ConfigureAwait(false);
-                            throw new ApiException("The HTTP status code of the response was not expected (" + status_ + ").", status_, responseData_, headers_, null);
+                            throw new SonarApiException("The HTTP status code of the response was not expected (" + status_ + ").", status_, responseData_, headers_, null);
                         }
                     }
                     finally
@@ -4617,7 +4617,7 @@ namespace Wedol.SteelSeries.Sonar
         }
 
         /// <returns>OK</returns>
-        /// <exception cref="ApiException">A server side error occurred.</exception>
+        /// <exception cref="SonarApiException">A server side error occurred.</exception>
         public virtual System.Threading.Tasks.Task<ChatMix> ChatMixPUTAsync(float? balance)
         {
             return ChatMixPUTAsync(balance, System.Threading.CancellationToken.None);
@@ -4625,7 +4625,7 @@ namespace Wedol.SteelSeries.Sonar
 
         /// <param name="cancellationToken">A cancellation token that can be used by other objects or threads to receive notice of cancellation.</param>
         /// <returns>OK</returns>
-        /// <exception cref="ApiException">A server side error occurred.</exception>
+        /// <exception cref="SonarApiException">A server side error occurred.</exception>
         public virtual async System.Threading.Tasks.Task<ChatMix> ChatMixPUTAsync(float? balance, System.Threading.CancellationToken cancellationToken)
         {
             var client_ = _httpClient;
@@ -4677,14 +4677,14 @@ namespace Wedol.SteelSeries.Sonar
                             var objectResponse_ = await ReadObjectResponseAsync<ChatMix>(response_, headers_, cancellationToken).ConfigureAwait(false);
                             if (objectResponse_.Object == null)
                             {
-                                throw new ApiException("Response was null which was not expected.", status_, objectResponse_.Text, headers_, null);
+                                throw new SonarApiException("Response was null which was not expected.", status_, objectResponse_.Text, headers_, null);
                             }
                             return objectResponse_.Object;
                         }
                         else
                         {
                             var responseData_ = response_.Content == null ? null : await ReadAsStringAsync(response_.Content, cancellationToken).ConfigureAwait(false);
-                            throw new ApiException("The HTTP status code of the response was not expected (" + status_ + ").", status_, responseData_, headers_, null);
+                            throw new SonarApiException("The HTTP status code of the response was not expected (" + status_ + ").", status_, responseData_, headers_, null);
                         }
                     }
                     finally
@@ -4702,7 +4702,7 @@ namespace Wedol.SteelSeries.Sonar
         }
 
         /// <returns>OK</returns>
-        /// <exception cref="ApiException">A server side error occurred.</exception>
+        /// <exception cref="SonarApiException">A server side error occurred.</exception>
         public virtual System.Threading.Tasks.Task<System.Collections.Generic.ICollection<KeyboardShortcut>> KeyboardShortcutsAllAsync()
         {
             return KeyboardShortcutsAllAsync(System.Threading.CancellationToken.None);
@@ -4710,7 +4710,7 @@ namespace Wedol.SteelSeries.Sonar
 
         /// <param name="cancellationToken">A cancellation token that can be used by other objects or threads to receive notice of cancellation.</param>
         /// <returns>OK</returns>
-        /// <exception cref="ApiException">A server side error occurred.</exception>
+        /// <exception cref="SonarApiException">A server side error occurred.</exception>
         public virtual async System.Threading.Tasks.Task<System.Collections.Generic.ICollection<KeyboardShortcut>> KeyboardShortcutsAllAsync(System.Threading.CancellationToken cancellationToken)
         {
             var client_ = _httpClient;
@@ -4755,14 +4755,14 @@ namespace Wedol.SteelSeries.Sonar
                             var objectResponse_ = await ReadObjectResponseAsync<System.Collections.Generic.ICollection<KeyboardShortcut>>(response_, headers_, cancellationToken).ConfigureAwait(false);
                             if (objectResponse_.Object == null)
                             {
-                                throw new ApiException("Response was null which was not expected.", status_, objectResponse_.Text, headers_, null);
+                                throw new SonarApiException("Response was null which was not expected.", status_, objectResponse_.Text, headers_, null);
                             }
                             return objectResponse_.Object;
                         }
                         else
                         {
                             var responseData_ = response_.Content == null ? null : await ReadAsStringAsync(response_.Content, cancellationToken).ConfigureAwait(false);
-                            throw new ApiException("The HTTP status code of the response was not expected (" + status_ + ").", status_, responseData_, headers_, null);
+                            throw new SonarApiException("The HTTP status code of the response was not expected (" + status_ + ").", status_, responseData_, headers_, null);
                         }
                     }
                     finally
@@ -4780,7 +4780,7 @@ namespace Wedol.SteelSeries.Sonar
         }
 
         /// <returns>OK</returns>
-        /// <exception cref="ApiException">A server side error occurred.</exception>
+        /// <exception cref="SonarApiException">A server side error occurred.</exception>
         public virtual System.Threading.Tasks.Task KeyboardShortcutsAsync(KeyboardShortcut? body)
         {
             return KeyboardShortcutsAsync(body, System.Threading.CancellationToken.None);
@@ -4788,7 +4788,7 @@ namespace Wedol.SteelSeries.Sonar
 
         /// <param name="cancellationToken">A cancellation token that can be used by other objects or threads to receive notice of cancellation.</param>
         /// <returns>OK</returns>
-        /// <exception cref="ApiException">A server side error occurred.</exception>
+        /// <exception cref="SonarApiException">A server side error occurred.</exception>
         public virtual async System.Threading.Tasks.Task KeyboardShortcutsAsync(KeyboardShortcut? body, System.Threading.CancellationToken cancellationToken)
         {
             var client_ = _httpClient;
@@ -4838,7 +4838,7 @@ namespace Wedol.SteelSeries.Sonar
                         else
                         {
                             var responseData_ = response_.Content == null ? null : await ReadAsStringAsync(response_.Content, cancellationToken).ConfigureAwait(false);
-                            throw new ApiException("The HTTP status code of the response was not expected (" + status_ + ").", status_, responseData_, headers_, null);
+                            throw new SonarApiException("The HTTP status code of the response was not expected (" + status_ + ").", status_, responseData_, headers_, null);
                         }
                     }
                     finally
@@ -4856,7 +4856,7 @@ namespace Wedol.SteelSeries.Sonar
         }
 
         /// <returns>OK</returns>
-        /// <exception cref="ApiException">A server side error occurred.</exception>
+        /// <exception cref="SonarApiException">A server side error occurred.</exception>
         public virtual System.Threading.Tasks.Task<System.Collections.Generic.ICollection<KeyboardShortcut>> RenderAsync(Type type, string triggerData)
         {
             return RenderAsync(type, triggerData, System.Threading.CancellationToken.None);
@@ -4864,7 +4864,7 @@ namespace Wedol.SteelSeries.Sonar
 
         /// <param name="cancellationToken">A cancellation token that can be used by other objects or threads to receive notice of cancellation.</param>
         /// <returns>OK</returns>
-        /// <exception cref="ApiException">A server side error occurred.</exception>
+        /// <exception cref="SonarApiException">A server side error occurred.</exception>
         public virtual async System.Threading.Tasks.Task<System.Collections.Generic.ICollection<KeyboardShortcut>> RenderAsync(Type type, string triggerData, System.Threading.CancellationToken cancellationToken)
         {
             if (type == null)
@@ -4919,14 +4919,14 @@ namespace Wedol.SteelSeries.Sonar
                             var objectResponse_ = await ReadObjectResponseAsync<System.Collections.Generic.ICollection<KeyboardShortcut>>(response_, headers_, cancellationToken).ConfigureAwait(false);
                             if (objectResponse_.Object == null)
                             {
-                                throw new ApiException("Response was null which was not expected.", status_, objectResponse_.Text, headers_, null);
+                                throw new SonarApiException("Response was null which was not expected.", status_, objectResponse_.Text, headers_, null);
                             }
                             return objectResponse_.Object;
                         }
                         else
                         {
                             var responseData_ = response_.Content == null ? null : await ReadAsStringAsync(response_.Content, cancellationToken).ConfigureAwait(false);
-                            throw new ApiException("The HTTP status code of the response was not expected (" + status_ + ").", status_, responseData_, headers_, null);
+                            throw new SonarApiException("The HTTP status code of the response was not expected (" + status_ + ").", status_, responseData_, headers_, null);
                         }
                     }
                     finally
@@ -4944,7 +4944,7 @@ namespace Wedol.SteelSeries.Sonar
         }
 
         /// <returns>OK</returns>
-        /// <exception cref="ApiException">A server side error occurred.</exception>
+        /// <exception cref="SonarApiException">A server side error occurred.</exception>
         public virtual System.Threading.Tasks.Task<bool> IsRenderLinkAllEnabledAsync()
         {
             return IsRenderLinkAllEnabledAsync(System.Threading.CancellationToken.None);
@@ -4952,7 +4952,7 @@ namespace Wedol.SteelSeries.Sonar
 
         /// <param name="cancellationToken">A cancellation token that can be used by other objects or threads to receive notice of cancellation.</param>
         /// <returns>OK</returns>
-        /// <exception cref="ApiException">A server side error occurred.</exception>
+        /// <exception cref="SonarApiException">A server side error occurred.</exception>
         public virtual async System.Threading.Tasks.Task<bool> IsRenderLinkAllEnabledAsync(System.Threading.CancellationToken cancellationToken)
         {
             var client_ = _httpClient;
@@ -4997,14 +4997,14 @@ namespace Wedol.SteelSeries.Sonar
                             var objectResponse_ = await ReadObjectResponseAsync<bool>(response_, headers_, cancellationToken).ConfigureAwait(false);
                             if (objectResponse_.Object == null)
                             {
-                                throw new ApiException("Response was null which was not expected.", status_, objectResponse_.Text, headers_, null);
+                                throw new SonarApiException("Response was null which was not expected.", status_, objectResponse_.Text, headers_, null);
                             }
                             return objectResponse_.Object;
                         }
                         else
                         {
                             var responseData_ = response_.Content == null ? null : await ReadAsStringAsync(response_.Content, cancellationToken).ConfigureAwait(false);
-                            throw new ApiException("The HTTP status code of the response was not expected (" + status_ + ").", status_, responseData_, headers_, null);
+                            throw new SonarApiException("The HTTP status code of the response was not expected (" + status_ + ").", status_, responseData_, headers_, null);
                         }
                     }
                     finally
@@ -5022,7 +5022,7 @@ namespace Wedol.SteelSeries.Sonar
         }
 
         /// <returns>OK</returns>
-        /// <exception cref="ApiException">A server side error occurred.</exception>
+        /// <exception cref="SonarApiException">A server side error occurred.</exception>
         public virtual System.Threading.Tasks.Task<LinkAllData> LinkAsync(DeviceRole sourceRole)
         {
             return LinkAsync(sourceRole, System.Threading.CancellationToken.None);
@@ -5030,7 +5030,7 @@ namespace Wedol.SteelSeries.Sonar
 
         /// <param name="cancellationToken">A cancellation token that can be used by other objects or threads to receive notice of cancellation.</param>
         /// <returns>OK</returns>
-        /// <exception cref="ApiException">A server side error occurred.</exception>
+        /// <exception cref="SonarApiException">A server side error occurred.</exception>
         public virtual async System.Threading.Tasks.Task<LinkAllData> LinkAsync(DeviceRole sourceRole, System.Threading.CancellationToken cancellationToken)
         {
             if (sourceRole == null)
@@ -5080,14 +5080,14 @@ namespace Wedol.SteelSeries.Sonar
                             var objectResponse_ = await ReadObjectResponseAsync<LinkAllData>(response_, headers_, cancellationToken).ConfigureAwait(false);
                             if (objectResponse_.Object == null)
                             {
-                                throw new ApiException("Response was null which was not expected.", status_, objectResponse_.Text, headers_, null);
+                                throw new SonarApiException("Response was null which was not expected.", status_, objectResponse_.Text, headers_, null);
                             }
                             return objectResponse_.Object;
                         }
                         else
                         {
                             var responseData_ = response_.Content == null ? null : await ReadAsStringAsync(response_.Content, cancellationToken).ConfigureAwait(false);
-                            throw new ApiException("The HTTP status code of the response was not expected (" + status_ + ").", status_, responseData_, headers_, null);
+                            throw new SonarApiException("The HTTP status code of the response was not expected (" + status_ + ").", status_, responseData_, headers_, null);
                         }
                     }
                     finally
@@ -5105,7 +5105,7 @@ namespace Wedol.SteelSeries.Sonar
         }
 
         /// <returns>OK</returns>
-        /// <exception cref="ApiException">A server side error occurred.</exception>
+        /// <exception cref="SonarApiException">A server side error occurred.</exception>
         public virtual System.Threading.Tasks.Task<bool> UnlinkAsync()
         {
             return UnlinkAsync(System.Threading.CancellationToken.None);
@@ -5113,7 +5113,7 @@ namespace Wedol.SteelSeries.Sonar
 
         /// <param name="cancellationToken">A cancellation token that can be used by other objects or threads to receive notice of cancellation.</param>
         /// <returns>OK</returns>
-        /// <exception cref="ApiException">A server side error occurred.</exception>
+        /// <exception cref="SonarApiException">A server side error occurred.</exception>
         public virtual async System.Threading.Tasks.Task<bool> UnlinkAsync(System.Threading.CancellationToken cancellationToken)
         {
             var client_ = _httpClient;
@@ -5159,14 +5159,14 @@ namespace Wedol.SteelSeries.Sonar
                             var objectResponse_ = await ReadObjectResponseAsync<bool>(response_, headers_, cancellationToken).ConfigureAwait(false);
                             if (objectResponse_.Object == null)
                             {
-                                throw new ApiException("Response was null which was not expected.", status_, objectResponse_.Text, headers_, null);
+                                throw new SonarApiException("Response was null which was not expected.", status_, objectResponse_.Text, headers_, null);
                             }
                             return objectResponse_.Object;
                         }
                         else
                         {
                             var responseData_ = response_.Content == null ? null : await ReadAsStringAsync(response_.Content, cancellationToken).ConfigureAwait(false);
-                            throw new ApiException("The HTTP status code of the response was not expected (" + status_ + ").", status_, responseData_, headers_, null);
+                            throw new SonarApiException("The HTTP status code of the response was not expected (" + status_ + ").", status_, responseData_, headers_, null);
                         }
                     }
                     finally
@@ -5184,7 +5184,7 @@ namespace Wedol.SteelSeries.Sonar
         }
 
         /// <returns>OK</returns>
-        /// <exception cref="ApiException">A server side error occurred.</exception>
+        /// <exception cref="SonarApiException">A server side error occurred.</exception>
         public virtual System.Threading.Tasks.Task<ModeId> ModeGETAsync()
         {
             return ModeGETAsync(System.Threading.CancellationToken.None);
@@ -5192,7 +5192,7 @@ namespace Wedol.SteelSeries.Sonar
 
         /// <param name="cancellationToken">A cancellation token that can be used by other objects or threads to receive notice of cancellation.</param>
         /// <returns>OK</returns>
-        /// <exception cref="ApiException">A server side error occurred.</exception>
+        /// <exception cref="SonarApiException">A server side error occurred.</exception>
         public virtual async System.Threading.Tasks.Task<ModeId> ModeGETAsync(System.Threading.CancellationToken cancellationToken)
         {
             var client_ = _httpClient;
@@ -5237,14 +5237,14 @@ namespace Wedol.SteelSeries.Sonar
                             var objectResponse_ = await ReadObjectResponseAsync<ModeId>(response_, headers_, cancellationToken).ConfigureAwait(false);
                             if (objectResponse_.Object == null)
                             {
-                                throw new ApiException("Response was null which was not expected.", status_, objectResponse_.Text, headers_, null);
+                                throw new SonarApiException("Response was null which was not expected.", status_, objectResponse_.Text, headers_, null);
                             }
                             return objectResponse_.Object;
                         }
                         else
                         {
                             var responseData_ = response_.Content == null ? null : await ReadAsStringAsync(response_.Content, cancellationToken).ConfigureAwait(false);
-                            throw new ApiException("The HTTP status code of the response was not expected (" + status_ + ").", status_, responseData_, headers_, null);
+                            throw new SonarApiException("The HTTP status code of the response was not expected (" + status_ + ").", status_, responseData_, headers_, null);
                         }
                     }
                     finally
@@ -5262,7 +5262,7 @@ namespace Wedol.SteelSeries.Sonar
         }
 
         /// <returns>OK</returns>
-        /// <exception cref="ApiException">A server side error occurred.</exception>
+        /// <exception cref="SonarApiException">A server side error occurred.</exception>
         public virtual System.Threading.Tasks.Task<ModeId> ModePUTAsync(ModeId id)
         {
             return ModePUTAsync(id, System.Threading.CancellationToken.None);
@@ -5270,7 +5270,7 @@ namespace Wedol.SteelSeries.Sonar
 
         /// <param name="cancellationToken">A cancellation token that can be used by other objects or threads to receive notice of cancellation.</param>
         /// <returns>OK</returns>
-        /// <exception cref="ApiException">A server side error occurred.</exception>
+        /// <exception cref="SonarApiException">A server side error occurred.</exception>
         public virtual async System.Threading.Tasks.Task<ModeId> ModePUTAsync(ModeId id, System.Threading.CancellationToken cancellationToken)
         {
             if (id == null)
@@ -5320,14 +5320,14 @@ namespace Wedol.SteelSeries.Sonar
                             var objectResponse_ = await ReadObjectResponseAsync<ModeId>(response_, headers_, cancellationToken).ConfigureAwait(false);
                             if (objectResponse_.Object == null)
                             {
-                                throw new ApiException("Response was null which was not expected.", status_, objectResponse_.Text, headers_, null);
+                                throw new SonarApiException("Response was null which was not expected.", status_, objectResponse_.Text, headers_, null);
                             }
                             return objectResponse_.Object;
                         }
                         else
                         {
                             var responseData_ = response_.Content == null ? null : await ReadAsStringAsync(response_.Content, cancellationToken).ConfigureAwait(false);
-                            throw new ApiException("The HTTP status code of the response was not expected (" + status_ + ").", status_, responseData_, headers_, null);
+                            throw new SonarApiException("The HTTP status code of the response was not expected (" + status_ + ").", status_, responseData_, headers_, null);
                         }
                     }
                     finally
@@ -5345,7 +5345,7 @@ namespace Wedol.SteelSeries.Sonar
         }
 
         /// <returns>OK</returns>
-        /// <exception cref="ApiException">A server side error occurred.</exception>
+        /// <exception cref="SonarApiException">A server side error occurred.</exception>
         public virtual System.Threading.Tasks.Task<OnBoardingPayload> OnboardingGETAsync()
         {
             return OnboardingGETAsync(System.Threading.CancellationToken.None);
@@ -5353,7 +5353,7 @@ namespace Wedol.SteelSeries.Sonar
 
         /// <param name="cancellationToken">A cancellation token that can be used by other objects or threads to receive notice of cancellation.</param>
         /// <returns>OK</returns>
-        /// <exception cref="ApiException">A server side error occurred.</exception>
+        /// <exception cref="SonarApiException">A server side error occurred.</exception>
         public virtual async System.Threading.Tasks.Task<OnBoardingPayload> OnboardingGETAsync(System.Threading.CancellationToken cancellationToken)
         {
             var client_ = _httpClient;
@@ -5398,14 +5398,14 @@ namespace Wedol.SteelSeries.Sonar
                             var objectResponse_ = await ReadObjectResponseAsync<OnBoardingPayload>(response_, headers_, cancellationToken).ConfigureAwait(false);
                             if (objectResponse_.Object == null)
                             {
-                                throw new ApiException("Response was null which was not expected.", status_, objectResponse_.Text, headers_, null);
+                                throw new SonarApiException("Response was null which was not expected.", status_, objectResponse_.Text, headers_, null);
                             }
                             return objectResponse_.Object;
                         }
                         else
                         {
                             var responseData_ = response_.Content == null ? null : await ReadAsStringAsync(response_.Content, cancellationToken).ConfigureAwait(false);
-                            throw new ApiException("The HTTP status code of the response was not expected (" + status_ + ").", status_, responseData_, headers_, null);
+                            throw new SonarApiException("The HTTP status code of the response was not expected (" + status_ + ").", status_, responseData_, headers_, null);
                         }
                     }
                     finally
@@ -5423,7 +5423,7 @@ namespace Wedol.SteelSeries.Sonar
         }
 
         /// <returns>OK</returns>
-        /// <exception cref="ApiException">A server side error occurred.</exception>
+        /// <exception cref="SonarApiException">A server side error occurred.</exception>
         public virtual System.Threading.Tasks.Task OnboardingPOSTAsync(OnboardingDevices? body)
         {
             return OnboardingPOSTAsync(body, System.Threading.CancellationToken.None);
@@ -5431,7 +5431,7 @@ namespace Wedol.SteelSeries.Sonar
 
         /// <param name="cancellationToken">A cancellation token that can be used by other objects or threads to receive notice of cancellation.</param>
         /// <returns>OK</returns>
-        /// <exception cref="ApiException">A server side error occurred.</exception>
+        /// <exception cref="SonarApiException">A server side error occurred.</exception>
         public virtual async System.Threading.Tasks.Task OnboardingPOSTAsync(OnboardingDevices? body, System.Threading.CancellationToken cancellationToken)
         {
             var client_ = _httpClient;
@@ -5481,7 +5481,7 @@ namespace Wedol.SteelSeries.Sonar
                         else
                         {
                             var responseData_ = response_.Content == null ? null : await ReadAsStringAsync(response_.Content, cancellationToken).ConfigureAwait(false);
-                            throw new ApiException("The HTTP status code of the response was not expected (" + status_ + ").", status_, responseData_, headers_, null);
+                            throw new SonarApiException("The HTTP status code of the response was not expected (" + status_ + ").", status_, responseData_, headers_, null);
                         }
                     }
                     finally
@@ -5499,7 +5499,7 @@ namespace Wedol.SteelSeries.Sonar
         }
 
         /// <returns>OK</returns>
-        /// <exception cref="ApiException">A server side error occurred.</exception>
+        /// <exception cref="SonarApiException">A server side error occurred.</exception>
         public virtual System.Threading.Tasks.Task<SteelSeriesAudioDevice> PreferredDeviceAsync(string deviceName)
         {
             return PreferredDeviceAsync(deviceName, System.Threading.CancellationToken.None);
@@ -5507,7 +5507,7 @@ namespace Wedol.SteelSeries.Sonar
 
         /// <param name="cancellationToken">A cancellation token that can be used by other objects or threads to receive notice of cancellation.</param>
         /// <returns>OK</returns>
-        /// <exception cref="ApiException">A server side error occurred.</exception>
+        /// <exception cref="SonarApiException">A server side error occurred.</exception>
         public virtual async System.Threading.Tasks.Task<SteelSeriesAudioDevice> PreferredDeviceAsync(string deviceName, System.Threading.CancellationToken cancellationToken)
         {
             if (deviceName == null)
@@ -5556,14 +5556,14 @@ namespace Wedol.SteelSeries.Sonar
                             var objectResponse_ = await ReadObjectResponseAsync<SteelSeriesAudioDevice>(response_, headers_, cancellationToken).ConfigureAwait(false);
                             if (objectResponse_.Object == null)
                             {
-                                throw new ApiException("Response was null which was not expected.", status_, objectResponse_.Text, headers_, null);
+                                throw new SonarApiException("Response was null which was not expected.", status_, objectResponse_.Text, headers_, null);
                             }
                             return objectResponse_.Object;
                         }
                         else
                         {
                             var responseData_ = response_.Content == null ? null : await ReadAsStringAsync(response_.Content, cancellationToken).ConfigureAwait(false);
-                            throw new ApiException("The HTTP status code of the response was not expected (" + status_ + ").", status_, responseData_, headers_, null);
+                            throw new SonarApiException("The HTTP status code of the response was not expected (" + status_ + ").", status_, responseData_, headers_, null);
                         }
                     }
                     finally
@@ -5581,7 +5581,7 @@ namespace Wedol.SteelSeries.Sonar
         }
 
         /// <returns>OK</returns>
-        /// <exception cref="ApiException">A server side error occurred.</exception>
+        /// <exception cref="SonarApiException">A server side error occurred.</exception>
         public virtual System.Threading.Tasks.Task ConfigureAsync()
         {
             return ConfigureAsync(System.Threading.CancellationToken.None);
@@ -5589,7 +5589,7 @@ namespace Wedol.SteelSeries.Sonar
 
         /// <param name="cancellationToken">A cancellation token that can be used by other objects or threads to receive notice of cancellation.</param>
         /// <returns>OK</returns>
-        /// <exception cref="ApiException">A server side error occurred.</exception>
+        /// <exception cref="SonarApiException">A server side error occurred.</exception>
         public virtual async System.Threading.Tasks.Task ConfigureAsync(System.Threading.CancellationToken cancellationToken)
         {
             var client_ = _httpClient;
@@ -5636,7 +5636,7 @@ namespace Wedol.SteelSeries.Sonar
                         else
                         {
                             var responseData_ = response_.Content == null ? null : await ReadAsStringAsync(response_.Content, cancellationToken).ConfigureAwait(false);
-                            throw new ApiException("The HTTP status code of the response was not expected (" + status_ + ").", status_, responseData_, headers_, null);
+                            throw new SonarApiException("The HTTP status code of the response was not expected (" + status_ + ").", status_, responseData_, headers_, null);
                         }
                     }
                     finally
@@ -5654,7 +5654,7 @@ namespace Wedol.SteelSeries.Sonar
         }
 
         /// <returns>OK</returns>
-        /// <exception cref="ApiException">A server side error occurred.</exception>
+        /// <exception cref="SonarApiException">A server side error occurred.</exception>
         public virtual System.Threading.Tasks.Task Configure2Async()
         {
             return Configure2Async(System.Threading.CancellationToken.None);
@@ -5662,7 +5662,7 @@ namespace Wedol.SteelSeries.Sonar
 
         /// <param name="cancellationToken">A cancellation token that can be used by other objects or threads to receive notice of cancellation.</param>
         /// <returns>OK</returns>
-        /// <exception cref="ApiException">A server side error occurred.</exception>
+        /// <exception cref="SonarApiException">A server side error occurred.</exception>
         public virtual async System.Threading.Tasks.Task Configure2Async(System.Threading.CancellationToken cancellationToken)
         {
             var client_ = _httpClient;
@@ -5709,7 +5709,7 @@ namespace Wedol.SteelSeries.Sonar
                         else
                         {
                             var responseData_ = response_.Content == null ? null : await ReadAsStringAsync(response_.Content, cancellationToken).ConfigureAwait(false);
-                            throw new ApiException("The HTTP status code of the response was not expected (" + status_ + ").", status_, responseData_, headers_, null);
+                            throw new SonarApiException("The HTTP status code of the response was not expected (" + status_ + ").", status_, responseData_, headers_, null);
                         }
                     }
                     finally
@@ -5727,7 +5727,7 @@ namespace Wedol.SteelSeries.Sonar
         }
 
         /// <returns>OK</returns>
-        /// <exception cref="ApiException">A server side error occurred.</exception>
+        /// <exception cref="SonarApiException">A server side error occurred.</exception>
         public virtual System.Threading.Tasks.Task<OverlaysSettings> OverlaysAsync()
         {
             return OverlaysAsync(System.Threading.CancellationToken.None);
@@ -5735,7 +5735,7 @@ namespace Wedol.SteelSeries.Sonar
 
         /// <param name="cancellationToken">A cancellation token that can be used by other objects or threads to receive notice of cancellation.</param>
         /// <returns>OK</returns>
-        /// <exception cref="ApiException">A server side error occurred.</exception>
+        /// <exception cref="SonarApiException">A server side error occurred.</exception>
         public virtual async System.Threading.Tasks.Task<OverlaysSettings> OverlaysAsync(System.Threading.CancellationToken cancellationToken)
         {
             var client_ = _httpClient;
@@ -5780,14 +5780,14 @@ namespace Wedol.SteelSeries.Sonar
                             var objectResponse_ = await ReadObjectResponseAsync<OverlaysSettings>(response_, headers_, cancellationToken).ConfigureAwait(false);
                             if (objectResponse_.Object == null)
                             {
-                                throw new ApiException("Response was null which was not expected.", status_, objectResponse_.Text, headers_, null);
+                                throw new SonarApiException("Response was null which was not expected.", status_, objectResponse_.Text, headers_, null);
                             }
                             return objectResponse_.Object;
                         }
                         else
                         {
                             var responseData_ = response_.Content == null ? null : await ReadAsStringAsync(response_.Content, cancellationToken).ConfigureAwait(false);
-                            throw new ApiException("The HTTP status code of the response was not expected (" + status_ + ").", status_, responseData_, headers_, null);
+                            throw new SonarApiException("The HTTP status code of the response was not expected (" + status_ + ").", status_, responseData_, headers_, null);
                         }
                     }
                     finally
@@ -5805,7 +5805,7 @@ namespace Wedol.SteelSeries.Sonar
         }
 
         /// <returns>OK</returns>
-        /// <exception cref="ApiException">A server side error occurred.</exception>
+        /// <exception cref="SonarApiException">A server side error occurred.</exception>
         public virtual System.Threading.Tasks.Task<bool> IsHardwareTriggeredEnabledGETAsync()
         {
             return IsHardwareTriggeredEnabledGETAsync(System.Threading.CancellationToken.None);
@@ -5813,7 +5813,7 @@ namespace Wedol.SteelSeries.Sonar
 
         /// <param name="cancellationToken">A cancellation token that can be used by other objects or threads to receive notice of cancellation.</param>
         /// <returns>OK</returns>
-        /// <exception cref="ApiException">A server side error occurred.</exception>
+        /// <exception cref="SonarApiException">A server side error occurred.</exception>
         public virtual async System.Threading.Tasks.Task<bool> IsHardwareTriggeredEnabledGETAsync(System.Threading.CancellationToken cancellationToken)
         {
             var client_ = _httpClient;
@@ -5858,14 +5858,14 @@ namespace Wedol.SteelSeries.Sonar
                             var objectResponse_ = await ReadObjectResponseAsync<bool>(response_, headers_, cancellationToken).ConfigureAwait(false);
                             if (objectResponse_.Object == null)
                             {
-                                throw new ApiException("Response was null which was not expected.", status_, objectResponse_.Text, headers_, null);
+                                throw new SonarApiException("Response was null which was not expected.", status_, objectResponse_.Text, headers_, null);
                             }
                             return objectResponse_.Object;
                         }
                         else
                         {
                             var responseData_ = response_.Content == null ? null : await ReadAsStringAsync(response_.Content, cancellationToken).ConfigureAwait(false);
-                            throw new ApiException("The HTTP status code of the response was not expected (" + status_ + ").", status_, responseData_, headers_, null);
+                            throw new SonarApiException("The HTTP status code of the response was not expected (" + status_ + ").", status_, responseData_, headers_, null);
                         }
                     }
                     finally
@@ -5883,7 +5883,7 @@ namespace Wedol.SteelSeries.Sonar
         }
 
         /// <returns>OK</returns>
-        /// <exception cref="ApiException">A server side error occurred.</exception>
+        /// <exception cref="SonarApiException">A server side error occurred.</exception>
         public virtual System.Threading.Tasks.Task<bool> IsHardwareTriggeredEnabledPUTAsync(bool isEnabled)
         {
             return IsHardwareTriggeredEnabledPUTAsync(isEnabled, System.Threading.CancellationToken.None);
@@ -5891,7 +5891,7 @@ namespace Wedol.SteelSeries.Sonar
 
         /// <param name="cancellationToken">A cancellation token that can be used by other objects or threads to receive notice of cancellation.</param>
         /// <returns>OK</returns>
-        /// <exception cref="ApiException">A server side error occurred.</exception>
+        /// <exception cref="SonarApiException">A server side error occurred.</exception>
         public virtual async System.Threading.Tasks.Task<bool> IsHardwareTriggeredEnabledPUTAsync(bool isEnabled, System.Threading.CancellationToken cancellationToken)
         {
             if (isEnabled == null)
@@ -5941,14 +5941,14 @@ namespace Wedol.SteelSeries.Sonar
                             var objectResponse_ = await ReadObjectResponseAsync<bool>(response_, headers_, cancellationToken).ConfigureAwait(false);
                             if (objectResponse_.Object == null)
                             {
-                                throw new ApiException("Response was null which was not expected.", status_, objectResponse_.Text, headers_, null);
+                                throw new SonarApiException("Response was null which was not expected.", status_, objectResponse_.Text, headers_, null);
                             }
                             return objectResponse_.Object;
                         }
                         else
                         {
                             var responseData_ = response_.Content == null ? null : await ReadAsStringAsync(response_.Content, cancellationToken).ConfigureAwait(false);
-                            throw new ApiException("The HTTP status code of the response was not expected (" + status_ + ").", status_, responseData_, headers_, null);
+                            throw new SonarApiException("The HTTP status code of the response was not expected (" + status_ + ").", status_, responseData_, headers_, null);
                         }
                     }
                     finally
@@ -5966,7 +5966,7 @@ namespace Wedol.SteelSeries.Sonar
         }
 
         /// <returns>OK</returns>
-        /// <exception cref="ApiException">A server side error occurred.</exception>
+        /// <exception cref="SonarApiException">A server side error occurred.</exception>
         public virtual System.Threading.Tasks.Task<bool> IsEnabledPUT4Async(bool isEnabled)
         {
             return IsEnabledPUT4Async(isEnabled, System.Threading.CancellationToken.None);
@@ -5974,7 +5974,7 @@ namespace Wedol.SteelSeries.Sonar
 
         /// <param name="cancellationToken">A cancellation token that can be used by other objects or threads to receive notice of cancellation.</param>
         /// <returns>OK</returns>
-        /// <exception cref="ApiException">A server side error occurred.</exception>
+        /// <exception cref="SonarApiException">A server side error occurred.</exception>
         public virtual async System.Threading.Tasks.Task<bool> IsEnabledPUT4Async(bool isEnabled, System.Threading.CancellationToken cancellationToken)
         {
             if (isEnabled == null)
@@ -6024,14 +6024,14 @@ namespace Wedol.SteelSeries.Sonar
                             var objectResponse_ = await ReadObjectResponseAsync<bool>(response_, headers_, cancellationToken).ConfigureAwait(false);
                             if (objectResponse_.Object == null)
                             {
-                                throw new ApiException("Response was null which was not expected.", status_, objectResponse_.Text, headers_, null);
+                                throw new SonarApiException("Response was null which was not expected.", status_, objectResponse_.Text, headers_, null);
                             }
                             return objectResponse_.Object;
                         }
                         else
                         {
                             var responseData_ = response_.Content == null ? null : await ReadAsStringAsync(response_.Content, cancellationToken).ConfigureAwait(false);
-                            throw new ApiException("The HTTP status code of the response was not expected (" + status_ + ").", status_, responseData_, headers_, null);
+                            throw new SonarApiException("The HTTP status code of the response was not expected (" + status_ + ").", status_, responseData_, headers_, null);
                         }
                     }
                     finally
@@ -6049,7 +6049,7 @@ namespace Wedol.SteelSeries.Sonar
         }
 
         /// <returns>OK</returns>
-        /// <exception cref="ApiException">A server side error occurred.</exception>
+        /// <exception cref="SonarApiException">A server side error occurred.</exception>
         public virtual System.Threading.Tasks.Task<bool> IsEnabledPUT5Async(string overlayName, bool isEnabled)
         {
             return IsEnabledPUT5Async(overlayName, isEnabled, System.Threading.CancellationToken.None);
@@ -6057,7 +6057,7 @@ namespace Wedol.SteelSeries.Sonar
 
         /// <param name="cancellationToken">A cancellation token that can be used by other objects or threads to receive notice of cancellation.</param>
         /// <returns>OK</returns>
-        /// <exception cref="ApiException">A server side error occurred.</exception>
+        /// <exception cref="SonarApiException">A server side error occurred.</exception>
         public virtual async System.Threading.Tasks.Task<bool> IsEnabledPUT5Async(string overlayName, bool isEnabled, System.Threading.CancellationToken cancellationToken)
         {
             if (overlayName == null)
@@ -6112,14 +6112,14 @@ namespace Wedol.SteelSeries.Sonar
                             var objectResponse_ = await ReadObjectResponseAsync<bool>(response_, headers_, cancellationToken).ConfigureAwait(false);
                             if (objectResponse_.Object == null)
                             {
-                                throw new ApiException("Response was null which was not expected.", status_, objectResponse_.Text, headers_, null);
+                                throw new SonarApiException("Response was null which was not expected.", status_, objectResponse_.Text, headers_, null);
                             }
                             return objectResponse_.Object;
                         }
                         else
                         {
                             var responseData_ = response_.Content == null ? null : await ReadAsStringAsync(response_.Content, cancellationToken).ConfigureAwait(false);
-                            throw new ApiException("The HTTP status code of the response was not expected (" + status_ + ").", status_, responseData_, headers_, null);
+                            throw new SonarApiException("The HTTP status code of the response was not expected (" + status_ + ").", status_, responseData_, headers_, null);
                         }
                     }
                     finally
@@ -6137,7 +6137,7 @@ namespace Wedol.SteelSeries.Sonar
         }
 
         /// <returns>OK</returns>
-        /// <exception cref="ApiException">A server side error occurred.</exception>
+        /// <exception cref="SonarApiException">A server side error occurred.</exception>
         public virtual System.Threading.Tasks.Task<int> PositionAsync(OverlayPosition position)
         {
             return PositionAsync(position, System.Threading.CancellationToken.None);
@@ -6145,7 +6145,7 @@ namespace Wedol.SteelSeries.Sonar
 
         /// <param name="cancellationToken">A cancellation token that can be used by other objects or threads to receive notice of cancellation.</param>
         /// <returns>OK</returns>
-        /// <exception cref="ApiException">A server side error occurred.</exception>
+        /// <exception cref="SonarApiException">A server side error occurred.</exception>
         public virtual async System.Threading.Tasks.Task<int> PositionAsync(OverlayPosition position, System.Threading.CancellationToken cancellationToken)
         {
             if (position == null)
@@ -6195,14 +6195,14 @@ namespace Wedol.SteelSeries.Sonar
                             var objectResponse_ = await ReadObjectResponseAsync<int>(response_, headers_, cancellationToken).ConfigureAwait(false);
                             if (objectResponse_.Object == null)
                             {
-                                throw new ApiException("Response was null which was not expected.", status_, objectResponse_.Text, headers_, null);
+                                throw new SonarApiException("Response was null which was not expected.", status_, objectResponse_.Text, headers_, null);
                             }
                             return objectResponse_.Object;
                         }
                         else
                         {
                             var responseData_ = response_.Content == null ? null : await ReadAsStringAsync(response_.Content, cancellationToken).ConfigureAwait(false);
-                            throw new ApiException("The HTTP status code of the response was not expected (" + status_ + ").", status_, responseData_, headers_, null);
+                            throw new SonarApiException("The HTTP status code of the response was not expected (" + status_ + ").", status_, responseData_, headers_, null);
                         }
                     }
                     finally
@@ -6220,7 +6220,7 @@ namespace Wedol.SteelSeries.Sonar
         }
 
         /// <returns>OK</returns>
-        /// <exception cref="ApiException">A server side error occurred.</exception>
+        /// <exception cref="SonarApiException">A server side error occurred.</exception>
         public virtual System.Threading.Tasks.Task<System.Collections.Generic.ICollection<Preset>> PresetsAsync(VirtualAudioDevice vad)
         {
             return PresetsAsync(vad, System.Threading.CancellationToken.None);
@@ -6228,7 +6228,7 @@ namespace Wedol.SteelSeries.Sonar
 
         /// <param name="cancellationToken">A cancellation token that can be used by other objects or threads to receive notice of cancellation.</param>
         /// <returns>OK</returns>
-        /// <exception cref="ApiException">A server side error occurred.</exception>
+        /// <exception cref="SonarApiException">A server side error occurred.</exception>
         public virtual async System.Threading.Tasks.Task<System.Collections.Generic.ICollection<Preset>> PresetsAsync(VirtualAudioDevice vad, System.Threading.CancellationToken cancellationToken)
         {
             if (vad == null)
@@ -6277,14 +6277,14 @@ namespace Wedol.SteelSeries.Sonar
                             var objectResponse_ = await ReadObjectResponseAsync<System.Collections.Generic.ICollection<Preset>>(response_, headers_, cancellationToken).ConfigureAwait(false);
                             if (objectResponse_.Object == null)
                             {
-                                throw new ApiException("Response was null which was not expected.", status_, objectResponse_.Text, headers_, null);
+                                throw new SonarApiException("Response was null which was not expected.", status_, objectResponse_.Text, headers_, null);
                             }
                             return objectResponse_.Object;
                         }
                         else
                         {
                             var responseData_ = response_.Content == null ? null : await ReadAsStringAsync(response_.Content, cancellationToken).ConfigureAwait(false);
-                            throw new ApiException("The HTTP status code of the response was not expected (" + status_ + ").", status_, responseData_, headers_, null);
+                            throw new SonarApiException("The HTTP status code of the response was not expected (" + status_ + ").", status_, responseData_, headers_, null);
                         }
                     }
                     finally
@@ -6302,7 +6302,7 @@ namespace Wedol.SteelSeries.Sonar
         }
 
         /// <returns>OK</returns>
-        /// <exception cref="ApiException">A server side error occurred.</exception>
+        /// <exception cref="SonarApiException">A server side error occurred.</exception>
         public virtual System.Threading.Tasks.Task<bool> IsEnabledGET2Async()
         {
             return IsEnabledGET2Async(System.Threading.CancellationToken.None);
@@ -6310,7 +6310,7 @@ namespace Wedol.SteelSeries.Sonar
 
         /// <param name="cancellationToken">A cancellation token that can be used by other objects or threads to receive notice of cancellation.</param>
         /// <returns>OK</returns>
-        /// <exception cref="ApiException">A server side error occurred.</exception>
+        /// <exception cref="SonarApiException">A server side error occurred.</exception>
         public virtual async System.Threading.Tasks.Task<bool> IsEnabledGET2Async(System.Threading.CancellationToken cancellationToken)
         {
             var client_ = _httpClient;
@@ -6355,14 +6355,14 @@ namespace Wedol.SteelSeries.Sonar
                             var objectResponse_ = await ReadObjectResponseAsync<bool>(response_, headers_, cancellationToken).ConfigureAwait(false);
                             if (objectResponse_.Object == null)
                             {
-                                throw new ApiException("Response was null which was not expected.", status_, objectResponse_.Text, headers_, null);
+                                throw new SonarApiException("Response was null which was not expected.", status_, objectResponse_.Text, headers_, null);
                             }
                             return objectResponse_.Object;
                         }
                         else
                         {
                             var responseData_ = response_.Content == null ? null : await ReadAsStringAsync(response_.Content, cancellationToken).ConfigureAwait(false);
-                            throw new ApiException("The HTTP status code of the response was not expected (" + status_ + ").", status_, responseData_, headers_, null);
+                            throw new SonarApiException("The HTTP status code of the response was not expected (" + status_ + ").", status_, responseData_, headers_, null);
                         }
                     }
                     finally
@@ -6380,7 +6380,7 @@ namespace Wedol.SteelSeries.Sonar
         }
 
         /// <returns>OK</returns>
-        /// <exception cref="ApiException">A server side error occurred.</exception>
+        /// <exception cref="SonarApiException">A server side error occurred.</exception>
         public virtual System.Threading.Tasks.Task<Profile> SelectedAsync()
         {
             return SelectedAsync(System.Threading.CancellationToken.None);
@@ -6388,7 +6388,7 @@ namespace Wedol.SteelSeries.Sonar
 
         /// <param name="cancellationToken">A cancellation token that can be used by other objects or threads to receive notice of cancellation.</param>
         /// <returns>OK</returns>
-        /// <exception cref="ApiException">A server side error occurred.</exception>
+        /// <exception cref="SonarApiException">A server side error occurred.</exception>
         public virtual async System.Threading.Tasks.Task<Profile> SelectedAsync(System.Threading.CancellationToken cancellationToken)
         {
             var client_ = _httpClient;
@@ -6433,14 +6433,14 @@ namespace Wedol.SteelSeries.Sonar
                             var objectResponse_ = await ReadObjectResponseAsync<Profile>(response_, headers_, cancellationToken).ConfigureAwait(false);
                             if (objectResponse_.Object == null)
                             {
-                                throw new ApiException("Response was null which was not expected.", status_, objectResponse_.Text, headers_, null);
+                                throw new SonarApiException("Response was null which was not expected.", status_, objectResponse_.Text, headers_, null);
                             }
                             return objectResponse_.Object;
                         }
                         else
                         {
                             var responseData_ = response_.Content == null ? null : await ReadAsStringAsync(response_.Content, cancellationToken).ConfigureAwait(false);
-                            throw new ApiException("The HTTP status code of the response was not expected (" + status_ + ").", status_, responseData_, headers_, null);
+                            throw new SonarApiException("The HTTP status code of the response was not expected (" + status_ + ").", status_, responseData_, headers_, null);
                         }
                     }
                     finally
@@ -6458,7 +6458,7 @@ namespace Wedol.SteelSeries.Sonar
         }
 
         /// <returns>OK</returns>
-        /// <exception cref="ApiException">A server side error occurred.</exception>
+        /// <exception cref="SonarApiException">A server side error occurred.</exception>
         public virtual System.Threading.Tasks.Task<System.Collections.Generic.ICollection<Profile>> ProfilesAsync()
         {
             return ProfilesAsync(System.Threading.CancellationToken.None);
@@ -6466,7 +6466,7 @@ namespace Wedol.SteelSeries.Sonar
 
         /// <param name="cancellationToken">A cancellation token that can be used by other objects or threads to receive notice of cancellation.</param>
         /// <returns>OK</returns>
-        /// <exception cref="ApiException">A server side error occurred.</exception>
+        /// <exception cref="SonarApiException">A server side error occurred.</exception>
         public virtual async System.Threading.Tasks.Task<System.Collections.Generic.ICollection<Profile>> ProfilesAsync(System.Threading.CancellationToken cancellationToken)
         {
             var client_ = _httpClient;
@@ -6511,14 +6511,14 @@ namespace Wedol.SteelSeries.Sonar
                             var objectResponse_ = await ReadObjectResponseAsync<System.Collections.Generic.ICollection<Profile>>(response_, headers_, cancellationToken).ConfigureAwait(false);
                             if (objectResponse_.Object == null)
                             {
-                                throw new ApiException("Response was null which was not expected.", status_, objectResponse_.Text, headers_, null);
+                                throw new SonarApiException("Response was null which was not expected.", status_, objectResponse_.Text, headers_, null);
                             }
                             return objectResponse_.Object;
                         }
                         else
                         {
                             var responseData_ = response_.Content == null ? null : await ReadAsStringAsync(response_.Content, cancellationToken).ConfigureAwait(false);
-                            throw new ApiException("The HTTP status code of the response was not expected (" + status_ + ").", status_, responseData_, headers_, null);
+                            throw new SonarApiException("The HTTP status code of the response was not expected (" + status_ + ").", status_, responseData_, headers_, null);
                         }
                     }
                     finally
@@ -6536,7 +6536,7 @@ namespace Wedol.SteelSeries.Sonar
         }
 
         /// <returns>OK</returns>
-        /// <exception cref="ApiException">A server side error occurred.</exception>
+        /// <exception cref="SonarApiException">A server side error occurred.</exception>
         public virtual System.Threading.Tasks.Task TargetAsync(string deviceName, DeviceDataFlow dataflow)
         {
             return TargetAsync(deviceName, dataflow, System.Threading.CancellationToken.None);
@@ -6544,7 +6544,7 @@ namespace Wedol.SteelSeries.Sonar
 
         /// <param name="cancellationToken">A cancellation token that can be used by other objects or threads to receive notice of cancellation.</param>
         /// <returns>OK</returns>
-        /// <exception cref="ApiException">A server side error occurred.</exception>
+        /// <exception cref="SonarApiException">A server side error occurred.</exception>
         public virtual async System.Threading.Tasks.Task TargetAsync(string deviceName, DeviceDataFlow dataflow, System.Threading.CancellationToken cancellationToken)
         {
             if (deviceName == null)
@@ -6600,7 +6600,7 @@ namespace Wedol.SteelSeries.Sonar
                         else
                         {
                             var responseData_ = response_.Content == null ? null : await ReadAsStringAsync(response_.Content, cancellationToken).ConfigureAwait(false);
-                            throw new ApiException("The HTTP status code of the response was not expected (" + status_ + ").", status_, responseData_, headers_, null);
+                            throw new SonarApiException("The HTTP status code of the response was not expected (" + status_ + ").", status_, responseData_, headers_, null);
                         }
                     }
                     finally
@@ -6618,7 +6618,7 @@ namespace Wedol.SteelSeries.Sonar
         }
 
         /// <returns>OK</returns>
-        /// <exception cref="ApiException">A server side error occurred.</exception>
+        /// <exception cref="SonarApiException">A server side error occurred.</exception>
         public virtual System.Threading.Tasks.Task<bool> ShouldShowTargetDeviceAsync()
         {
             return ShouldShowTargetDeviceAsync(System.Threading.CancellationToken.None);
@@ -6626,7 +6626,7 @@ namespace Wedol.SteelSeries.Sonar
 
         /// <param name="cancellationToken">A cancellation token that can be used by other objects or threads to receive notice of cancellation.</param>
         /// <returns>OK</returns>
-        /// <exception cref="ApiException">A server side error occurred.</exception>
+        /// <exception cref="SonarApiException">A server side error occurred.</exception>
         public virtual async System.Threading.Tasks.Task<bool> ShouldShowTargetDeviceAsync(System.Threading.CancellationToken cancellationToken)
         {
             var client_ = _httpClient;
@@ -6671,14 +6671,14 @@ namespace Wedol.SteelSeries.Sonar
                             var objectResponse_ = await ReadObjectResponseAsync<bool>(response_, headers_, cancellationToken).ConfigureAwait(false);
                             if (objectResponse_.Object == null)
                             {
-                                throw new ApiException("Response was null which was not expected.", status_, objectResponse_.Text, headers_, null);
+                                throw new SonarApiException("Response was null which was not expected.", status_, objectResponse_.Text, headers_, null);
                             }
                             return objectResponse_.Object;
                         }
                         else
                         {
                             var responseData_ = response_.Content == null ? null : await ReadAsStringAsync(response_.Content, cancellationToken).ConfigureAwait(false);
-                            throw new ApiException("The HTTP status code of the response was not expected (" + status_ + ").", status_, responseData_, headers_, null);
+                            throw new SonarApiException("The HTTP status code of the response was not expected (" + status_ + ").", status_, responseData_, headers_, null);
                         }
                     }
                     finally
@@ -6696,7 +6696,7 @@ namespace Wedol.SteelSeries.Sonar
         }
 
         /// <returns>OK</returns>
-        /// <exception cref="ApiException">A server side error occurred.</exception>
+        /// <exception cref="SonarApiException">A server side error occurred.</exception>
         public virtual System.Threading.Tasks.Task SnoozeTargetDeviceAsync()
         {
             return SnoozeTargetDeviceAsync(System.Threading.CancellationToken.None);
@@ -6704,7 +6704,7 @@ namespace Wedol.SteelSeries.Sonar
 
         /// <param name="cancellationToken">A cancellation token that can be used by other objects or threads to receive notice of cancellation.</param>
         /// <returns>OK</returns>
-        /// <exception cref="ApiException">A server side error occurred.</exception>
+        /// <exception cref="SonarApiException">A server side error occurred.</exception>
         public virtual async System.Threading.Tasks.Task SnoozeTargetDeviceAsync(System.Threading.CancellationToken cancellationToken)
         {
             var client_ = _httpClient;
@@ -6751,7 +6751,7 @@ namespace Wedol.SteelSeries.Sonar
                         else
                         {
                             var responseData_ = response_.Content == null ? null : await ReadAsStringAsync(response_.Content, cancellationToken).ConfigureAwait(false);
-                            throw new ApiException("The HTTP status code of the response was not expected (" + status_ + ").", status_, responseData_, headers_, null);
+                            throw new SonarApiException("The HTTP status code of the response was not expected (" + status_ + ").", status_, responseData_, headers_, null);
                         }
                     }
                     finally
@@ -6769,7 +6769,7 @@ namespace Wedol.SteelSeries.Sonar
         }
 
         /// <returns>OK</returns>
-        /// <exception cref="ApiException">A server side error occurred.</exception>
+        /// <exception cref="SonarApiException">A server side error occurred.</exception>
         public virtual System.Threading.Tasks.Task<VolumeInfo> ClassicAsync()
         {
             return ClassicAsync(System.Threading.CancellationToken.None);
@@ -6777,7 +6777,7 @@ namespace Wedol.SteelSeries.Sonar
 
         /// <param name="cancellationToken">A cancellation token that can be used by other objects or threads to receive notice of cancellation.</param>
         /// <returns>OK</returns>
-        /// <exception cref="ApiException">A server side error occurred.</exception>
+        /// <exception cref="SonarApiException">A server side error occurred.</exception>
         public virtual async System.Threading.Tasks.Task<VolumeInfo> ClassicAsync(System.Threading.CancellationToken cancellationToken)
         {
             var client_ = _httpClient;
@@ -6822,14 +6822,14 @@ namespace Wedol.SteelSeries.Sonar
                             var objectResponse_ = await ReadObjectResponseAsync<VolumeInfo>(response_, headers_, cancellationToken).ConfigureAwait(false);
                             if (objectResponse_.Object == null)
                             {
-                                throw new ApiException("Response was null which was not expected.", status_, objectResponse_.Text, headers_, null);
+                                throw new SonarApiException("Response was null which was not expected.", status_, objectResponse_.Text, headers_, null);
                             }
                             return objectResponse_.Object;
                         }
                         else
                         {
                             var responseData_ = response_.Content == null ? null : await ReadAsStringAsync(response_.Content, cancellationToken).ConfigureAwait(false);
-                            throw new ApiException("The HTTP status code of the response was not expected (" + status_ + ").", status_, responseData_, headers_, null);
+                            throw new SonarApiException("The HTTP status code of the response was not expected (" + status_ + ").", status_, responseData_, headers_, null);
                         }
                     }
                     finally
@@ -6847,7 +6847,7 @@ namespace Wedol.SteelSeries.Sonar
         }
 
         /// <returns>OK</returns>
-        /// <exception cref="ApiException">A server side error occurred.</exception>
+        /// <exception cref="SonarApiException">A server side error occurred.</exception>
         public virtual System.Threading.Tasks.Task<VolumeInfo> VolumeAsync(float masterVolume)
         {
             return VolumeAsync(masterVolume, System.Threading.CancellationToken.None);
@@ -6855,7 +6855,7 @@ namespace Wedol.SteelSeries.Sonar
 
         /// <param name="cancellationToken">A cancellation token that can be used by other objects or threads to receive notice of cancellation.</param>
         /// <returns>OK</returns>
-        /// <exception cref="ApiException">A server side error occurred.</exception>
+        /// <exception cref="SonarApiException">A server side error occurred.</exception>
         public virtual async System.Threading.Tasks.Task<VolumeInfo> VolumeAsync(float masterVolume, System.Threading.CancellationToken cancellationToken)
         {
             if (masterVolume == null)
@@ -6905,14 +6905,14 @@ namespace Wedol.SteelSeries.Sonar
                             var objectResponse_ = await ReadObjectResponseAsync<VolumeInfo>(response_, headers_, cancellationToken).ConfigureAwait(false);
                             if (objectResponse_.Object == null)
                             {
-                                throw new ApiException("Response was null which was not expected.", status_, objectResponse_.Text, headers_, null);
+                                throw new SonarApiException("Response was null which was not expected.", status_, objectResponse_.Text, headers_, null);
                             }
                             return objectResponse_.Object;
                         }
                         else
                         {
                             var responseData_ = response_.Content == null ? null : await ReadAsStringAsync(response_.Content, cancellationToken).ConfigureAwait(false);
-                            throw new ApiException("The HTTP status code of the response was not expected (" + status_ + ").", status_, responseData_, headers_, null);
+                            throw new SonarApiException("The HTTP status code of the response was not expected (" + status_ + ").", status_, responseData_, headers_, null);
                         }
                     }
                     finally
@@ -6930,7 +6930,7 @@ namespace Wedol.SteelSeries.Sonar
         }
 
         /// <returns>OK</returns>
-        /// <exception cref="ApiException">A server side error occurred.</exception>
+        /// <exception cref="SonarApiException">A server side error occurred.</exception>
         public virtual System.Threading.Tasks.Task<VolumeInfo> MuteAsync(bool masterMute)
         {
             return MuteAsync(masterMute, System.Threading.CancellationToken.None);
@@ -6938,7 +6938,7 @@ namespace Wedol.SteelSeries.Sonar
 
         /// <param name="cancellationToken">A cancellation token that can be used by other objects or threads to receive notice of cancellation.</param>
         /// <returns>OK</returns>
-        /// <exception cref="ApiException">A server side error occurred.</exception>
+        /// <exception cref="SonarApiException">A server side error occurred.</exception>
         public virtual async System.Threading.Tasks.Task<VolumeInfo> MuteAsync(bool masterMute, System.Threading.CancellationToken cancellationToken)
         {
             if (masterMute == null)
@@ -6988,14 +6988,14 @@ namespace Wedol.SteelSeries.Sonar
                             var objectResponse_ = await ReadObjectResponseAsync<VolumeInfo>(response_, headers_, cancellationToken).ConfigureAwait(false);
                             if (objectResponse_.Object == null)
                             {
-                                throw new ApiException("Response was null which was not expected.", status_, objectResponse_.Text, headers_, null);
+                                throw new SonarApiException("Response was null which was not expected.", status_, objectResponse_.Text, headers_, null);
                             }
                             return objectResponse_.Object;
                         }
                         else
                         {
                             var responseData_ = response_.Content == null ? null : await ReadAsStringAsync(response_.Content, cancellationToken).ConfigureAwait(false);
-                            throw new ApiException("The HTTP status code of the response was not expected (" + status_ + ").", status_, responseData_, headers_, null);
+                            throw new SonarApiException("The HTTP status code of the response was not expected (" + status_ + ").", status_, responseData_, headers_, null);
                         }
                     }
                     finally
@@ -7013,7 +7013,7 @@ namespace Wedol.SteelSeries.Sonar
         }
 
         /// <returns>OK</returns>
-        /// <exception cref="ApiException">A server side error occurred.</exception>
+        /// <exception cref="SonarApiException">A server side error occurred.</exception>
         public virtual System.Threading.Tasks.Task<VolumeInfo> Volume2Async(DeviceRole role, float volume)
         {
             return Volume2Async(role, volume, System.Threading.CancellationToken.None);
@@ -7021,7 +7021,7 @@ namespace Wedol.SteelSeries.Sonar
 
         /// <param name="cancellationToken">A cancellation token that can be used by other objects or threads to receive notice of cancellation.</param>
         /// <returns>OK</returns>
-        /// <exception cref="ApiException">A server side error occurred.</exception>
+        /// <exception cref="SonarApiException">A server side error occurred.</exception>
         public virtual async System.Threading.Tasks.Task<VolumeInfo> Volume2Async(DeviceRole role, float volume, System.Threading.CancellationToken cancellationToken)
         {
             if (role == null)
@@ -7076,14 +7076,14 @@ namespace Wedol.SteelSeries.Sonar
                             var objectResponse_ = await ReadObjectResponseAsync<VolumeInfo>(response_, headers_, cancellationToken).ConfigureAwait(false);
                             if (objectResponse_.Object == null)
                             {
-                                throw new ApiException("Response was null which was not expected.", status_, objectResponse_.Text, headers_, null);
+                                throw new SonarApiException("Response was null which was not expected.", status_, objectResponse_.Text, headers_, null);
                             }
                             return objectResponse_.Object;
                         }
                         else
                         {
                             var responseData_ = response_.Content == null ? null : await ReadAsStringAsync(response_.Content, cancellationToken).ConfigureAwait(false);
-                            throw new ApiException("The HTTP status code of the response was not expected (" + status_ + ").", status_, responseData_, headers_, null);
+                            throw new SonarApiException("The HTTP status code of the response was not expected (" + status_ + ").", status_, responseData_, headers_, null);
                         }
                     }
                     finally
@@ -7101,7 +7101,7 @@ namespace Wedol.SteelSeries.Sonar
         }
 
         /// <returns>OK</returns>
-        /// <exception cref="ApiException">A server side error occurred.</exception>
+        /// <exception cref="SonarApiException">A server side error occurred.</exception>
         public virtual System.Threading.Tasks.Task<VolumeInfo> Mute2Async(DeviceRole role, bool mute)
         {
             return Mute2Async(role, mute, System.Threading.CancellationToken.None);
@@ -7109,7 +7109,7 @@ namespace Wedol.SteelSeries.Sonar
 
         /// <param name="cancellationToken">A cancellation token that can be used by other objects or threads to receive notice of cancellation.</param>
         /// <returns>OK</returns>
-        /// <exception cref="ApiException">A server side error occurred.</exception>
+        /// <exception cref="SonarApiException">A server side error occurred.</exception>
         public virtual async System.Threading.Tasks.Task<VolumeInfo> Mute2Async(DeviceRole role, bool mute, System.Threading.CancellationToken cancellationToken)
         {
             if (role == null)
@@ -7164,14 +7164,14 @@ namespace Wedol.SteelSeries.Sonar
                             var objectResponse_ = await ReadObjectResponseAsync<VolumeInfo>(response_, headers_, cancellationToken).ConfigureAwait(false);
                             if (objectResponse_.Object == null)
                             {
-                                throw new ApiException("Response was null which was not expected.", status_, objectResponse_.Text, headers_, null);
+                                throw new SonarApiException("Response was null which was not expected.", status_, objectResponse_.Text, headers_, null);
                             }
                             return objectResponse_.Object;
                         }
                         else
                         {
                             var responseData_ = response_.Content == null ? null : await ReadAsStringAsync(response_.Content, cancellationToken).ConfigureAwait(false);
-                            throw new ApiException("The HTTP status code of the response was not expected (" + status_ + ").", status_, responseData_, headers_, null);
+                            throw new SonarApiException("The HTTP status code of the response was not expected (" + status_ + ").", status_, responseData_, headers_, null);
                         }
                     }
                     finally
@@ -7189,7 +7189,7 @@ namespace Wedol.SteelSeries.Sonar
         }
 
         /// <returns>OK</returns>
-        /// <exception cref="ApiException">A server side error occurred.</exception>
+        /// <exception cref="SonarApiException">A server side error occurred.</exception>
         public virtual System.Threading.Tasks.Task<VolumeInfo> StreamerAsync()
         {
             return StreamerAsync(System.Threading.CancellationToken.None);
@@ -7197,7 +7197,7 @@ namespace Wedol.SteelSeries.Sonar
 
         /// <param name="cancellationToken">A cancellation token that can be used by other objects or threads to receive notice of cancellation.</param>
         /// <returns>OK</returns>
-        /// <exception cref="ApiException">A server side error occurred.</exception>
+        /// <exception cref="SonarApiException">A server side error occurred.</exception>
         public virtual async System.Threading.Tasks.Task<VolumeInfo> StreamerAsync(System.Threading.CancellationToken cancellationToken)
         {
             var client_ = _httpClient;
@@ -7242,14 +7242,14 @@ namespace Wedol.SteelSeries.Sonar
                             var objectResponse_ = await ReadObjectResponseAsync<VolumeInfo>(response_, headers_, cancellationToken).ConfigureAwait(false);
                             if (objectResponse_.Object == null)
                             {
-                                throw new ApiException("Response was null which was not expected.", status_, objectResponse_.Text, headers_, null);
+                                throw new SonarApiException("Response was null which was not expected.", status_, objectResponse_.Text, headers_, null);
                             }
                             return objectResponse_.Object;
                         }
                         else
                         {
                             var responseData_ = response_.Content == null ? null : await ReadAsStringAsync(response_.Content, cancellationToken).ConfigureAwait(false);
-                            throw new ApiException("The HTTP status code of the response was not expected (" + status_ + ").", status_, responseData_, headers_, null);
+                            throw new SonarApiException("The HTTP status code of the response was not expected (" + status_ + ").", status_, responseData_, headers_, null);
                         }
                     }
                     finally
@@ -7267,7 +7267,7 @@ namespace Wedol.SteelSeries.Sonar
         }
 
         /// <returns>OK</returns>
-        /// <exception cref="ApiException">A server side error occurred.</exception>
+        /// <exception cref="SonarApiException">A server side error occurred.</exception>
         public virtual System.Threading.Tasks.Task<VolumeInfo> VolumePUT2Async(StreamRedirectionId id, float masterVolume)
         {
             return VolumePUT2Async(id, masterVolume, System.Threading.CancellationToken.None);
@@ -7275,7 +7275,7 @@ namespace Wedol.SteelSeries.Sonar
 
         /// <param name="cancellationToken">A cancellation token that can be used by other objects or threads to receive notice of cancellation.</param>
         /// <returns>OK</returns>
-        /// <exception cref="ApiException">A server side error occurred.</exception>
+        /// <exception cref="SonarApiException">A server side error occurred.</exception>
         public virtual async System.Threading.Tasks.Task<VolumeInfo> VolumePUT2Async(StreamRedirectionId id, float masterVolume, System.Threading.CancellationToken cancellationToken)
         {
             if (id == null)
@@ -7330,14 +7330,14 @@ namespace Wedol.SteelSeries.Sonar
                             var objectResponse_ = await ReadObjectResponseAsync<VolumeInfo>(response_, headers_, cancellationToken).ConfigureAwait(false);
                             if (objectResponse_.Object == null)
                             {
-                                throw new ApiException("Response was null which was not expected.", status_, objectResponse_.Text, headers_, null);
+                                throw new SonarApiException("Response was null which was not expected.", status_, objectResponse_.Text, headers_, null);
                             }
                             return objectResponse_.Object;
                         }
                         else
                         {
                             var responseData_ = response_.Content == null ? null : await ReadAsStringAsync(response_.Content, cancellationToken).ConfigureAwait(false);
-                            throw new ApiException("The HTTP status code of the response was not expected (" + status_ + ").", status_, responseData_, headers_, null);
+                            throw new SonarApiException("The HTTP status code of the response was not expected (" + status_ + ").", status_, responseData_, headers_, null);
                         }
                     }
                     finally
@@ -7355,7 +7355,7 @@ namespace Wedol.SteelSeries.Sonar
         }
 
         /// <returns>OK</returns>
-        /// <exception cref="ApiException">A server side error occurred.</exception>
+        /// <exception cref="SonarApiException">A server side error occurred.</exception>
         public virtual System.Threading.Tasks.Task<VolumeInfo> IsMutedAsync(StreamRedirectionId id, bool masterMute)
         {
             return IsMutedAsync(id, masterMute, System.Threading.CancellationToken.None);
@@ -7363,7 +7363,7 @@ namespace Wedol.SteelSeries.Sonar
 
         /// <param name="cancellationToken">A cancellation token that can be used by other objects or threads to receive notice of cancellation.</param>
         /// <returns>OK</returns>
-        /// <exception cref="ApiException">A server side error occurred.</exception>
+        /// <exception cref="SonarApiException">A server side error occurred.</exception>
         public virtual async System.Threading.Tasks.Task<VolumeInfo> IsMutedAsync(StreamRedirectionId id, bool masterMute, System.Threading.CancellationToken cancellationToken)
         {
             if (id == null)
@@ -7418,14 +7418,14 @@ namespace Wedol.SteelSeries.Sonar
                             var objectResponse_ = await ReadObjectResponseAsync<VolumeInfo>(response_, headers_, cancellationToken).ConfigureAwait(false);
                             if (objectResponse_.Object == null)
                             {
-                                throw new ApiException("Response was null which was not expected.", status_, objectResponse_.Text, headers_, null);
+                                throw new SonarApiException("Response was null which was not expected.", status_, objectResponse_.Text, headers_, null);
                             }
                             return objectResponse_.Object;
                         }
                         else
                         {
                             var responseData_ = response_.Content == null ? null : await ReadAsStringAsync(response_.Content, cancellationToken).ConfigureAwait(false);
-                            throw new ApiException("The HTTP status code of the response was not expected (" + status_ + ").", status_, responseData_, headers_, null);
+                            throw new SonarApiException("The HTTP status code of the response was not expected (" + status_ + ").", status_, responseData_, headers_, null);
                         }
                     }
                     finally
@@ -7443,7 +7443,7 @@ namespace Wedol.SteelSeries.Sonar
         }
 
         /// <returns>OK</returns>
-        /// <exception cref="ApiException">A server side error occurred.</exception>
+        /// <exception cref="SonarApiException">A server side error occurred.</exception>
         public virtual System.Threading.Tasks.Task<VolumeInfo> VolumePUT3Async(StreamRedirectionId id, DeviceRole role, float value)
         {
             return VolumePUT3Async(id, role, value, System.Threading.CancellationToken.None);
@@ -7451,7 +7451,7 @@ namespace Wedol.SteelSeries.Sonar
 
         /// <param name="cancellationToken">A cancellation token that can be used by other objects or threads to receive notice of cancellation.</param>
         /// <returns>OK</returns>
-        /// <exception cref="ApiException">A server side error occurred.</exception>
+        /// <exception cref="SonarApiException">A server side error occurred.</exception>
         public virtual async System.Threading.Tasks.Task<VolumeInfo> VolumePUT3Async(StreamRedirectionId id, DeviceRole role, float value, System.Threading.CancellationToken cancellationToken)
         {
             if (id == null)
@@ -7511,14 +7511,14 @@ namespace Wedol.SteelSeries.Sonar
                             var objectResponse_ = await ReadObjectResponseAsync<VolumeInfo>(response_, headers_, cancellationToken).ConfigureAwait(false);
                             if (objectResponse_.Object == null)
                             {
-                                throw new ApiException("Response was null which was not expected.", status_, objectResponse_.Text, headers_, null);
+                                throw new SonarApiException("Response was null which was not expected.", status_, objectResponse_.Text, headers_, null);
                             }
                             return objectResponse_.Object;
                         }
                         else
                         {
                             var responseData_ = response_.Content == null ? null : await ReadAsStringAsync(response_.Content, cancellationToken).ConfigureAwait(false);
-                            throw new ApiException("The HTTP status code of the response was not expected (" + status_ + ").", status_, responseData_, headers_, null);
+                            throw new SonarApiException("The HTTP status code of the response was not expected (" + status_ + ").", status_, responseData_, headers_, null);
                         }
                     }
                     finally
@@ -7536,7 +7536,7 @@ namespace Wedol.SteelSeries.Sonar
         }
 
         /// <returns>OK</returns>
-        /// <exception cref="ApiException">A server side error occurred.</exception>
+        /// <exception cref="SonarApiException">A server side error occurred.</exception>
         public virtual System.Threading.Tasks.Task<VolumeInfo> IsMuted2Async(StreamRedirectionId id, DeviceRole role, bool value)
         {
             return IsMuted2Async(id, role, value, System.Threading.CancellationToken.None);
@@ -7544,7 +7544,7 @@ namespace Wedol.SteelSeries.Sonar
 
         /// <param name="cancellationToken">A cancellation token that can be used by other objects or threads to receive notice of cancellation.</param>
         /// <returns>OK</returns>
-        /// <exception cref="ApiException">A server side error occurred.</exception>
+        /// <exception cref="SonarApiException">A server side error occurred.</exception>
         public virtual async System.Threading.Tasks.Task<VolumeInfo> IsMuted2Async(StreamRedirectionId id, DeviceRole role, bool value, System.Threading.CancellationToken cancellationToken)
         {
             if (id == null)
@@ -7604,14 +7604,14 @@ namespace Wedol.SteelSeries.Sonar
                             var objectResponse_ = await ReadObjectResponseAsync<VolumeInfo>(response_, headers_, cancellationToken).ConfigureAwait(false);
                             if (objectResponse_.Object == null)
                             {
-                                throw new ApiException("Response was null which was not expected.", status_, objectResponse_.Text, headers_, null);
+                                throw new SonarApiException("Response was null which was not expected.", status_, objectResponse_.Text, headers_, null);
                             }
                             return objectResponse_.Object;
                         }
                         else
                         {
                             var responseData_ = response_.Content == null ? null : await ReadAsStringAsync(response_.Content, cancellationToken).ConfigureAwait(false);
-                            throw new ApiException("The HTTP status code of the response was not expected (" + status_ + ").", status_, responseData_, headers_, null);
+                            throw new SonarApiException("The HTTP status code of the response was not expected (" + status_ + ").", status_, responseData_, headers_, null);
                         }
                     }
                     finally
@@ -7629,7 +7629,7 @@ namespace Wedol.SteelSeries.Sonar
         }
 
         /// <returns>OK</returns>
-        /// <exception cref="ApiException">A server side error occurred.</exception>
+        /// <exception cref="SonarApiException">A server side error occurred.</exception>
         public virtual System.Threading.Tasks.Task<AppStatus> StatusAsync()
         {
             return StatusAsync(System.Threading.CancellationToken.None);
@@ -7637,7 +7637,7 @@ namespace Wedol.SteelSeries.Sonar
 
         /// <param name="cancellationToken">A cancellation token that can be used by other objects or threads to receive notice of cancellation.</param>
         /// <returns>OK</returns>
-        /// <exception cref="ApiException">A server side error occurred.</exception>
+        /// <exception cref="SonarApiException">A server side error occurred.</exception>
         public virtual async System.Threading.Tasks.Task<AppStatus> StatusAsync(System.Threading.CancellationToken cancellationToken)
         {
             var client_ = _httpClient;
@@ -7682,14 +7682,14 @@ namespace Wedol.SteelSeries.Sonar
                             var objectResponse_ = await ReadObjectResponseAsync<AppStatus>(response_, headers_, cancellationToken).ConfigureAwait(false);
                             if (objectResponse_.Object == null)
                             {
-                                throw new ApiException("Response was null which was not expected.", status_, objectResponse_.Text, headers_, null);
+                                throw new SonarApiException("Response was null which was not expected.", status_, objectResponse_.Text, headers_, null);
                             }
                             return objectResponse_.Object;
                         }
                         else
                         {
                             var responseData_ = response_.Content == null ? null : await ReadAsStringAsync(response_.Content, cancellationToken).ConfigureAwait(false);
-                            throw new ApiException("The HTTP status code of the response was not expected (" + status_ + ").", status_, responseData_, headers_, null);
+                            throw new SonarApiException("The HTTP status code of the response was not expected (" + status_ + ").", status_, responseData_, headers_, null);
                         }
                     }
                     finally
@@ -7707,7 +7707,7 @@ namespace Wedol.SteelSeries.Sonar
         }
 
         /// <returns>OK</returns>
-        /// <exception cref="ApiException">A server side error occurred.</exception>
+        /// <exception cref="SonarApiException">A server side error occurred.</exception>
         public virtual System.Threading.Tasks.Task<System.Collections.Generic.ICollection<StreamRedirection>> StreamRedirectionsAsync()
         {
             return StreamRedirectionsAsync(System.Threading.CancellationToken.None);
@@ -7715,7 +7715,7 @@ namespace Wedol.SteelSeries.Sonar
 
         /// <param name="cancellationToken">A cancellation token that can be used by other objects or threads to receive notice of cancellation.</param>
         /// <returns>OK</returns>
-        /// <exception cref="ApiException">A server side error occurred.</exception>
+        /// <exception cref="SonarApiException">A server side error occurred.</exception>
         public virtual async System.Threading.Tasks.Task<System.Collections.Generic.ICollection<StreamRedirection>> StreamRedirectionsAsync(System.Threading.CancellationToken cancellationToken)
         {
             var client_ = _httpClient;
@@ -7760,14 +7760,14 @@ namespace Wedol.SteelSeries.Sonar
                             var objectResponse_ = await ReadObjectResponseAsync<System.Collections.Generic.ICollection<StreamRedirection>>(response_, headers_, cancellationToken).ConfigureAwait(false);
                             if (objectResponse_.Object == null)
                             {
-                                throw new ApiException("Response was null which was not expected.", status_, objectResponse_.Text, headers_, null);
+                                throw new SonarApiException("Response was null which was not expected.", status_, objectResponse_.Text, headers_, null);
                             }
                             return objectResponse_.Object;
                         }
                         else
                         {
                             var responseData_ = response_.Content == null ? null : await ReadAsStringAsync(response_.Content, cancellationToken).ConfigureAwait(false);
-                            throw new ApiException("The HTTP status code of the response was not expected (" + status_ + ").", status_, responseData_, headers_, null);
+                            throw new SonarApiException("The HTTP status code of the response was not expected (" + status_ + ").", status_, responseData_, headers_, null);
                         }
                     }
                     finally
@@ -7785,7 +7785,7 @@ namespace Wedol.SteelSeries.Sonar
         }
 
         /// <returns>OK</returns>
-        /// <exception cref="ApiException">A server side error occurred.</exception>
+        /// <exception cref="SonarApiException">A server side error occurred.</exception>
         public virtual System.Threading.Tasks.Task<StreamRedirection> DeviceIdPUT2Async(StreamRedirectionId id, string deviceId)
         {
             return DeviceIdPUT2Async(id, deviceId, System.Threading.CancellationToken.None);
@@ -7793,7 +7793,7 @@ namespace Wedol.SteelSeries.Sonar
 
         /// <param name="cancellationToken">A cancellation token that can be used by other objects or threads to receive notice of cancellation.</param>
         /// <returns>OK</returns>
-        /// <exception cref="ApiException">A server side error occurred.</exception>
+        /// <exception cref="SonarApiException">A server side error occurred.</exception>
         public virtual async System.Threading.Tasks.Task<StreamRedirection> DeviceIdPUT2Async(StreamRedirectionId id, string deviceId, System.Threading.CancellationToken cancellationToken)
         {
             if (id == null)
@@ -7848,14 +7848,14 @@ namespace Wedol.SteelSeries.Sonar
                             var objectResponse_ = await ReadObjectResponseAsync<StreamRedirection>(response_, headers_, cancellationToken).ConfigureAwait(false);
                             if (objectResponse_.Object == null)
                             {
-                                throw new ApiException("Response was null which was not expected.", status_, objectResponse_.Text, headers_, null);
+                                throw new SonarApiException("Response was null which was not expected.", status_, objectResponse_.Text, headers_, null);
                             }
                             return objectResponse_.Object;
                         }
                         else
                         {
                             var responseData_ = response_.Content == null ? null : await ReadAsStringAsync(response_.Content, cancellationToken).ConfigureAwait(false);
-                            throw new ApiException("The HTTP status code of the response was not expected (" + status_ + ").", status_, responseData_, headers_, null);
+                            throw new SonarApiException("The HTTP status code of the response was not expected (" + status_ + ").", status_, responseData_, headers_, null);
                         }
                     }
                     finally
@@ -7873,7 +7873,7 @@ namespace Wedol.SteelSeries.Sonar
         }
 
         /// <returns>OK</returns>
-        /// <exception cref="ApiException">A server side error occurred.</exception>
+        /// <exception cref="SonarApiException">A server side error occurred.</exception>
         public virtual System.Threading.Tasks.Task<StreamRedirection> DeviceIdDELETE2Async(StreamRedirectionId id)
         {
             return DeviceIdDELETE2Async(id, System.Threading.CancellationToken.None);
@@ -7881,7 +7881,7 @@ namespace Wedol.SteelSeries.Sonar
 
         /// <param name="cancellationToken">A cancellation token that can be used by other objects or threads to receive notice of cancellation.</param>
         /// <returns>OK</returns>
-        /// <exception cref="ApiException">A server side error occurred.</exception>
+        /// <exception cref="SonarApiException">A server side error occurred.</exception>
         public virtual async System.Threading.Tasks.Task<StreamRedirection> DeviceIdDELETE2Async(StreamRedirectionId id, System.Threading.CancellationToken cancellationToken)
         {
             if (id == null)
@@ -7931,14 +7931,14 @@ namespace Wedol.SteelSeries.Sonar
                             var objectResponse_ = await ReadObjectResponseAsync<StreamRedirection>(response_, headers_, cancellationToken).ConfigureAwait(false);
                             if (objectResponse_.Object == null)
                             {
-                                throw new ApiException("Response was null which was not expected.", status_, objectResponse_.Text, headers_, null);
+                                throw new SonarApiException("Response was null which was not expected.", status_, objectResponse_.Text, headers_, null);
                             }
                             return objectResponse_.Object;
                         }
                         else
                         {
                             var responseData_ = response_.Content == null ? null : await ReadAsStringAsync(response_.Content, cancellationToken).ConfigureAwait(false);
-                            throw new ApiException("The HTTP status code of the response was not expected (" + status_ + ").", status_, responseData_, headers_, null);
+                            throw new SonarApiException("The HTTP status code of the response was not expected (" + status_ + ").", status_, responseData_, headers_, null);
                         }
                     }
                     finally
@@ -7956,7 +7956,7 @@ namespace Wedol.SteelSeries.Sonar
         }
 
         /// <returns>OK</returns>
-        /// <exception cref="ApiException">A server side error occurred.</exception>
+        /// <exception cref="SonarApiException">A server side error occurred.</exception>
         public virtual System.Threading.Tasks.Task<StreamRedirection> IsEnabledPUT6Async(StreamRedirectionId id, DeviceRole role, bool isEnabled)
         {
             return IsEnabledPUT6Async(id, role, isEnabled, System.Threading.CancellationToken.None);
@@ -7964,7 +7964,7 @@ namespace Wedol.SteelSeries.Sonar
 
         /// <param name="cancellationToken">A cancellation token that can be used by other objects or threads to receive notice of cancellation.</param>
         /// <returns>OK</returns>
-        /// <exception cref="ApiException">A server side error occurred.</exception>
+        /// <exception cref="SonarApiException">A server side error occurred.</exception>
         public virtual async System.Threading.Tasks.Task<StreamRedirection> IsEnabledPUT6Async(StreamRedirectionId id, DeviceRole role, bool isEnabled, System.Threading.CancellationToken cancellationToken)
         {
             if (id == null)
@@ -8024,14 +8024,14 @@ namespace Wedol.SteelSeries.Sonar
                             var objectResponse_ = await ReadObjectResponseAsync<StreamRedirection>(response_, headers_, cancellationToken).ConfigureAwait(false);
                             if (objectResponse_.Object == null)
                             {
-                                throw new ApiException("Response was null which was not expected.", status_, objectResponse_.Text, headers_, null);
+                                throw new SonarApiException("Response was null which was not expected.", status_, objectResponse_.Text, headers_, null);
                             }
                             return objectResponse_.Object;
                         }
                         else
                         {
                             var responseData_ = response_.Content == null ? null : await ReadAsStringAsync(response_.Content, cancellationToken).ConfigureAwait(false);
-                            throw new ApiException("The HTTP status code of the response was not expected (" + status_ + ").", status_, responseData_, headers_, null);
+                            throw new SonarApiException("The HTTP status code of the response was not expected (" + status_ + ").", status_, responseData_, headers_, null);
                         }
                     }
                     finally
@@ -8049,7 +8049,7 @@ namespace Wedol.SteelSeries.Sonar
         }
 
         /// <returns>OK</returns>
-        /// <exception cref="ApiException">A server side error occurred.</exception>
+        /// <exception cref="SonarApiException">A server side error occurred.</exception>
         public virtual System.Threading.Tasks.Task<bool> IsStreamMonitoringEnabledGETAsync()
         {
             return IsStreamMonitoringEnabledGETAsync(System.Threading.CancellationToken.None);
@@ -8057,7 +8057,7 @@ namespace Wedol.SteelSeries.Sonar
 
         /// <param name="cancellationToken">A cancellation token that can be used by other objects or threads to receive notice of cancellation.</param>
         /// <returns>OK</returns>
-        /// <exception cref="ApiException">A server side error occurred.</exception>
+        /// <exception cref="SonarApiException">A server side error occurred.</exception>
         public virtual async System.Threading.Tasks.Task<bool> IsStreamMonitoringEnabledGETAsync(System.Threading.CancellationToken cancellationToken)
         {
             var client_ = _httpClient;
@@ -8102,14 +8102,14 @@ namespace Wedol.SteelSeries.Sonar
                             var objectResponse_ = await ReadObjectResponseAsync<bool>(response_, headers_, cancellationToken).ConfigureAwait(false);
                             if (objectResponse_.Object == null)
                             {
-                                throw new ApiException("Response was null which was not expected.", status_, objectResponse_.Text, headers_, null);
+                                throw new SonarApiException("Response was null which was not expected.", status_, objectResponse_.Text, headers_, null);
                             }
                             return objectResponse_.Object;
                         }
                         else
                         {
                             var responseData_ = response_.Content == null ? null : await ReadAsStringAsync(response_.Content, cancellationToken).ConfigureAwait(false);
-                            throw new ApiException("The HTTP status code of the response was not expected (" + status_ + ").", status_, responseData_, headers_, null);
+                            throw new SonarApiException("The HTTP status code of the response was not expected (" + status_ + ").", status_, responseData_, headers_, null);
                         }
                     }
                     finally
@@ -8127,7 +8127,7 @@ namespace Wedol.SteelSeries.Sonar
         }
 
         /// <returns>OK</returns>
-        /// <exception cref="ApiException">A server side error occurred.</exception>
+        /// <exception cref="SonarApiException">A server side error occurred.</exception>
         public virtual System.Threading.Tasks.Task<bool> IsStreamMonitoringEnabledPUTAsync(bool isStreamMonitoringEnabled)
         {
             return IsStreamMonitoringEnabledPUTAsync(isStreamMonitoringEnabled, System.Threading.CancellationToken.None);
@@ -8135,7 +8135,7 @@ namespace Wedol.SteelSeries.Sonar
 
         /// <param name="cancellationToken">A cancellation token that can be used by other objects or threads to receive notice of cancellation.</param>
         /// <returns>OK</returns>
-        /// <exception cref="ApiException">A server side error occurred.</exception>
+        /// <exception cref="SonarApiException">A server side error occurred.</exception>
         public virtual async System.Threading.Tasks.Task<bool> IsStreamMonitoringEnabledPUTAsync(bool isStreamMonitoringEnabled, System.Threading.CancellationToken cancellationToken)
         {
             if (isStreamMonitoringEnabled == null)
@@ -8185,14 +8185,14 @@ namespace Wedol.SteelSeries.Sonar
                             var objectResponse_ = await ReadObjectResponseAsync<bool>(response_, headers_, cancellationToken).ConfigureAwait(false);
                             if (objectResponse_.Object == null)
                             {
-                                throw new ApiException("Response was null which was not expected.", status_, objectResponse_.Text, headers_, null);
+                                throw new SonarApiException("Response was null which was not expected.", status_, objectResponse_.Text, headers_, null);
                             }
                             return objectResponse_.Object;
                         }
                         else
                         {
                             var responseData_ = response_.Content == null ? null : await ReadAsStringAsync(response_.Content, cancellationToken).ConfigureAwait(false);
-                            throw new ApiException("The HTTP status code of the response was not expected (" + status_ + ").", status_, responseData_, headers_, null);
+                            throw new SonarApiException("The HTTP status code of the response was not expected (" + status_ + ").", status_, responseData_, headers_, null);
                         }
                     }
                     finally
@@ -8210,7 +8210,7 @@ namespace Wedol.SteelSeries.Sonar
         }
 
         /// <returns>OK</returns>
-        /// <exception cref="ApiException">A server side error occurred.</exception>
+        /// <exception cref="SonarApiException">A server side error occurred.</exception>
         public virtual System.Threading.Tasks.Task<bool> IsStreamMonitoringLockedAsync()
         {
             return IsStreamMonitoringLockedAsync(System.Threading.CancellationToken.None);
@@ -8218,7 +8218,7 @@ namespace Wedol.SteelSeries.Sonar
 
         /// <param name="cancellationToken">A cancellation token that can be used by other objects or threads to receive notice of cancellation.</param>
         /// <returns>OK</returns>
-        /// <exception cref="ApiException">A server side error occurred.</exception>
+        /// <exception cref="SonarApiException">A server side error occurred.</exception>
         public virtual async System.Threading.Tasks.Task<bool> IsStreamMonitoringLockedAsync(System.Threading.CancellationToken cancellationToken)
         {
             var client_ = _httpClient;
@@ -8263,14 +8263,14 @@ namespace Wedol.SteelSeries.Sonar
                             var objectResponse_ = await ReadObjectResponseAsync<bool>(response_, headers_, cancellationToken).ConfigureAwait(false);
                             if (objectResponse_.Object == null)
                             {
-                                throw new ApiException("Response was null which was not expected.", status_, objectResponse_.Text, headers_, null);
+                                throw new SonarApiException("Response was null which was not expected.", status_, objectResponse_.Text, headers_, null);
                             }
                             return objectResponse_.Object;
                         }
                         else
                         {
                             var responseData_ = response_.Content == null ? null : await ReadAsStringAsync(response_.Content, cancellationToken).ConfigureAwait(false);
-                            throw new ApiException("The HTTP status code of the response was not expected (" + status_ + ").", status_, responseData_, headers_, null);
+                            throw new SonarApiException("The HTTP status code of the response was not expected (" + status_ + ").", status_, responseData_, headers_, null);
                         }
                     }
                     finally
@@ -8288,7 +8288,7 @@ namespace Wedol.SteelSeries.Sonar
         }
 
         /// <returns>OK</returns>
-        /// <exception cref="ApiException">A server side error occurred.</exception>
+        /// <exception cref="SonarApiException">A server side error occurred.</exception>
         public virtual System.Threading.Tasks.Task<System.Collections.Generic.ICollection<DeviceVolume>> VolumesAsync()
         {
             return VolumesAsync(System.Threading.CancellationToken.None);
@@ -8296,7 +8296,7 @@ namespace Wedol.SteelSeries.Sonar
 
         /// <param name="cancellationToken">A cancellation token that can be used by other objects or threads to receive notice of cancellation.</param>
         /// <returns>OK</returns>
-        /// <exception cref="ApiException">A server side error occurred.</exception>
+        /// <exception cref="SonarApiException">A server side error occurred.</exception>
         public virtual async System.Threading.Tasks.Task<System.Collections.Generic.ICollection<DeviceVolume>> VolumesAsync(System.Threading.CancellationToken cancellationToken)
         {
             var client_ = _httpClient;
@@ -8341,14 +8341,14 @@ namespace Wedol.SteelSeries.Sonar
                             var objectResponse_ = await ReadObjectResponseAsync<System.Collections.Generic.ICollection<DeviceVolume>>(response_, headers_, cancellationToken).ConfigureAwait(false);
                             if (objectResponse_.Object == null)
                             {
-                                throw new ApiException("Response was null which was not expected.", status_, objectResponse_.Text, headers_, null);
+                                throw new SonarApiException("Response was null which was not expected.", status_, objectResponse_.Text, headers_, null);
                             }
                             return objectResponse_.Object;
                         }
                         else
                         {
                             var responseData_ = response_.Content == null ? null : await ReadAsStringAsync(response_.Content, cancellationToken).ConfigureAwait(false);
-                            throw new ApiException("The HTTP status code of the response was not expected (" + status_ + ").", status_, responseData_, headers_, null);
+                            throw new SonarApiException("The HTTP status code of the response was not expected (" + status_ + ").", status_, responseData_, headers_, null);
                         }
                     }
                     finally
@@ -8366,7 +8366,7 @@ namespace Wedol.SteelSeries.Sonar
         }
 
         /// <returns>OK</returns>
-        /// <exception cref="ApiException">A server side error occurred.</exception>
+        /// <exception cref="SonarApiException">A server side error occurred.</exception>
         public virtual System.Threading.Tasks.Task<float> VolumePUT4Async(string deviceId, float volume)
         {
             return VolumePUT4Async(deviceId, volume, System.Threading.CancellationToken.None);
@@ -8374,7 +8374,7 @@ namespace Wedol.SteelSeries.Sonar
 
         /// <param name="cancellationToken">A cancellation token that can be used by other objects or threads to receive notice of cancellation.</param>
         /// <returns>OK</returns>
-        /// <exception cref="ApiException">A server side error occurred.</exception>
+        /// <exception cref="SonarApiException">A server side error occurred.</exception>
         public virtual async System.Threading.Tasks.Task<float> VolumePUT4Async(string deviceId, float volume, System.Threading.CancellationToken cancellationToken)
         {
             if (deviceId == null)
@@ -8429,14 +8429,14 @@ namespace Wedol.SteelSeries.Sonar
                             var objectResponse_ = await ReadObjectResponseAsync<float>(response_, headers_, cancellationToken).ConfigureAwait(false);
                             if (objectResponse_.Object == null)
                             {
-                                throw new ApiException("Response was null which was not expected.", status_, objectResponse_.Text, headers_, null);
+                                throw new SonarApiException("Response was null which was not expected.", status_, objectResponse_.Text, headers_, null);
                             }
                             return objectResponse_.Object;
                         }
                         else
                         {
                             var responseData_ = response_.Content == null ? null : await ReadAsStringAsync(response_.Content, cancellationToken).ConfigureAwait(false);
-                            throw new ApiException("The HTTP status code of the response was not expected (" + status_ + ").", status_, responseData_, headers_, null);
+                            throw new SonarApiException("The HTTP status code of the response was not expected (" + status_ + ").", status_, responseData_, headers_, null);
                         }
                     }
                     finally
@@ -8506,7 +8506,7 @@ namespace Wedol.SteelSeries.Sonar
                 catch (System.Text.Json.JsonException exception)
                 {
                     var message = "Could not deserialize the response body string as " + typeof(T).FullName + ".";
-                    throw new ApiException(message, (int)response.StatusCode, responseText, headers, exception);
+                    throw new SonarApiException(message, (int)response.StatusCode, responseText, headers, exception);
                 }
             }
             else
@@ -8522,7 +8522,7 @@ namespace Wedol.SteelSeries.Sonar
                 catch (System.Text.Json.JsonException exception)
                 {
                     var message = "Could not deserialize the response body stream as " + typeof(T).FullName + ".";
-                    throw new ApiException(message, (int)response.StatusCode, string.Empty, headers, exception);
+                    throw new SonarApiException(message, (int)response.StatusCode, string.Empty, headers, exception);
                 }
             }
         }
