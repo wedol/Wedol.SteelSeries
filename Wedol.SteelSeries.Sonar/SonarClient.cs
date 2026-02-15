@@ -78,15 +78,15 @@ namespace Wedol.SteelSeries.Sonar
 
         /// <returns>OK</returns>
         /// <exception cref="SonarApiException">A server side error occurred.</exception>
-        public virtual System.Threading.Tasks.Task TrackAsync(AnalyticsEvent? body)
+        public virtual System.Threading.Tasks.Task PostAnalyticsTrackAsync(AnalyticsEvent? body)
         {
-            return TrackAsync(body, System.Threading.CancellationToken.None);
+            return PostAnalyticsTrackAsync(body, System.Threading.CancellationToken.None);
         }
 
         /// <param name="cancellationToken">A cancellation token that can be used by other objects or threads to receive notice of cancellation.</param>
         /// <returns>OK</returns>
         /// <exception cref="SonarApiException">A server side error occurred.</exception>
-        public virtual async System.Threading.Tasks.Task TrackAsync(AnalyticsEvent? body, System.Threading.CancellationToken cancellationToken)
+        public virtual async System.Threading.Tasks.Task PostAnalyticsTrackAsync(AnalyticsEvent? body, System.Threading.CancellationToken cancellationToken)
         {
             var client_ = _httpClient;
             var disposeClient_ = false;
@@ -154,15 +154,15 @@ namespace Wedol.SteelSeries.Sonar
 
         /// <returns>OK</returns>
         /// <exception cref="SonarApiException">A server side error occurred.</exception>
-        public virtual System.Threading.Tasks.Task<System.Collections.Generic.ICollection<DeviceAudioSessions>> AudioDeviceRoutingAllAsync()
+        public virtual System.Threading.Tasks.Task<System.Collections.Generic.ICollection<DeviceAudioSessions>> GetAudiodeviceroutingAsync()
         {
-            return AudioDeviceRoutingAllAsync(System.Threading.CancellationToken.None);
+            return GetAudiodeviceroutingAsync(System.Threading.CancellationToken.None);
         }
 
         /// <param name="cancellationToken">A cancellation token that can be used by other objects or threads to receive notice of cancellation.</param>
         /// <returns>OK</returns>
         /// <exception cref="SonarApiException">A server side error occurred.</exception>
-        public virtual async System.Threading.Tasks.Task<System.Collections.Generic.ICollection<DeviceAudioSessions>> AudioDeviceRoutingAllAsync(System.Threading.CancellationToken cancellationToken)
+        public virtual async System.Threading.Tasks.Task<System.Collections.Generic.ICollection<DeviceAudioSessions>> GetAudiodeviceroutingAsync(System.Threading.CancellationToken cancellationToken)
         {
             var client_ = _httpClient;
             var disposeClient_ = false;
@@ -232,15 +232,15 @@ namespace Wedol.SteelSeries.Sonar
 
         /// <returns>OK</returns>
         /// <exception cref="SonarApiException">A server side error occurred.</exception>
-        public virtual System.Threading.Tasks.Task<string> AudioDeviceRoutingGETAsync(DeviceDataFlow deviceDataFlow, int processId)
+        public virtual System.Threading.Tasks.Task<string> GetAudiodeviceroutingByDevicedataflowByProcessidAsync(DeviceDataFlow deviceDataFlow, int processId)
         {
-            return AudioDeviceRoutingGETAsync(deviceDataFlow, processId, System.Threading.CancellationToken.None);
+            return GetAudiodeviceroutingByDevicedataflowByProcessidAsync(deviceDataFlow, processId, System.Threading.CancellationToken.None);
         }
 
         /// <param name="cancellationToken">A cancellation token that can be used by other objects or threads to receive notice of cancellation.</param>
         /// <returns>OK</returns>
         /// <exception cref="SonarApiException">A server side error occurred.</exception>
-        public virtual async System.Threading.Tasks.Task<string> AudioDeviceRoutingGETAsync(DeviceDataFlow deviceDataFlow, int processId, System.Threading.CancellationToken cancellationToken)
+        public virtual async System.Threading.Tasks.Task<string> GetAudiodeviceroutingByDevicedataflowByProcessidAsync(DeviceDataFlow deviceDataFlow, int processId, System.Threading.CancellationToken cancellationToken)
         {
             if (deviceDataFlow == null)
                 throw new System.ArgumentNullException("deviceDataFlow");
@@ -319,15 +319,15 @@ namespace Wedol.SteelSeries.Sonar
 
         /// <returns>OK</returns>
         /// <exception cref="SonarApiException">A server side error occurred.</exception>
-        public virtual System.Threading.Tasks.Task AudioDeviceRoutingPUTAsync(DeviceDataFlow deviceDataFlow, string deviceId, int processId)
+        public virtual System.Threading.Tasks.Task PutAudiodeviceroutingByDevicedataflowByDeviceidByProcessidAsync(DeviceDataFlow deviceDataFlow, string deviceId, int processId)
         {
-            return AudioDeviceRoutingPUTAsync(deviceDataFlow, deviceId, processId, System.Threading.CancellationToken.None);
+            return PutAudiodeviceroutingByDevicedataflowByDeviceidByProcessidAsync(deviceDataFlow, deviceId, processId, System.Threading.CancellationToken.None);
         }
 
         /// <param name="cancellationToken">A cancellation token that can be used by other objects or threads to receive notice of cancellation.</param>
         /// <returns>OK</returns>
         /// <exception cref="SonarApiException">A server side error occurred.</exception>
-        public virtual async System.Threading.Tasks.Task AudioDeviceRoutingPUTAsync(DeviceDataFlow deviceDataFlow, string deviceId, int processId, System.Threading.CancellationToken cancellationToken)
+        public virtual async System.Threading.Tasks.Task PutAudiodeviceroutingByDevicedataflowByDeviceidByProcessidAsync(DeviceDataFlow deviceDataFlow, string deviceId, int processId, System.Threading.CancellationToken cancellationToken)
         {
             if (deviceDataFlow == null)
                 throw new System.ArgumentNullException("deviceDataFlow");
@@ -406,15 +406,15 @@ namespace Wedol.SteelSeries.Sonar
 
         /// <returns>OK</returns>
         /// <exception cref="SonarApiException">A server side error occurred.</exception>
-        public virtual System.Threading.Tasks.Task<System.Collections.Generic.ICollection<AudioDevice>> AudioDevicesAsync(DeviceDataFlow? deviceDataFlow, bool? onlySteelSeriesVAD, bool? removeSteelSeriesVAD)
+        public virtual System.Threading.Tasks.Task<System.Collections.Generic.ICollection<AudioDevice>> GetAudiodevicesAsync(DeviceDataFlow? deviceDataFlow, bool? onlySteelSeriesVAD, bool? removeSteelSeriesVAD)
         {
-            return AudioDevicesAsync(deviceDataFlow, onlySteelSeriesVAD, removeSteelSeriesVAD, System.Threading.CancellationToken.None);
+            return GetAudiodevicesAsync(deviceDataFlow, onlySteelSeriesVAD, removeSteelSeriesVAD, System.Threading.CancellationToken.None);
         }
 
         /// <param name="cancellationToken">A cancellation token that can be used by other objects or threads to receive notice of cancellation.</param>
         /// <returns>OK</returns>
         /// <exception cref="SonarApiException">A server side error occurred.</exception>
-        public virtual async System.Threading.Tasks.Task<System.Collections.Generic.ICollection<AudioDevice>> AudioDevicesAsync(DeviceDataFlow? deviceDataFlow, bool? onlySteelSeriesVAD, bool? removeSteelSeriesVAD, System.Threading.CancellationToken cancellationToken)
+        public virtual async System.Threading.Tasks.Task<System.Collections.Generic.ICollection<AudioDevice>> GetAudiodevicesAsync(DeviceDataFlow? deviceDataFlow, bool? onlySteelSeriesVAD, bool? removeSteelSeriesVAD, System.Threading.CancellationToken cancellationToken)
         {
             var client_ = _httpClient;
             var disposeClient_ = false;
@@ -498,15 +498,15 @@ namespace Wedol.SteelSeries.Sonar
 
         /// <returns>OK</returns>
         /// <exception cref="SonarApiException">A server side error occurred.</exception>
-        public virtual System.Threading.Tasks.Task IsEnabledPUTAsync(DeviceRole role, bool isEnabled)
+        public virtual System.Threading.Tasks.Task PutAudioinitializationByRoleIsenabledByIsenabledAsync(DeviceRole role, bool isEnabled)
         {
-            return IsEnabledPUTAsync(role, isEnabled, System.Threading.CancellationToken.None);
+            return PutAudioinitializationByRoleIsenabledByIsenabledAsync(role, isEnabled, System.Threading.CancellationToken.None);
         }
 
         /// <param name="cancellationToken">A cancellation token that can be used by other objects or threads to receive notice of cancellation.</param>
         /// <returns>OK</returns>
         /// <exception cref="SonarApiException">A server side error occurred.</exception>
-        public virtual async System.Threading.Tasks.Task IsEnabledPUTAsync(DeviceRole role, bool isEnabled, System.Threading.CancellationToken cancellationToken)
+        public virtual async System.Threading.Tasks.Task PutAudioinitializationByRoleIsenabledByIsenabledAsync(DeviceRole role, bool isEnabled, System.Threading.CancellationToken cancellationToken)
         {
             if (role == null)
                 throw new System.ArgumentNullException("role");
@@ -580,15 +580,15 @@ namespace Wedol.SteelSeries.Sonar
 
         /// <returns>OK</returns>
         /// <exception cref="SonarApiException">A server side error occurred.</exception>
-        public virtual System.Threading.Tasks.Task<System.Collections.Generic.ICollection<AudioSample>> SamplesAsync(DeviceRole? role)
+        public virtual System.Threading.Tasks.Task<System.Collections.Generic.ICollection<AudioSample>> GetAudiosamplesSamplesAsync(DeviceRole? role)
         {
-            return SamplesAsync(role, System.Threading.CancellationToken.None);
+            return GetAudiosamplesSamplesAsync(role, System.Threading.CancellationToken.None);
         }
 
         /// <param name="cancellationToken">A cancellation token that can be used by other objects or threads to receive notice of cancellation.</param>
         /// <returns>OK</returns>
         /// <exception cref="SonarApiException">A server side error occurred.</exception>
-        public virtual async System.Threading.Tasks.Task<System.Collections.Generic.ICollection<AudioSample>> SamplesAsync(DeviceRole? role, System.Threading.CancellationToken cancellationToken)
+        public virtual async System.Threading.Tasks.Task<System.Collections.Generic.ICollection<AudioSample>> GetAudiosamplesSamplesAsync(DeviceRole? role, System.Threading.CancellationToken cancellationToken)
         {
             var client_ = _httpClient;
             var disposeClient_ = false;
@@ -664,15 +664,15 @@ namespace Wedol.SteelSeries.Sonar
 
         /// <returns>OK</returns>
         /// <exception cref="SonarApiException">A server side error occurred.</exception>
-        public virtual System.Threading.Tasks.Task AudioSamplesAsync(DeviceRole role, string sampleId)
+        public virtual System.Threading.Tasks.Task PutAudiosamplesByRoleBySampleidAsync(DeviceRole role, string sampleId)
         {
-            return AudioSamplesAsync(role, sampleId, System.Threading.CancellationToken.None);
+            return PutAudiosamplesByRoleBySampleidAsync(role, sampleId, System.Threading.CancellationToken.None);
         }
 
         /// <param name="cancellationToken">A cancellation token that can be used by other objects or threads to receive notice of cancellation.</param>
         /// <returns>OK</returns>
         /// <exception cref="SonarApiException">A server side error occurred.</exception>
-        public virtual async System.Threading.Tasks.Task AudioSamplesAsync(DeviceRole role, string sampleId, System.Threading.CancellationToken cancellationToken)
+        public virtual async System.Threading.Tasks.Task PutAudiosamplesByRoleBySampleidAsync(DeviceRole role, string sampleId, System.Threading.CancellationToken cancellationToken)
         {
             if (role == null)
                 throw new System.ArgumentNullException("role");
@@ -746,15 +746,15 @@ namespace Wedol.SteelSeries.Sonar
 
         /// <returns>OK</returns>
         /// <exception cref="SonarApiException">A server side error occurred.</exception>
-        public virtual System.Threading.Tasks.Task<System.Collections.Generic.ICollection<AudioSample>> StopAsync(DeviceRole role)
+        public virtual System.Threading.Tasks.Task<System.Collections.Generic.ICollection<AudioSample>> PutAudiosamplesStopByRoleAsync(DeviceRole role)
         {
-            return StopAsync(role, System.Threading.CancellationToken.None);
+            return PutAudiosamplesStopByRoleAsync(role, System.Threading.CancellationToken.None);
         }
 
         /// <param name="cancellationToken">A cancellation token that can be used by other objects or threads to receive notice of cancellation.</param>
         /// <returns>OK</returns>
         /// <exception cref="SonarApiException">A server side error occurred.</exception>
-        public virtual async System.Threading.Tasks.Task<System.Collections.Generic.ICollection<AudioSample>> StopAsync(DeviceRole role, System.Threading.CancellationToken cancellationToken)
+        public virtual async System.Threading.Tasks.Task<System.Collections.Generic.ICollection<AudioSample>> PutAudiosamplesStopByRoleAsync(DeviceRole role, System.Threading.CancellationToken cancellationToken)
         {
             if (role == null)
                 throw new System.ArgumentNullException("role");
@@ -829,15 +829,15 @@ namespace Wedol.SteelSeries.Sonar
 
         /// <returns>OK</returns>
         /// <exception cref="SonarApiException">A server side error occurred.</exception>
-        public virtual System.Threading.Tasks.Task<bool> IsRecordingAsync()
+        public virtual System.Threading.Tasks.Task<bool> GetAudiosamplesIsrecordingAsync()
         {
-            return IsRecordingAsync(System.Threading.CancellationToken.None);
+            return GetAudiosamplesIsrecordingAsync(System.Threading.CancellationToken.None);
         }
 
         /// <param name="cancellationToken">A cancellation token that can be used by other objects or threads to receive notice of cancellation.</param>
         /// <returns>OK</returns>
         /// <exception cref="SonarApiException">A server side error occurred.</exception>
-        public virtual async System.Threading.Tasks.Task<bool> IsRecordingAsync(System.Threading.CancellationToken cancellationToken)
+        public virtual async System.Threading.Tasks.Task<bool> GetAudiosamplesIsrecordingAsync(System.Threading.CancellationToken cancellationToken)
         {
             var client_ = _httpClient;
             var disposeClient_ = false;
@@ -907,15 +907,15 @@ namespace Wedol.SteelSeries.Sonar
 
         /// <returns>OK</returns>
         /// <exception cref="SonarApiException">A server side error occurred.</exception>
-        public virtual System.Threading.Tasks.Task<bool> StartRecordAsync()
+        public virtual System.Threading.Tasks.Task<bool> PutAudiosamplesStartrecordAsync()
         {
-            return StartRecordAsync(System.Threading.CancellationToken.None);
+            return PutAudiosamplesStartrecordAsync(System.Threading.CancellationToken.None);
         }
 
         /// <param name="cancellationToken">A cancellation token that can be used by other objects or threads to receive notice of cancellation.</param>
         /// <returns>OK</returns>
         /// <exception cref="SonarApiException">A server side error occurred.</exception>
-        public virtual async System.Threading.Tasks.Task<bool> StartRecordAsync(System.Threading.CancellationToken cancellationToken)
+        public virtual async System.Threading.Tasks.Task<bool> PutAudiosamplesStartrecordAsync(System.Threading.CancellationToken cancellationToken)
         {
             var client_ = _httpClient;
             var disposeClient_ = false;
@@ -986,15 +986,15 @@ namespace Wedol.SteelSeries.Sonar
 
         /// <returns>OK</returns>
         /// <exception cref="SonarApiException">A server side error occurred.</exception>
-        public virtual System.Threading.Tasks.Task StopRecordAsync()
+        public virtual System.Threading.Tasks.Task PutAudiosamplesStoprecordAsync()
         {
-            return StopRecordAsync(System.Threading.CancellationToken.None);
+            return PutAudiosamplesStoprecordAsync(System.Threading.CancellationToken.None);
         }
 
         /// <param name="cancellationToken">A cancellation token that can be used by other objects or threads to receive notice of cancellation.</param>
         /// <returns>OK</returns>
         /// <exception cref="SonarApiException">A server side error occurred.</exception>
-        public virtual async System.Threading.Tasks.Task StopRecordAsync(System.Threading.CancellationToken cancellationToken)
+        public virtual async System.Threading.Tasks.Task PutAudiosamplesStoprecordAsync(System.Threading.CancellationToken cancellationToken)
         {
             var client_ = _httpClient;
             var disposeClient_ = false;
@@ -1059,15 +1059,15 @@ namespace Wedol.SteelSeries.Sonar
 
         /// <returns>OK</returns>
         /// <exception cref="SonarApiException">A server side error occurred.</exception>
-        public virtual System.Threading.Tasks.Task<System.Collections.Generic.ICollection<ClassicRedirection>> ClassicRedirectionsAsync()
+        public virtual System.Threading.Tasks.Task<System.Collections.Generic.ICollection<ClassicRedirection>> GetClassicredirectionsAsync()
         {
-            return ClassicRedirectionsAsync(System.Threading.CancellationToken.None);
+            return GetClassicredirectionsAsync(System.Threading.CancellationToken.None);
         }
 
         /// <param name="cancellationToken">A cancellation token that can be used by other objects or threads to receive notice of cancellation.</param>
         /// <returns>OK</returns>
         /// <exception cref="SonarApiException">A server side error occurred.</exception>
-        public virtual async System.Threading.Tasks.Task<System.Collections.Generic.ICollection<ClassicRedirection>> ClassicRedirectionsAsync(System.Threading.CancellationToken cancellationToken)
+        public virtual async System.Threading.Tasks.Task<System.Collections.Generic.ICollection<ClassicRedirection>> GetClassicredirectionsAsync(System.Threading.CancellationToken cancellationToken)
         {
             var client_ = _httpClient;
             var disposeClient_ = false;
@@ -1137,15 +1137,15 @@ namespace Wedol.SteelSeries.Sonar
 
         /// <returns>OK</returns>
         /// <exception cref="SonarApiException">A server side error occurred.</exception>
-        public virtual System.Threading.Tasks.Task<ClassicRedirection> DeviceIdPUTAsync(RedirectionId id, string deviceId)
+        public virtual System.Threading.Tasks.Task<ClassicRedirection> PutClassicredirectionsByIdDeviceidByDeviceidAsync(RedirectionId id, string deviceId)
         {
-            return DeviceIdPUTAsync(id, deviceId, System.Threading.CancellationToken.None);
+            return PutClassicredirectionsByIdDeviceidByDeviceidAsync(id, deviceId, System.Threading.CancellationToken.None);
         }
 
         /// <param name="cancellationToken">A cancellation token that can be used by other objects or threads to receive notice of cancellation.</param>
         /// <returns>OK</returns>
         /// <exception cref="SonarApiException">A server side error occurred.</exception>
-        public virtual async System.Threading.Tasks.Task<ClassicRedirection> DeviceIdPUTAsync(RedirectionId id, string deviceId, System.Threading.CancellationToken cancellationToken)
+        public virtual async System.Threading.Tasks.Task<ClassicRedirection> PutClassicredirectionsByIdDeviceidByDeviceidAsync(RedirectionId id, string deviceId, System.Threading.CancellationToken cancellationToken)
         {
             if (id == null)
                 throw new System.ArgumentNullException("id");
@@ -1225,15 +1225,15 @@ namespace Wedol.SteelSeries.Sonar
 
         /// <returns>OK</returns>
         /// <exception cref="SonarApiException">A server side error occurred.</exception>
-        public virtual System.Threading.Tasks.Task<System.Collections.Generic.ICollection<ClassicRedirection>> DeviceIdAllAsync(string deviceId)
+        public virtual System.Threading.Tasks.Task<System.Collections.Generic.ICollection<ClassicRedirection>> PutClassicredirectionsRenderDeviceidByDeviceidAsync(string deviceId)
         {
-            return DeviceIdAllAsync(deviceId, System.Threading.CancellationToken.None);
+            return PutClassicredirectionsRenderDeviceidByDeviceidAsync(deviceId, System.Threading.CancellationToken.None);
         }
 
         /// <param name="cancellationToken">A cancellation token that can be used by other objects or threads to receive notice of cancellation.</param>
         /// <returns>OK</returns>
         /// <exception cref="SonarApiException">A server side error occurred.</exception>
-        public virtual async System.Threading.Tasks.Task<System.Collections.Generic.ICollection<ClassicRedirection>> DeviceIdAllAsync(string deviceId, System.Threading.CancellationToken cancellationToken)
+        public virtual async System.Threading.Tasks.Task<System.Collections.Generic.ICollection<ClassicRedirection>> PutClassicredirectionsRenderDeviceidByDeviceidAsync(string deviceId, System.Threading.CancellationToken cancellationToken)
         {
             if (deviceId == null)
                 throw new System.ArgumentNullException("deviceId");
@@ -1308,15 +1308,15 @@ namespace Wedol.SteelSeries.Sonar
 
         /// <returns>OK</returns>
         /// <exception cref="SonarApiException">A server side error occurred.</exception>
-        public virtual System.Threading.Tasks.Task<ClassicRedirection> DeviceIdDELETEAsync(RedirectionId id)
+        public virtual System.Threading.Tasks.Task<ClassicRedirection> DeleteClassicredirectionsByIdDeviceidAsync(RedirectionId id)
         {
-            return DeviceIdDELETEAsync(id, System.Threading.CancellationToken.None);
+            return DeleteClassicredirectionsByIdDeviceidAsync(id, System.Threading.CancellationToken.None);
         }
 
         /// <param name="cancellationToken">A cancellation token that can be used by other objects or threads to receive notice of cancellation.</param>
         /// <returns>OK</returns>
         /// <exception cref="SonarApiException">A server side error occurred.</exception>
-        public virtual async System.Threading.Tasks.Task<ClassicRedirection> DeviceIdDELETEAsync(RedirectionId id, System.Threading.CancellationToken cancellationToken)
+        public virtual async System.Threading.Tasks.Task<ClassicRedirection> DeleteClassicredirectionsByIdDeviceidAsync(RedirectionId id, System.Threading.CancellationToken cancellationToken)
         {
             if (id == null)
                 throw new System.ArgumentNullException("id");
@@ -1391,15 +1391,15 @@ namespace Wedol.SteelSeries.Sonar
 
         /// <returns>OK</returns>
         /// <exception cref="SonarApiException">A server side error occurred.</exception>
-        public virtual System.Threading.Tasks.Task<ExportedConfigLink> ExportAsync(System.Guid id, ExportRequestData? body)
+        public virtual System.Threading.Tasks.Task<ExportedConfigLink> PostConfigsByIdExportAsync(System.Guid id, ExportRequestData? body)
         {
-            return ExportAsync(id, body, System.Threading.CancellationToken.None);
+            return PostConfigsByIdExportAsync(id, body, System.Threading.CancellationToken.None);
         }
 
         /// <param name="cancellationToken">A cancellation token that can be used by other objects or threads to receive notice of cancellation.</param>
         /// <returns>OK</returns>
         /// <exception cref="SonarApiException">A server side error occurred.</exception>
-        public virtual async System.Threading.Tasks.Task<ExportedConfigLink> ExportAsync(System.Guid id, ExportRequestData? body, System.Threading.CancellationToken cancellationToken)
+        public virtual async System.Threading.Tasks.Task<ExportedConfigLink> PostConfigsByIdExportAsync(System.Guid id, ExportRequestData? body, System.Threading.CancellationToken cancellationToken)
         {
             if (id == null)
                 throw new System.ArgumentNullException("id");
@@ -1478,15 +1478,15 @@ namespace Wedol.SteelSeries.Sonar
 
         /// <returns>OK</returns>
         /// <exception cref="SonarApiException">A server side error occurred.</exception>
-        public virtual System.Threading.Tasks.Task<SharedConfig> RetrieveFromUrlHashAsync(string? hash)
+        public virtual System.Threading.Tasks.Task<SharedConfig> GetConfigsRetrievefromurlhashAsync(string? hash)
         {
-            return RetrieveFromUrlHashAsync(hash, System.Threading.CancellationToken.None);
+            return GetConfigsRetrievefromurlhashAsync(hash, System.Threading.CancellationToken.None);
         }
 
         /// <param name="cancellationToken">A cancellation token that can be used by other objects or threads to receive notice of cancellation.</param>
         /// <returns>OK</returns>
         /// <exception cref="SonarApiException">A server side error occurred.</exception>
-        public virtual async System.Threading.Tasks.Task<SharedConfig> RetrieveFromUrlHashAsync(string? hash, System.Threading.CancellationToken cancellationToken)
+        public virtual async System.Threading.Tasks.Task<SharedConfig> GetConfigsRetrievefromurlhashAsync(string? hash, System.Threading.CancellationToken cancellationToken)
         {
             var client_ = _httpClient;
             var disposeClient_ = false;
@@ -1562,15 +1562,15 @@ namespace Wedol.SteelSeries.Sonar
 
         /// <returns>OK</returns>
         /// <exception cref="SonarApiException">A server side error occurred.</exception>
-        public virtual System.Threading.Tasks.Task<System.Collections.Generic.ICollection<Config>> ConfigsAllGETAsync(VirtualAudioDevice? vad)
+        public virtual System.Threading.Tasks.Task<System.Collections.Generic.ICollection<Config>> GetConfigsAsync(VirtualAudioDevice? vad)
         {
-            return ConfigsAllGETAsync(vad, System.Threading.CancellationToken.None);
+            return GetConfigsAsync(vad, System.Threading.CancellationToken.None);
         }
 
         /// <param name="cancellationToken">A cancellation token that can be used by other objects or threads to receive notice of cancellation.</param>
         /// <returns>OK</returns>
         /// <exception cref="SonarApiException">A server side error occurred.</exception>
-        public virtual async System.Threading.Tasks.Task<System.Collections.Generic.ICollection<Config>> ConfigsAllGETAsync(VirtualAudioDevice? vad, System.Threading.CancellationToken cancellationToken)
+        public virtual async System.Threading.Tasks.Task<System.Collections.Generic.ICollection<Config>> GetConfigsAsync(VirtualAudioDevice? vad, System.Threading.CancellationToken cancellationToken)
         {
             var client_ = _httpClient;
             var disposeClient_ = false;
@@ -1646,15 +1646,15 @@ namespace Wedol.SteelSeries.Sonar
 
         /// <returns>OK</returns>
         /// <exception cref="SonarApiException">A server side error occurred.</exception>
-        public virtual System.Threading.Tasks.Task<Config> ConfigsPOSTAsync(Config? body)
+        public virtual System.Threading.Tasks.Task<Config> PostConfigsAsync(Config? body)
         {
-            return ConfigsPOSTAsync(body, System.Threading.CancellationToken.None);
+            return PostConfigsAsync(body, System.Threading.CancellationToken.None);
         }
 
         /// <param name="cancellationToken">A cancellation token that can be used by other objects or threads to receive notice of cancellation.</param>
         /// <returns>OK</returns>
         /// <exception cref="SonarApiException">A server side error occurred.</exception>
-        public virtual async System.Threading.Tasks.Task<Config> ConfigsPOSTAsync(Config? body, System.Threading.CancellationToken cancellationToken)
+        public virtual async System.Threading.Tasks.Task<Config> PostConfigsAsync(Config? body, System.Threading.CancellationToken cancellationToken)
         {
             var client_ = _httpClient;
             var disposeClient_ = false;
@@ -1728,15 +1728,15 @@ namespace Wedol.SteelSeries.Sonar
 
         /// <returns>OK</returns>
         /// <exception cref="SonarApiException">A server side error occurred.</exception>
-        public virtual System.Threading.Tasks.Task<Config> ConfigsPUTAsync(Config? body)
+        public virtual System.Threading.Tasks.Task<Config> PutConfigsAsync(Config? body)
         {
-            return ConfigsPUTAsync(body, System.Threading.CancellationToken.None);
+            return PutConfigsAsync(body, System.Threading.CancellationToken.None);
         }
 
         /// <param name="cancellationToken">A cancellation token that can be used by other objects or threads to receive notice of cancellation.</param>
         /// <returns>OK</returns>
         /// <exception cref="SonarApiException">A server side error occurred.</exception>
-        public virtual async System.Threading.Tasks.Task<Config> ConfigsPUTAsync(Config? body, System.Threading.CancellationToken cancellationToken)
+        public virtual async System.Threading.Tasks.Task<Config> PutConfigsAsync(Config? body, System.Threading.CancellationToken cancellationToken)
         {
             var client_ = _httpClient;
             var disposeClient_ = false;
@@ -1810,15 +1810,15 @@ namespace Wedol.SteelSeries.Sonar
 
         /// <returns>OK</returns>
         /// <exception cref="SonarApiException">A server side error occurred.</exception>
-        public virtual System.Threading.Tasks.Task<System.Collections.Generic.ICollection<Config>> ConfigsAllDELETEAsync(System.Guid id)
+        public virtual System.Threading.Tasks.Task<System.Collections.Generic.ICollection<Config>> DeleteConfigsByIdAsync(System.Guid id)
         {
-            return ConfigsAllDELETEAsync(id, System.Threading.CancellationToken.None);
+            return DeleteConfigsByIdAsync(id, System.Threading.CancellationToken.None);
         }
 
         /// <param name="cancellationToken">A cancellation token that can be used by other objects or threads to receive notice of cancellation.</param>
         /// <returns>OK</returns>
         /// <exception cref="SonarApiException">A server side error occurred.</exception>
-        public virtual async System.Threading.Tasks.Task<System.Collections.Generic.ICollection<Config>> ConfigsAllDELETEAsync(System.Guid id, System.Threading.CancellationToken cancellationToken)
+        public virtual async System.Threading.Tasks.Task<System.Collections.Generic.ICollection<Config>> DeleteConfigsByIdAsync(System.Guid id, System.Threading.CancellationToken cancellationToken)
         {
             if (id == null)
                 throw new System.ArgumentNullException("id");
@@ -1892,15 +1892,15 @@ namespace Wedol.SteelSeries.Sonar
 
         /// <returns>OK</returns>
         /// <exception cref="SonarApiException">A server side error occurred.</exception>
-        public virtual System.Threading.Tasks.Task<System.Collections.Generic.ICollection<Config>> SelectedAllAsync()
+        public virtual System.Threading.Tasks.Task<System.Collections.Generic.ICollection<Config>> GetConfigsSelectedAsync()
         {
-            return SelectedAllAsync(System.Threading.CancellationToken.None);
+            return GetConfigsSelectedAsync(System.Threading.CancellationToken.None);
         }
 
         /// <param name="cancellationToken">A cancellation token that can be used by other objects or threads to receive notice of cancellation.</param>
         /// <returns>OK</returns>
         /// <exception cref="SonarApiException">A server side error occurred.</exception>
-        public virtual async System.Threading.Tasks.Task<System.Collections.Generic.ICollection<Config>> SelectedAllAsync(System.Threading.CancellationToken cancellationToken)
+        public virtual async System.Threading.Tasks.Task<System.Collections.Generic.ICollection<Config>> GetConfigsSelectedAsync(System.Threading.CancellationToken cancellationToken)
         {
             var client_ = _httpClient;
             var disposeClient_ = false;
@@ -1970,15 +1970,15 @@ namespace Wedol.SteelSeries.Sonar
 
         /// <returns>OK</returns>
         /// <exception cref="SonarApiException">A server side error occurred.</exception>
-        public virtual System.Threading.Tasks.Task<Config> SelectAsync(System.Guid id)
+        public virtual System.Threading.Tasks.Task<Config> PutConfigsByIdSelectAsync(System.Guid id)
         {
-            return SelectAsync(id, System.Threading.CancellationToken.None);
+            return PutConfigsByIdSelectAsync(id, System.Threading.CancellationToken.None);
         }
 
         /// <param name="cancellationToken">A cancellation token that can be used by other objects or threads to receive notice of cancellation.</param>
         /// <returns>OK</returns>
         /// <exception cref="SonarApiException">A server side error occurred.</exception>
-        public virtual async System.Threading.Tasks.Task<Config> SelectAsync(System.Guid id, System.Threading.CancellationToken cancellationToken)
+        public virtual async System.Threading.Tasks.Task<Config> PutConfigsByIdSelectAsync(System.Guid id, System.Threading.CancellationToken cancellationToken)
         {
             if (id == null)
                 throw new System.ArgumentNullException("id");
@@ -2054,15 +2054,15 @@ namespace Wedol.SteelSeries.Sonar
 
         /// <returns>OK</returns>
         /// <exception cref="SonarApiException">A server side error occurred.</exception>
-        public virtual System.Threading.Tasks.Task<VadConfig> DefaultAsync(VirtualAudioDevice? virtualAudioDevice)
+        public virtual System.Threading.Tasks.Task<VadConfig> GetConfigsDefaultAsync(VirtualAudioDevice? virtualAudioDevice)
         {
-            return DefaultAsync(virtualAudioDevice, System.Threading.CancellationToken.None);
+            return GetConfigsDefaultAsync(virtualAudioDevice, System.Threading.CancellationToken.None);
         }
 
         /// <param name="cancellationToken">A cancellation token that can be used by other objects or threads to receive notice of cancellation.</param>
         /// <returns>OK</returns>
         /// <exception cref="SonarApiException">A server side error occurred.</exception>
-        public virtual async System.Threading.Tasks.Task<VadConfig> DefaultAsync(VirtualAudioDevice? virtualAudioDevice, System.Threading.CancellationToken cancellationToken)
+        public virtual async System.Threading.Tasks.Task<VadConfig> GetConfigsDefaultAsync(VirtualAudioDevice? virtualAudioDevice, System.Threading.CancellationToken cancellationToken)
         {
             var client_ = _httpClient;
             var disposeClient_ = false;
@@ -2138,15 +2138,15 @@ namespace Wedol.SteelSeries.Sonar
 
         /// <returns>OK</returns>
         /// <exception cref="SonarApiException">A server side error occurred.</exception>
-        public virtual System.Threading.Tasks.Task<System.Collections.Generic.ICollection<Config>> IsFavoriteAsync(System.Guid id, bool isFavorite)
+        public virtual System.Threading.Tasks.Task<System.Collections.Generic.ICollection<Config>> PostConfigsByIdIsfavoriteByIsfavoriteAsync(System.Guid id, bool isFavorite)
         {
-            return IsFavoriteAsync(id, isFavorite, System.Threading.CancellationToken.None);
+            return PostConfigsByIdIsfavoriteByIsfavoriteAsync(id, isFavorite, System.Threading.CancellationToken.None);
         }
 
         /// <param name="cancellationToken">A cancellation token that can be used by other objects or threads to receive notice of cancellation.</param>
         /// <returns>OK</returns>
         /// <exception cref="SonarApiException">A server side error occurred.</exception>
-        public virtual async System.Threading.Tasks.Task<System.Collections.Generic.ICollection<Config>> IsFavoriteAsync(System.Guid id, bool isFavorite, System.Threading.CancellationToken cancellationToken)
+        public virtual async System.Threading.Tasks.Task<System.Collections.Generic.ICollection<Config>> PostConfigsByIdIsfavoriteByIsfavoriteAsync(System.Guid id, bool isFavorite, System.Threading.CancellationToken cancellationToken)
         {
             if (id == null)
                 throw new System.ArgumentNullException("id");
@@ -2226,15 +2226,15 @@ namespace Wedol.SteelSeries.Sonar
 
         /// <returns>OK</returns>
         /// <exception cref="SonarApiException">A server side error occurred.</exception>
-        public virtual System.Threading.Tasks.Task<System.Collections.Generic.ICollection<Config>> SetFavoritePositionAsync(System.Guid id, int position)
+        public virtual System.Threading.Tasks.Task<System.Collections.Generic.ICollection<Config>> PostConfigsByIdSetfavoritepositionByPositionAsync(System.Guid id, int position)
         {
-            return SetFavoritePositionAsync(id, position, System.Threading.CancellationToken.None);
+            return PostConfigsByIdSetfavoritepositionByPositionAsync(id, position, System.Threading.CancellationToken.None);
         }
 
         /// <param name="cancellationToken">A cancellation token that can be used by other objects or threads to receive notice of cancellation.</param>
         /// <returns>OK</returns>
         /// <exception cref="SonarApiException">A server side error occurred.</exception>
-        public virtual async System.Threading.Tasks.Task<System.Collections.Generic.ICollection<Config>> SetFavoritePositionAsync(System.Guid id, int position, System.Threading.CancellationToken cancellationToken)
+        public virtual async System.Threading.Tasks.Task<System.Collections.Generic.ICollection<Config>> PostConfigsByIdSetfavoritepositionByPositionAsync(System.Guid id, int position, System.Threading.CancellationToken cancellationToken)
         {
             if (id == null)
                 throw new System.ArgumentNullException("id");
@@ -2314,15 +2314,15 @@ namespace Wedol.SteelSeries.Sonar
 
         /// <returns>OK</returns>
         /// <exception cref="SonarApiException">A server side error occurred.</exception>
-        public virtual System.Threading.Tasks.Task<System.Collections.Generic.ICollection<ConfigOption>> OptionsAsync()
+        public virtual System.Threading.Tasks.Task<System.Collections.Generic.ICollection<ConfigOption>> GetConfigsOptionsAsync()
         {
-            return OptionsAsync(System.Threading.CancellationToken.None);
+            return GetConfigsOptionsAsync(System.Threading.CancellationToken.None);
         }
 
         /// <param name="cancellationToken">A cancellation token that can be used by other objects or threads to receive notice of cancellation.</param>
         /// <returns>OK</returns>
         /// <exception cref="SonarApiException">A server side error occurred.</exception>
-        public virtual async System.Threading.Tasks.Task<System.Collections.Generic.ICollection<ConfigOption>> OptionsAsync(System.Threading.CancellationToken cancellationToken)
+        public virtual async System.Threading.Tasks.Task<System.Collections.Generic.ICollection<ConfigOption>> GetConfigsOptionsAsync(System.Threading.CancellationToken cancellationToken)
         {
             var client_ = _httpClient;
             var disposeClient_ = false;
@@ -2392,15 +2392,15 @@ namespace Wedol.SteelSeries.Sonar
 
         /// <returns>OK</returns>
         /// <exception cref="SonarApiException">A server side error occurred.</exception>
-        public virtual System.Threading.Tasks.Task<InAppToastMessage> InAppToastMessageAsync()
+        public virtual System.Threading.Tasks.Task<InAppToastMessage> GetContentInapptoastmessageAsync()
         {
-            return InAppToastMessageAsync(System.Threading.CancellationToken.None);
+            return GetContentInapptoastmessageAsync(System.Threading.CancellationToken.None);
         }
 
         /// <param name="cancellationToken">A cancellation token that can be used by other objects or threads to receive notice of cancellation.</param>
         /// <returns>OK</returns>
         /// <exception cref="SonarApiException">A server side error occurred.</exception>
-        public virtual async System.Threading.Tasks.Task<InAppToastMessage> InAppToastMessageAsync(System.Threading.CancellationToken cancellationToken)
+        public virtual async System.Threading.Tasks.Task<InAppToastMessage> GetContentInapptoastmessageAsync(System.Threading.CancellationToken cancellationToken)
         {
             var client_ = _httpClient;
             var disposeClient_ = false;
@@ -2470,15 +2470,15 @@ namespace Wedol.SteelSeries.Sonar
 
         /// <returns>OK</returns>
         /// <exception cref="SonarApiException">A server side error occurred.</exception>
-        public virtual System.Threading.Tasks.Task<DeviceOutData> DeviceOutAsync()
+        public virtual System.Threading.Tasks.Task<DeviceOutData> GetDeviceoutAsync()
         {
-            return DeviceOutAsync(System.Threading.CancellationToken.None);
+            return GetDeviceoutAsync(System.Threading.CancellationToken.None);
         }
 
         /// <param name="cancellationToken">A cancellation token that can be used by other objects or threads to receive notice of cancellation.</param>
         /// <returns>OK</returns>
         /// <exception cref="SonarApiException">A server side error occurred.</exception>
-        public virtual async System.Threading.Tasks.Task<DeviceOutData> DeviceOutAsync(System.Threading.CancellationToken cancellationToken)
+        public virtual async System.Threading.Tasks.Task<DeviceOutData> GetDeviceoutAsync(System.Threading.CancellationToken cancellationToken)
         {
             var client_ = _httpClient;
             var disposeClient_ = false;
@@ -2548,15 +2548,15 @@ namespace Wedol.SteelSeries.Sonar
 
         /// <returns>OK</returns>
         /// <exception cref="SonarApiException">A server side error occurred.</exception>
-        public virtual System.Threading.Tasks.Task<string> AudioPathGETAsync()
+        public virtual System.Threading.Tasks.Task<string> GetDeviceoutAudiopathAsync()
         {
-            return AudioPathGETAsync(System.Threading.CancellationToken.None);
+            return GetDeviceoutAudiopathAsync(System.Threading.CancellationToken.None);
         }
 
         /// <param name="cancellationToken">A cancellation token that can be used by other objects or threads to receive notice of cancellation.</param>
         /// <returns>OK</returns>
         /// <exception cref="SonarApiException">A server side error occurred.</exception>
-        public virtual async System.Threading.Tasks.Task<string> AudioPathGETAsync(System.Threading.CancellationToken cancellationToken)
+        public virtual async System.Threading.Tasks.Task<string> GetDeviceoutAudiopathAsync(System.Threading.CancellationToken cancellationToken)
         {
             var client_ = _httpClient;
             var disposeClient_ = false;
@@ -2626,15 +2626,15 @@ namespace Wedol.SteelSeries.Sonar
 
         /// <returns>OK</returns>
         /// <exception cref="SonarApiException">A server side error occurred.</exception>
-        public virtual System.Threading.Tasks.Task<string> AudioPathPUTAsync(Feature feature)
+        public virtual System.Threading.Tasks.Task<string> PutDeviceoutAudiopathByFeatureAsync(Feature feature)
         {
-            return AudioPathPUTAsync(feature, System.Threading.CancellationToken.None);
+            return PutDeviceoutAudiopathByFeatureAsync(feature, System.Threading.CancellationToken.None);
         }
 
         /// <param name="cancellationToken">A cancellation token that can be used by other objects or threads to receive notice of cancellation.</param>
         /// <returns>OK</returns>
         /// <exception cref="SonarApiException">A server side error occurred.</exception>
-        public virtual async System.Threading.Tasks.Task<string> AudioPathPUTAsync(Feature feature, System.Threading.CancellationToken cancellationToken)
+        public virtual async System.Threading.Tasks.Task<string> PutDeviceoutAudiopathByFeatureAsync(Feature feature, System.Threading.CancellationToken cancellationToken)
         {
             if (feature == null)
                 throw new System.ArgumentNullException("feature");
@@ -2709,15 +2709,15 @@ namespace Wedol.SteelSeries.Sonar
 
         /// <returns>OK</returns>
         /// <exception cref="SonarApiException">A server side error occurred.</exception>
-        public virtual System.Threading.Tasks.Task<float> VolumeGETAsync(Feature feature)
+        public virtual System.Threading.Tasks.Task<float> GetDeviceoutVolumeByFeatureAsync(Feature feature)
         {
-            return VolumeGETAsync(feature, System.Threading.CancellationToken.None);
+            return GetDeviceoutVolumeByFeatureAsync(feature, System.Threading.CancellationToken.None);
         }
 
         /// <param name="cancellationToken">A cancellation token that can be used by other objects or threads to receive notice of cancellation.</param>
         /// <returns>OK</returns>
         /// <exception cref="SonarApiException">A server side error occurred.</exception>
-        public virtual async System.Threading.Tasks.Task<float> VolumeGETAsync(Feature feature, System.Threading.CancellationToken cancellationToken)
+        public virtual async System.Threading.Tasks.Task<float> GetDeviceoutVolumeByFeatureAsync(Feature feature, System.Threading.CancellationToken cancellationToken)
         {
             if (feature == null)
                 throw new System.ArgumentNullException("feature");
@@ -2791,15 +2791,15 @@ namespace Wedol.SteelSeries.Sonar
 
         /// <returns>OK</returns>
         /// <exception cref="SonarApiException">A server side error occurred.</exception>
-        public virtual System.Threading.Tasks.Task<bool> MuteGETAsync(Feature feature)
+        public virtual System.Threading.Tasks.Task<bool> GetDeviceoutMuteByFeatureAsync(Feature feature)
         {
-            return MuteGETAsync(feature, System.Threading.CancellationToken.None);
+            return GetDeviceoutMuteByFeatureAsync(feature, System.Threading.CancellationToken.None);
         }
 
         /// <param name="cancellationToken">A cancellation token that can be used by other objects or threads to receive notice of cancellation.</param>
         /// <returns>OK</returns>
         /// <exception cref="SonarApiException">A server side error occurred.</exception>
-        public virtual async System.Threading.Tasks.Task<bool> MuteGETAsync(Feature feature, System.Threading.CancellationToken cancellationToken)
+        public virtual async System.Threading.Tasks.Task<bool> GetDeviceoutMuteByFeatureAsync(Feature feature, System.Threading.CancellationToken cancellationToken)
         {
             if (feature == null)
                 throw new System.ArgumentNullException("feature");
@@ -2873,15 +2873,15 @@ namespace Wedol.SteelSeries.Sonar
 
         /// <returns>OK</returns>
         /// <exception cref="SonarApiException">A server side error occurred.</exception>
-        public virtual System.Threading.Tasks.Task<float> VolumePUTAsync(Feature feature, float volume)
+        public virtual System.Threading.Tasks.Task<float> PutDeviceoutVolumeByFeatureByVolumeAsync(Feature feature, float volume)
         {
-            return VolumePUTAsync(feature, volume, System.Threading.CancellationToken.None);
+            return PutDeviceoutVolumeByFeatureByVolumeAsync(feature, volume, System.Threading.CancellationToken.None);
         }
 
         /// <param name="cancellationToken">A cancellation token that can be used by other objects or threads to receive notice of cancellation.</param>
         /// <returns>OK</returns>
         /// <exception cref="SonarApiException">A server side error occurred.</exception>
-        public virtual async System.Threading.Tasks.Task<float> VolumePUTAsync(Feature feature, float volume, System.Threading.CancellationToken cancellationToken)
+        public virtual async System.Threading.Tasks.Task<float> PutDeviceoutVolumeByFeatureByVolumeAsync(Feature feature, float volume, System.Threading.CancellationToken cancellationToken)
         {
             if (feature == null)
                 throw new System.ArgumentNullException("feature");
@@ -2961,15 +2961,15 @@ namespace Wedol.SteelSeries.Sonar
 
         /// <returns>OK</returns>
         /// <exception cref="SonarApiException">A server side error occurred.</exception>
-        public virtual System.Threading.Tasks.Task<bool> MutePUTAsync(Feature feature, bool mute)
+        public virtual System.Threading.Tasks.Task<bool> PutDeviceoutMuteByFeatureByMuteAsync(Feature feature, bool mute)
         {
-            return MutePUTAsync(feature, mute, System.Threading.CancellationToken.None);
+            return PutDeviceoutMuteByFeatureByMuteAsync(feature, mute, System.Threading.CancellationToken.None);
         }
 
         /// <param name="cancellationToken">A cancellation token that can be used by other objects or threads to receive notice of cancellation.</param>
         /// <returns>OK</returns>
         /// <exception cref="SonarApiException">A server side error occurred.</exception>
-        public virtual async System.Threading.Tasks.Task<bool> MutePUTAsync(Feature feature, bool mute, System.Threading.CancellationToken cancellationToken)
+        public virtual async System.Threading.Tasks.Task<bool> PutDeviceoutMuteByFeatureByMuteAsync(Feature feature, bool mute, System.Threading.CancellationToken cancellationToken)
         {
             if (feature == null)
                 throw new System.ArgumentNullException("feature");
@@ -3049,15 +3049,15 @@ namespace Wedol.SteelSeries.Sonar
 
         /// <returns>OK</returns>
         /// <exception cref="SonarApiException">A server side error occurred.</exception>
-        public virtual System.Threading.Tasks.Task<bool> IsEnabledGETAsync()
+        public virtual System.Threading.Tasks.Task<bool> GetFallbacksettingsIsenabledAsync()
         {
-            return IsEnabledGETAsync(System.Threading.CancellationToken.None);
+            return GetFallbacksettingsIsenabledAsync(System.Threading.CancellationToken.None);
         }
 
         /// <param name="cancellationToken">A cancellation token that can be used by other objects or threads to receive notice of cancellation.</param>
         /// <returns>OK</returns>
         /// <exception cref="SonarApiException">A server side error occurred.</exception>
-        public virtual async System.Threading.Tasks.Task<bool> IsEnabledGETAsync(System.Threading.CancellationToken cancellationToken)
+        public virtual async System.Threading.Tasks.Task<bool> GetFallbacksettingsIsenabledAsync(System.Threading.CancellationToken cancellationToken)
         {
             var client_ = _httpClient;
             var disposeClient_ = false;
@@ -3127,15 +3127,15 @@ namespace Wedol.SteelSeries.Sonar
 
         /// <returns>OK</returns>
         /// <exception cref="SonarApiException">A server side error occurred.</exception>
-        public virtual System.Threading.Tasks.Task<bool> IsEnabledPUT2Async(bool isEnabled)
+        public virtual System.Threading.Tasks.Task<bool> PutFallbacksettingsIsenabledByIsenabledAsync(bool isEnabled)
         {
-            return IsEnabledPUT2Async(isEnabled, System.Threading.CancellationToken.None);
+            return PutFallbacksettingsIsenabledByIsenabledAsync(isEnabled, System.Threading.CancellationToken.None);
         }
 
         /// <param name="cancellationToken">A cancellation token that can be used by other objects or threads to receive notice of cancellation.</param>
         /// <returns>OK</returns>
         /// <exception cref="SonarApiException">A server side error occurred.</exception>
-        public virtual async System.Threading.Tasks.Task<bool> IsEnabledPUT2Async(bool isEnabled, System.Threading.CancellationToken cancellationToken)
+        public virtual async System.Threading.Tasks.Task<bool> PutFallbacksettingsIsenabledByIsenabledAsync(bool isEnabled, System.Threading.CancellationToken cancellationToken)
         {
             if (isEnabled == null)
                 throw new System.ArgumentNullException("isEnabled");
@@ -3210,15 +3210,15 @@ namespace Wedol.SteelSeries.Sonar
 
         /// <returns>OK</returns>
         /// <exception cref="SonarApiException">A server side error occurred.</exception>
-        public virtual System.Threading.Tasks.Task<bool> IsWirelessTriggerEnabledGETAsync()
+        public virtual System.Threading.Tasks.Task<bool> GetFallbacksettingsIswirelesstriggerenabledAsync()
         {
-            return IsWirelessTriggerEnabledGETAsync(System.Threading.CancellationToken.None);
+            return GetFallbacksettingsIswirelesstriggerenabledAsync(System.Threading.CancellationToken.None);
         }
 
         /// <param name="cancellationToken">A cancellation token that can be used by other objects or threads to receive notice of cancellation.</param>
         /// <returns>OK</returns>
         /// <exception cref="SonarApiException">A server side error occurred.</exception>
-        public virtual async System.Threading.Tasks.Task<bool> IsWirelessTriggerEnabledGETAsync(System.Threading.CancellationToken cancellationToken)
+        public virtual async System.Threading.Tasks.Task<bool> GetFallbacksettingsIswirelesstriggerenabledAsync(System.Threading.CancellationToken cancellationToken)
         {
             var client_ = _httpClient;
             var disposeClient_ = false;
@@ -3288,15 +3288,15 @@ namespace Wedol.SteelSeries.Sonar
 
         /// <returns>OK</returns>
         /// <exception cref="SonarApiException">A server side error occurred.</exception>
-        public virtual System.Threading.Tasks.Task<bool> IsWirelessTriggerEnabledPUTAsync(bool isEnabled)
+        public virtual System.Threading.Tasks.Task<bool> PutFallbacksettingsIswirelesstriggerenabledByIsenabledAsync(bool isEnabled)
         {
-            return IsWirelessTriggerEnabledPUTAsync(isEnabled, System.Threading.CancellationToken.None);
+            return PutFallbacksettingsIswirelesstriggerenabledByIsenabledAsync(isEnabled, System.Threading.CancellationToken.None);
         }
 
         /// <param name="cancellationToken">A cancellation token that can be used by other objects or threads to receive notice of cancellation.</param>
         /// <returns>OK</returns>
         /// <exception cref="SonarApiException">A server side error occurred.</exception>
-        public virtual async System.Threading.Tasks.Task<bool> IsWirelessTriggerEnabledPUTAsync(bool isEnabled, System.Threading.CancellationToken cancellationToken)
+        public virtual async System.Threading.Tasks.Task<bool> PutFallbacksettingsIswirelesstriggerenabledByIsenabledAsync(bool isEnabled, System.Threading.CancellationToken cancellationToken)
         {
             if (isEnabled == null)
                 throw new System.ArgumentNullException("isEnabled");
@@ -3371,15 +3371,15 @@ namespace Wedol.SteelSeries.Sonar
 
         /// <returns>OK</returns>
         /// <exception cref="SonarApiException">A server side error occurred.</exception>
-        public virtual System.Threading.Tasks.Task<bool> IsFallbackOnRebootEnabledGETAsync()
+        public virtual System.Threading.Tasks.Task<bool> GetFallbacksettingsIsfallbackonrebootenabledAsync()
         {
-            return IsFallbackOnRebootEnabledGETAsync(System.Threading.CancellationToken.None);
+            return GetFallbacksettingsIsfallbackonrebootenabledAsync(System.Threading.CancellationToken.None);
         }
 
         /// <param name="cancellationToken">A cancellation token that can be used by other objects or threads to receive notice of cancellation.</param>
         /// <returns>OK</returns>
         /// <exception cref="SonarApiException">A server side error occurred.</exception>
-        public virtual async System.Threading.Tasks.Task<bool> IsFallbackOnRebootEnabledGETAsync(System.Threading.CancellationToken cancellationToken)
+        public virtual async System.Threading.Tasks.Task<bool> GetFallbacksettingsIsfallbackonrebootenabledAsync(System.Threading.CancellationToken cancellationToken)
         {
             var client_ = _httpClient;
             var disposeClient_ = false;
@@ -3449,15 +3449,15 @@ namespace Wedol.SteelSeries.Sonar
 
         /// <returns>OK</returns>
         /// <exception cref="SonarApiException">A server side error occurred.</exception>
-        public virtual System.Threading.Tasks.Task<bool> IsFallbackOnRebootEnabledPUTAsync(bool isEnabled)
+        public virtual System.Threading.Tasks.Task<bool> PutFallbacksettingsIsfallbackonrebootenabledByIsenabledAsync(bool isEnabled)
         {
-            return IsFallbackOnRebootEnabledPUTAsync(isEnabled, System.Threading.CancellationToken.None);
+            return PutFallbacksettingsIsfallbackonrebootenabledByIsenabledAsync(isEnabled, System.Threading.CancellationToken.None);
         }
 
         /// <param name="cancellationToken">A cancellation token that can be used by other objects or threads to receive notice of cancellation.</param>
         /// <returns>OK</returns>
         /// <exception cref="SonarApiException">A server side error occurred.</exception>
-        public virtual async System.Threading.Tasks.Task<bool> IsFallbackOnRebootEnabledPUTAsync(bool isEnabled, System.Threading.CancellationToken cancellationToken)
+        public virtual async System.Threading.Tasks.Task<bool> PutFallbacksettingsIsfallbackonrebootenabledByIsenabledAsync(bool isEnabled, System.Threading.CancellationToken cancellationToken)
         {
             if (isEnabled == null)
                 throw new System.ArgumentNullException("isEnabled");
@@ -3532,15 +3532,15 @@ namespace Wedol.SteelSeries.Sonar
 
         /// <returns>OK</returns>
         /// <exception cref="SonarApiException">A server side error occurred.</exception>
-        public virtual System.Threading.Tasks.Task<System.Collections.Generic.ICollection<DeviceRoleExtendedFallbackDeviceDataIEnumerableKeyValuePair>> ListsAsync()
+        public virtual System.Threading.Tasks.Task<System.Collections.Generic.ICollection<DeviceRoleExtendedFallbackDeviceDataIEnumerableKeyValuePair>> GetFallbacksettingsListsAsync()
         {
-            return ListsAsync(System.Threading.CancellationToken.None);
+            return GetFallbacksettingsListsAsync(System.Threading.CancellationToken.None);
         }
 
         /// <param name="cancellationToken">A cancellation token that can be used by other objects or threads to receive notice of cancellation.</param>
         /// <returns>OK</returns>
         /// <exception cref="SonarApiException">A server side error occurred.</exception>
-        public virtual async System.Threading.Tasks.Task<System.Collections.Generic.ICollection<DeviceRoleExtendedFallbackDeviceDataIEnumerableKeyValuePair>> ListsAsync(System.Threading.CancellationToken cancellationToken)
+        public virtual async System.Threading.Tasks.Task<System.Collections.Generic.ICollection<DeviceRoleExtendedFallbackDeviceDataIEnumerableKeyValuePair>> GetFallbacksettingsListsAsync(System.Threading.CancellationToken cancellationToken)
         {
             var client_ = _httpClient;
             var disposeClient_ = false;
@@ -3610,15 +3610,15 @@ namespace Wedol.SteelSeries.Sonar
 
         /// <returns>OK</returns>
         /// <exception cref="SonarApiException">A server side error occurred.</exception>
-        public virtual System.Threading.Tasks.Task<System.Collections.Generic.ICollection<ExtendedFallbackDeviceData>> ExcludeDeviceAsync(DeviceRole role, string deviceId)
+        public virtual System.Threading.Tasks.Task<System.Collections.Generic.ICollection<ExtendedFallbackDeviceData>> PutFallbacksettingsExcludedeviceByRoleByDeviceidAsync(DeviceRole role, string deviceId)
         {
-            return ExcludeDeviceAsync(role, deviceId, System.Threading.CancellationToken.None);
+            return PutFallbacksettingsExcludedeviceByRoleByDeviceidAsync(role, deviceId, System.Threading.CancellationToken.None);
         }
 
         /// <param name="cancellationToken">A cancellation token that can be used by other objects or threads to receive notice of cancellation.</param>
         /// <returns>OK</returns>
         /// <exception cref="SonarApiException">A server side error occurred.</exception>
-        public virtual async System.Threading.Tasks.Task<System.Collections.Generic.ICollection<ExtendedFallbackDeviceData>> ExcludeDeviceAsync(DeviceRole role, string deviceId, System.Threading.CancellationToken cancellationToken)
+        public virtual async System.Threading.Tasks.Task<System.Collections.Generic.ICollection<ExtendedFallbackDeviceData>> PutFallbacksettingsExcludedeviceByRoleByDeviceidAsync(DeviceRole role, string deviceId, System.Threading.CancellationToken cancellationToken)
         {
             if (role == null)
                 throw new System.ArgumentNullException("role");
@@ -3698,15 +3698,15 @@ namespace Wedol.SteelSeries.Sonar
 
         /// <returns>OK</returns>
         /// <exception cref="SonarApiException">A server side error occurred.</exception>
-        public virtual System.Threading.Tasks.Task<System.Collections.Generic.ICollection<ExtendedFallbackDeviceData>> IncludeDeviceAsync(DeviceRole role, string sourceDeviceId, string destinationDeviceId)
+        public virtual System.Threading.Tasks.Task<System.Collections.Generic.ICollection<ExtendedFallbackDeviceData>> PutFallbacksettingsIncludedeviceByRoleBySourcedeviceidByDestinationdeviceidAsync(DeviceRole role, string sourceDeviceId, string destinationDeviceId)
         {
-            return IncludeDeviceAsync(role, sourceDeviceId, destinationDeviceId, System.Threading.CancellationToken.None);
+            return PutFallbacksettingsIncludedeviceByRoleBySourcedeviceidByDestinationdeviceidAsync(role, sourceDeviceId, destinationDeviceId, System.Threading.CancellationToken.None);
         }
 
         /// <param name="cancellationToken">A cancellation token that can be used by other objects or threads to receive notice of cancellation.</param>
         /// <returns>OK</returns>
         /// <exception cref="SonarApiException">A server side error occurred.</exception>
-        public virtual async System.Threading.Tasks.Task<System.Collections.Generic.ICollection<ExtendedFallbackDeviceData>> IncludeDeviceAsync(DeviceRole role, string sourceDeviceId, string destinationDeviceId, System.Threading.CancellationToken cancellationToken)
+        public virtual async System.Threading.Tasks.Task<System.Collections.Generic.ICollection<ExtendedFallbackDeviceData>> PutFallbacksettingsIncludedeviceByRoleBySourcedeviceidByDestinationdeviceidAsync(DeviceRole role, string sourceDeviceId, string destinationDeviceId, System.Threading.CancellationToken cancellationToken)
         {
             if (role == null)
                 throw new System.ArgumentNullException("role");
@@ -3791,15 +3791,15 @@ namespace Wedol.SteelSeries.Sonar
 
         /// <returns>OK</returns>
         /// <exception cref="SonarApiException">A server side error occurred.</exception>
-        public virtual System.Threading.Tasks.Task<System.Collections.Generic.ICollection<DeviceRoleExtendedFallbackDeviceDataIEnumerableKeyValuePair>> ExcludeDeviceFromAllAsync(string deviceId)
+        public virtual System.Threading.Tasks.Task<System.Collections.Generic.ICollection<DeviceRoleExtendedFallbackDeviceDataIEnumerableKeyValuePair>> PutFallbacksettingsExcludedevicefromallByDeviceidAsync(string deviceId)
         {
-            return ExcludeDeviceFromAllAsync(deviceId, System.Threading.CancellationToken.None);
+            return PutFallbacksettingsExcludedevicefromallByDeviceidAsync(deviceId, System.Threading.CancellationToken.None);
         }
 
         /// <param name="cancellationToken">A cancellation token that can be used by other objects or threads to receive notice of cancellation.</param>
         /// <returns>OK</returns>
         /// <exception cref="SonarApiException">A server side error occurred.</exception>
-        public virtual async System.Threading.Tasks.Task<System.Collections.Generic.ICollection<DeviceRoleExtendedFallbackDeviceDataIEnumerableKeyValuePair>> ExcludeDeviceFromAllAsync(string deviceId, System.Threading.CancellationToken cancellationToken)
+        public virtual async System.Threading.Tasks.Task<System.Collections.Generic.ICollection<DeviceRoleExtendedFallbackDeviceDataIEnumerableKeyValuePair>> PutFallbacksettingsExcludedevicefromallByDeviceidAsync(string deviceId, System.Threading.CancellationToken cancellationToken)
         {
             if (deviceId == null)
                 throw new System.ArgumentNullException("deviceId");
@@ -3874,15 +3874,15 @@ namespace Wedol.SteelSeries.Sonar
 
         /// <returns>OK</returns>
         /// <exception cref="SonarApiException">A server side error occurred.</exception>
-        public virtual System.Threading.Tasks.Task<System.Collections.Generic.ICollection<DeviceRoleExtendedFallbackDeviceDataIEnumerableKeyValuePair>> IncludeDeviceInAllAsync(string sourceDeviceId, string destinationDeviceId)
+        public virtual System.Threading.Tasks.Task<System.Collections.Generic.ICollection<DeviceRoleExtendedFallbackDeviceDataIEnumerableKeyValuePair>> PutFallbacksettingsIncludedeviceinallBySourcedeviceidByDestinationdeviceidAsync(string sourceDeviceId, string destinationDeviceId)
         {
-            return IncludeDeviceInAllAsync(sourceDeviceId, destinationDeviceId, System.Threading.CancellationToken.None);
+            return PutFallbacksettingsIncludedeviceinallBySourcedeviceidByDestinationdeviceidAsync(sourceDeviceId, destinationDeviceId, System.Threading.CancellationToken.None);
         }
 
         /// <param name="cancellationToken">A cancellation token that can be used by other objects or threads to receive notice of cancellation.</param>
         /// <returns>OK</returns>
         /// <exception cref="SonarApiException">A server side error occurred.</exception>
-        public virtual async System.Threading.Tasks.Task<System.Collections.Generic.ICollection<DeviceRoleExtendedFallbackDeviceDataIEnumerableKeyValuePair>> IncludeDeviceInAllAsync(string sourceDeviceId, string destinationDeviceId, System.Threading.CancellationToken cancellationToken)
+        public virtual async System.Threading.Tasks.Task<System.Collections.Generic.ICollection<DeviceRoleExtendedFallbackDeviceDataIEnumerableKeyValuePair>> PutFallbacksettingsIncludedeviceinallBySourcedeviceidByDestinationdeviceidAsync(string sourceDeviceId, string destinationDeviceId, System.Threading.CancellationToken cancellationToken)
         {
             if (sourceDeviceId == null)
                 throw new System.ArgumentNullException("sourceDeviceId");
@@ -3962,15 +3962,15 @@ namespace Wedol.SteelSeries.Sonar
 
         /// <returns>OK</returns>
         /// <exception cref="SonarApiException">A server side error occurred.</exception>
-        public virtual System.Threading.Tasks.Task<System.Collections.Generic.ICollection<ExtendedFallbackDeviceData>> SetDevicePositionAsync(DeviceRole role, string sourceDeviceId, string destinationDeviceId)
+        public virtual System.Threading.Tasks.Task<System.Collections.Generic.ICollection<ExtendedFallbackDeviceData>> PutFallbacksettingsSetdevicepositionByRoleBySourcedeviceidByDestinationdeviceidAsync(DeviceRole role, string sourceDeviceId, string destinationDeviceId)
         {
-            return SetDevicePositionAsync(role, sourceDeviceId, destinationDeviceId, System.Threading.CancellationToken.None);
+            return PutFallbacksettingsSetdevicepositionByRoleBySourcedeviceidByDestinationdeviceidAsync(role, sourceDeviceId, destinationDeviceId, System.Threading.CancellationToken.None);
         }
 
         /// <param name="cancellationToken">A cancellation token that can be used by other objects or threads to receive notice of cancellation.</param>
         /// <returns>OK</returns>
         /// <exception cref="SonarApiException">A server side error occurred.</exception>
-        public virtual async System.Threading.Tasks.Task<System.Collections.Generic.ICollection<ExtendedFallbackDeviceData>> SetDevicePositionAsync(DeviceRole role, string sourceDeviceId, string destinationDeviceId, System.Threading.CancellationToken cancellationToken)
+        public virtual async System.Threading.Tasks.Task<System.Collections.Generic.ICollection<ExtendedFallbackDeviceData>> PutFallbacksettingsSetdevicepositionByRoleBySourcedeviceidByDestinationdeviceidAsync(DeviceRole role, string sourceDeviceId, string destinationDeviceId, System.Threading.CancellationToken cancellationToken)
         {
             if (role == null)
                 throw new System.ArgumentNullException("role");
@@ -4055,15 +4055,15 @@ namespace Wedol.SteelSeries.Sonar
 
         /// <returns>OK</returns>
         /// <exception cref="SonarApiException">A server side error occurred.</exception>
-        public virtual System.Threading.Tasks.Task<System.Collections.Generic.ICollection<DeviceRoleExtendedFallbackDeviceDataIEnumerableKeyValuePair>> SetDevicePositionInAllAsync(string sourceDeviceId, string destinationDeviceId)
+        public virtual System.Threading.Tasks.Task<System.Collections.Generic.ICollection<DeviceRoleExtendedFallbackDeviceDataIEnumerableKeyValuePair>> PutFallbacksettingsSetdevicepositioninallBySourcedeviceidByDestinationdeviceidAsync(string sourceDeviceId, string destinationDeviceId)
         {
-            return SetDevicePositionInAllAsync(sourceDeviceId, destinationDeviceId, System.Threading.CancellationToken.None);
+            return PutFallbacksettingsSetdevicepositioninallBySourcedeviceidByDestinationdeviceidAsync(sourceDeviceId, destinationDeviceId, System.Threading.CancellationToken.None);
         }
 
         /// <param name="cancellationToken">A cancellation token that can be used by other objects or threads to receive notice of cancellation.</param>
         /// <returns>OK</returns>
         /// <exception cref="SonarApiException">A server side error occurred.</exception>
-        public virtual async System.Threading.Tasks.Task<System.Collections.Generic.ICollection<DeviceRoleExtendedFallbackDeviceDataIEnumerableKeyValuePair>> SetDevicePositionInAllAsync(string sourceDeviceId, string destinationDeviceId, System.Threading.CancellationToken cancellationToken)
+        public virtual async System.Threading.Tasks.Task<System.Collections.Generic.ICollection<DeviceRoleExtendedFallbackDeviceDataIEnumerableKeyValuePair>> PutFallbacksettingsSetdevicepositioninallBySourcedeviceidByDestinationdeviceidAsync(string sourceDeviceId, string destinationDeviceId, System.Threading.CancellationToken cancellationToken)
         {
             if (sourceDeviceId == null)
                 throw new System.ArgumentNullException("sourceDeviceId");
@@ -4143,15 +4143,15 @@ namespace Wedol.SteelSeries.Sonar
 
         /// <returns>OK</returns>
         /// <exception cref="SonarApiException">A server side error occurred.</exception>
-        public virtual System.Threading.Tasks.Task<System.Collections.Generic.ICollection<FeatureData>> DevelopmentAsync()
+        public virtual System.Threading.Tasks.Task<System.Collections.Generic.ICollection<FeatureData>> GetFeaturesDevelopmentAsync()
         {
-            return DevelopmentAsync(System.Threading.CancellationToken.None);
+            return GetFeaturesDevelopmentAsync(System.Threading.CancellationToken.None);
         }
 
         /// <param name="cancellationToken">A cancellation token that can be used by other objects or threads to receive notice of cancellation.</param>
         /// <returns>OK</returns>
         /// <exception cref="SonarApiException">A server side error occurred.</exception>
-        public virtual async System.Threading.Tasks.Task<System.Collections.Generic.ICollection<FeatureData>> DevelopmentAsync(System.Threading.CancellationToken cancellationToken)
+        public virtual async System.Threading.Tasks.Task<System.Collections.Generic.ICollection<FeatureData>> GetFeaturesDevelopmentAsync(System.Threading.CancellationToken cancellationToken)
         {
             var client_ = _httpClient;
             var disposeClient_ = false;
@@ -4221,15 +4221,15 @@ namespace Wedol.SteelSeries.Sonar
 
         /// <returns>OK</returns>
         /// <exception cref="SonarApiException">A server side error occurred.</exception>
-        public virtual System.Threading.Tasks.Task<System.Collections.Generic.ICollection<FeatureData>> FeaturesAllAsync()
+        public virtual System.Threading.Tasks.Task<System.Collections.Generic.ICollection<FeatureData>> GetFeaturesAsync()
         {
-            return FeaturesAllAsync(System.Threading.CancellationToken.None);
+            return GetFeaturesAsync(System.Threading.CancellationToken.None);
         }
 
         /// <param name="cancellationToken">A cancellation token that can be used by other objects or threads to receive notice of cancellation.</param>
         /// <returns>OK</returns>
         /// <exception cref="SonarApiException">A server side error occurred.</exception>
-        public virtual async System.Threading.Tasks.Task<System.Collections.Generic.ICollection<FeatureData>> FeaturesAllAsync(System.Threading.CancellationToken cancellationToken)
+        public virtual async System.Threading.Tasks.Task<System.Collections.Generic.ICollection<FeatureData>> GetFeaturesAsync(System.Threading.CancellationToken cancellationToken)
         {
             var client_ = _httpClient;
             var disposeClient_ = false;
@@ -4299,15 +4299,15 @@ namespace Wedol.SteelSeries.Sonar
 
         /// <returns>OK</returns>
         /// <exception cref="SonarApiException">A server side error occurred.</exception>
-        public virtual System.Threading.Tasks.Task<FeatureData> FeaturesGETAsync(Feature feature)
+        public virtual System.Threading.Tasks.Task<FeatureData> GetFeaturesByFeatureAsync(Feature feature)
         {
-            return FeaturesGETAsync(feature, System.Threading.CancellationToken.None);
+            return GetFeaturesByFeatureAsync(feature, System.Threading.CancellationToken.None);
         }
 
         /// <param name="cancellationToken">A cancellation token that can be used by other objects or threads to receive notice of cancellation.</param>
         /// <returns>OK</returns>
         /// <exception cref="SonarApiException">A server side error occurred.</exception>
-        public virtual async System.Threading.Tasks.Task<FeatureData> FeaturesGETAsync(Feature feature, System.Threading.CancellationToken cancellationToken)
+        public virtual async System.Threading.Tasks.Task<FeatureData> GetFeaturesByFeatureAsync(Feature feature, System.Threading.CancellationToken cancellationToken)
         {
             if (feature == null)
                 throw new System.ArgumentNullException("feature");
@@ -4381,15 +4381,15 @@ namespace Wedol.SteelSeries.Sonar
 
         /// <returns>OK</returns>
         /// <exception cref="SonarApiException">A server side error occurred.</exception>
-        public virtual System.Threading.Tasks.Task FeaturesPUTAsync(Feature feature)
+        public virtual System.Threading.Tasks.Task PutFeaturesByFeatureAsync(Feature feature)
         {
-            return FeaturesPUTAsync(feature, System.Threading.CancellationToken.None);
+            return PutFeaturesByFeatureAsync(feature, System.Threading.CancellationToken.None);
         }
 
         /// <param name="cancellationToken">A cancellation token that can be used by other objects or threads to receive notice of cancellation.</param>
         /// <returns>OK</returns>
         /// <exception cref="SonarApiException">A server side error occurred.</exception>
-        public virtual async System.Threading.Tasks.Task FeaturesPUTAsync(Feature feature, System.Threading.CancellationToken cancellationToken)
+        public virtual async System.Threading.Tasks.Task PutFeaturesByFeatureAsync(Feature feature, System.Threading.CancellationToken cancellationToken)
         {
             if (feature == null)
                 throw new System.ArgumentNullException("feature");
@@ -4458,15 +4458,15 @@ namespace Wedol.SteelSeries.Sonar
 
         /// <returns>OK</returns>
         /// <exception cref="SonarApiException">A server side error occurred.</exception>
-        public virtual System.Threading.Tasks.Task IsEnabledPUT3Async(Feature feature, bool isEnabled)
+        public virtual System.Threading.Tasks.Task PutFeaturesByFeatureIsenabledByIsenabledAsync(Feature feature, bool isEnabled)
         {
-            return IsEnabledPUT3Async(feature, isEnabled, System.Threading.CancellationToken.None);
+            return PutFeaturesByFeatureIsenabledByIsenabledAsync(feature, isEnabled, System.Threading.CancellationToken.None);
         }
 
         /// <param name="cancellationToken">A cancellation token that can be used by other objects or threads to receive notice of cancellation.</param>
         /// <returns>OK</returns>
         /// <exception cref="SonarApiException">A server side error occurred.</exception>
-        public virtual async System.Threading.Tasks.Task IsEnabledPUT3Async(Feature feature, bool isEnabled, System.Threading.CancellationToken cancellationToken)
+        public virtual async System.Threading.Tasks.Task PutFeaturesByFeatureIsenabledByIsenabledAsync(Feature feature, bool isEnabled, System.Threading.CancellationToken cancellationToken)
         {
             if (feature == null)
                 throw new System.ArgumentNullException("feature");
@@ -4540,15 +4540,15 @@ namespace Wedol.SteelSeries.Sonar
 
         /// <returns>OK</returns>
         /// <exception cref="SonarApiException">A server side error occurred.</exception>
-        public virtual System.Threading.Tasks.Task<ChatMix> ChatMixGETAsync()
+        public virtual System.Threading.Tasks.Task<ChatMix> GetChatmixAsync()
         {
-            return ChatMixGETAsync(System.Threading.CancellationToken.None);
+            return GetChatmixAsync(System.Threading.CancellationToken.None);
         }
 
         /// <param name="cancellationToken">A cancellation token that can be used by other objects or threads to receive notice of cancellation.</param>
         /// <returns>OK</returns>
         /// <exception cref="SonarApiException">A server side error occurred.</exception>
-        public virtual async System.Threading.Tasks.Task<ChatMix> ChatMixGETAsync(System.Threading.CancellationToken cancellationToken)
+        public virtual async System.Threading.Tasks.Task<ChatMix> GetChatmixAsync(System.Threading.CancellationToken cancellationToken)
         {
             var client_ = _httpClient;
             var disposeClient_ = false;
@@ -4618,15 +4618,15 @@ namespace Wedol.SteelSeries.Sonar
 
         /// <returns>OK</returns>
         /// <exception cref="SonarApiException">A server side error occurred.</exception>
-        public virtual System.Threading.Tasks.Task<ChatMix> ChatMixPUTAsync(float? balance)
+        public virtual System.Threading.Tasks.Task<ChatMix> PutChatmixAsync(float? balance)
         {
-            return ChatMixPUTAsync(balance, System.Threading.CancellationToken.None);
+            return PutChatmixAsync(balance, System.Threading.CancellationToken.None);
         }
 
         /// <param name="cancellationToken">A cancellation token that can be used by other objects or threads to receive notice of cancellation.</param>
         /// <returns>OK</returns>
         /// <exception cref="SonarApiException">A server side error occurred.</exception>
-        public virtual async System.Threading.Tasks.Task<ChatMix> ChatMixPUTAsync(float? balance, System.Threading.CancellationToken cancellationToken)
+        public virtual async System.Threading.Tasks.Task<ChatMix> PutChatmixAsync(float? balance, System.Threading.CancellationToken cancellationToken)
         {
             var client_ = _httpClient;
             var disposeClient_ = false;
@@ -4703,15 +4703,15 @@ namespace Wedol.SteelSeries.Sonar
 
         /// <returns>OK</returns>
         /// <exception cref="SonarApiException">A server side error occurred.</exception>
-        public virtual System.Threading.Tasks.Task<System.Collections.Generic.ICollection<KeyboardShortcut>> KeyboardShortcutsAllAsync()
+        public virtual System.Threading.Tasks.Task<System.Collections.Generic.ICollection<KeyboardShortcut>> GetKeyboardshortcutsAsync()
         {
-            return KeyboardShortcutsAllAsync(System.Threading.CancellationToken.None);
+            return GetKeyboardshortcutsAsync(System.Threading.CancellationToken.None);
         }
 
         /// <param name="cancellationToken">A cancellation token that can be used by other objects or threads to receive notice of cancellation.</param>
         /// <returns>OK</returns>
         /// <exception cref="SonarApiException">A server side error occurred.</exception>
-        public virtual async System.Threading.Tasks.Task<System.Collections.Generic.ICollection<KeyboardShortcut>> KeyboardShortcutsAllAsync(System.Threading.CancellationToken cancellationToken)
+        public virtual async System.Threading.Tasks.Task<System.Collections.Generic.ICollection<KeyboardShortcut>> GetKeyboardshortcutsAsync(System.Threading.CancellationToken cancellationToken)
         {
             var client_ = _httpClient;
             var disposeClient_ = false;
@@ -4781,15 +4781,15 @@ namespace Wedol.SteelSeries.Sonar
 
         /// <returns>OK</returns>
         /// <exception cref="SonarApiException">A server side error occurred.</exception>
-        public virtual System.Threading.Tasks.Task KeyboardShortcutsAsync(KeyboardShortcut? body)
+        public virtual System.Threading.Tasks.Task PostKeyboardshortcutsAsync(KeyboardShortcut? body)
         {
-            return KeyboardShortcutsAsync(body, System.Threading.CancellationToken.None);
+            return PostKeyboardshortcutsAsync(body, System.Threading.CancellationToken.None);
         }
 
         /// <param name="cancellationToken">A cancellation token that can be used by other objects or threads to receive notice of cancellation.</param>
         /// <returns>OK</returns>
         /// <exception cref="SonarApiException">A server side error occurred.</exception>
-        public virtual async System.Threading.Tasks.Task KeyboardShortcutsAsync(KeyboardShortcut? body, System.Threading.CancellationToken cancellationToken)
+        public virtual async System.Threading.Tasks.Task PostKeyboardshortcutsAsync(KeyboardShortcut? body, System.Threading.CancellationToken cancellationToken)
         {
             var client_ = _httpClient;
             var disposeClient_ = false;
@@ -4857,15 +4857,15 @@ namespace Wedol.SteelSeries.Sonar
 
         /// <returns>OK</returns>
         /// <exception cref="SonarApiException">A server side error occurred.</exception>
-        public virtual System.Threading.Tasks.Task<System.Collections.Generic.ICollection<KeyboardShortcut>> RenderAsync(Type type, string triggerData)
+        public virtual System.Threading.Tasks.Task<System.Collections.Generic.ICollection<KeyboardShortcut>> PutKeyboardshortcutsRenderByTypeByTriggerdataAsync(Type type, string triggerData)
         {
-            return RenderAsync(type, triggerData, System.Threading.CancellationToken.None);
+            return PutKeyboardshortcutsRenderByTypeByTriggerdataAsync(type, triggerData, System.Threading.CancellationToken.None);
         }
 
         /// <param name="cancellationToken">A cancellation token that can be used by other objects or threads to receive notice of cancellation.</param>
         /// <returns>OK</returns>
         /// <exception cref="SonarApiException">A server side error occurred.</exception>
-        public virtual async System.Threading.Tasks.Task<System.Collections.Generic.ICollection<KeyboardShortcut>> RenderAsync(Type type, string triggerData, System.Threading.CancellationToken cancellationToken)
+        public virtual async System.Threading.Tasks.Task<System.Collections.Generic.ICollection<KeyboardShortcut>> PutKeyboardshortcutsRenderByTypeByTriggerdataAsync(Type type, string triggerData, System.Threading.CancellationToken cancellationToken)
         {
             if (type == null)
                 throw new System.ArgumentNullException("type");
@@ -4945,15 +4945,15 @@ namespace Wedol.SteelSeries.Sonar
 
         /// <returns>OK</returns>
         /// <exception cref="SonarApiException">A server side error occurred.</exception>
-        public virtual System.Threading.Tasks.Task<bool> IsRenderLinkAllEnabledAsync()
+        public virtual System.Threading.Tasks.Task<bool> GetLinkallIsrenderlinkallenabledAsync()
         {
-            return IsRenderLinkAllEnabledAsync(System.Threading.CancellationToken.None);
+            return GetLinkallIsrenderlinkallenabledAsync(System.Threading.CancellationToken.None);
         }
 
         /// <param name="cancellationToken">A cancellation token that can be used by other objects or threads to receive notice of cancellation.</param>
         /// <returns>OK</returns>
         /// <exception cref="SonarApiException">A server side error occurred.</exception>
-        public virtual async System.Threading.Tasks.Task<bool> IsRenderLinkAllEnabledAsync(System.Threading.CancellationToken cancellationToken)
+        public virtual async System.Threading.Tasks.Task<bool> GetLinkallIsrenderlinkallenabledAsync(System.Threading.CancellationToken cancellationToken)
         {
             var client_ = _httpClient;
             var disposeClient_ = false;
@@ -5023,15 +5023,15 @@ namespace Wedol.SteelSeries.Sonar
 
         /// <returns>OK</returns>
         /// <exception cref="SonarApiException">A server side error occurred.</exception>
-        public virtual System.Threading.Tasks.Task<LinkAllData> LinkAsync(DeviceRole sourceRole)
+        public virtual System.Threading.Tasks.Task<LinkAllData> PutLinkallLinkBySourceroleAsync(DeviceRole sourceRole)
         {
-            return LinkAsync(sourceRole, System.Threading.CancellationToken.None);
+            return PutLinkallLinkBySourceroleAsync(sourceRole, System.Threading.CancellationToken.None);
         }
 
         /// <param name="cancellationToken">A cancellation token that can be used by other objects or threads to receive notice of cancellation.</param>
         /// <returns>OK</returns>
         /// <exception cref="SonarApiException">A server side error occurred.</exception>
-        public virtual async System.Threading.Tasks.Task<LinkAllData> LinkAsync(DeviceRole sourceRole, System.Threading.CancellationToken cancellationToken)
+        public virtual async System.Threading.Tasks.Task<LinkAllData> PutLinkallLinkBySourceroleAsync(DeviceRole sourceRole, System.Threading.CancellationToken cancellationToken)
         {
             if (sourceRole == null)
                 throw new System.ArgumentNullException("sourceRole");
@@ -5106,15 +5106,15 @@ namespace Wedol.SteelSeries.Sonar
 
         /// <returns>OK</returns>
         /// <exception cref="SonarApiException">A server side error occurred.</exception>
-        public virtual System.Threading.Tasks.Task<bool> UnlinkAsync()
+        public virtual System.Threading.Tasks.Task<bool> PutLinkallUnlinkAsync()
         {
-            return UnlinkAsync(System.Threading.CancellationToken.None);
+            return PutLinkallUnlinkAsync(System.Threading.CancellationToken.None);
         }
 
         /// <param name="cancellationToken">A cancellation token that can be used by other objects or threads to receive notice of cancellation.</param>
         /// <returns>OK</returns>
         /// <exception cref="SonarApiException">A server side error occurred.</exception>
-        public virtual async System.Threading.Tasks.Task<bool> UnlinkAsync(System.Threading.CancellationToken cancellationToken)
+        public virtual async System.Threading.Tasks.Task<bool> PutLinkallUnlinkAsync(System.Threading.CancellationToken cancellationToken)
         {
             var client_ = _httpClient;
             var disposeClient_ = false;
@@ -5185,15 +5185,15 @@ namespace Wedol.SteelSeries.Sonar
 
         /// <returns>OK</returns>
         /// <exception cref="SonarApiException">A server side error occurred.</exception>
-        public virtual System.Threading.Tasks.Task<ModeId> ModeGETAsync()
+        public virtual System.Threading.Tasks.Task<ModeId> GetModeAsync()
         {
-            return ModeGETAsync(System.Threading.CancellationToken.None);
+            return GetModeAsync(System.Threading.CancellationToken.None);
         }
 
         /// <param name="cancellationToken">A cancellation token that can be used by other objects or threads to receive notice of cancellation.</param>
         /// <returns>OK</returns>
         /// <exception cref="SonarApiException">A server side error occurred.</exception>
-        public virtual async System.Threading.Tasks.Task<ModeId> ModeGETAsync(System.Threading.CancellationToken cancellationToken)
+        public virtual async System.Threading.Tasks.Task<ModeId> GetModeAsync(System.Threading.CancellationToken cancellationToken)
         {
             var client_ = _httpClient;
             var disposeClient_ = false;
@@ -5263,15 +5263,15 @@ namespace Wedol.SteelSeries.Sonar
 
         /// <returns>OK</returns>
         /// <exception cref="SonarApiException">A server side error occurred.</exception>
-        public virtual System.Threading.Tasks.Task<ModeId> ModePUTAsync(ModeId id)
+        public virtual System.Threading.Tasks.Task<ModeId> PutModeByIdAsync(ModeId id)
         {
-            return ModePUTAsync(id, System.Threading.CancellationToken.None);
+            return PutModeByIdAsync(id, System.Threading.CancellationToken.None);
         }
 
         /// <param name="cancellationToken">A cancellation token that can be used by other objects or threads to receive notice of cancellation.</param>
         /// <returns>OK</returns>
         /// <exception cref="SonarApiException">A server side error occurred.</exception>
-        public virtual async System.Threading.Tasks.Task<ModeId> ModePUTAsync(ModeId id, System.Threading.CancellationToken cancellationToken)
+        public virtual async System.Threading.Tasks.Task<ModeId> PutModeByIdAsync(ModeId id, System.Threading.CancellationToken cancellationToken)
         {
             if (id == null)
                 throw new System.ArgumentNullException("id");
@@ -5346,15 +5346,15 @@ namespace Wedol.SteelSeries.Sonar
 
         /// <returns>OK</returns>
         /// <exception cref="SonarApiException">A server side error occurred.</exception>
-        public virtual System.Threading.Tasks.Task<OnBoardingPayload> OnboardingGETAsync()
+        public virtual System.Threading.Tasks.Task<OnBoardingPayload> GetOnboardingAsync()
         {
-            return OnboardingGETAsync(System.Threading.CancellationToken.None);
+            return GetOnboardingAsync(System.Threading.CancellationToken.None);
         }
 
         /// <param name="cancellationToken">A cancellation token that can be used by other objects or threads to receive notice of cancellation.</param>
         /// <returns>OK</returns>
         /// <exception cref="SonarApiException">A server side error occurred.</exception>
-        public virtual async System.Threading.Tasks.Task<OnBoardingPayload> OnboardingGETAsync(System.Threading.CancellationToken cancellationToken)
+        public virtual async System.Threading.Tasks.Task<OnBoardingPayload> GetOnboardingAsync(System.Threading.CancellationToken cancellationToken)
         {
             var client_ = _httpClient;
             var disposeClient_ = false;
@@ -5424,15 +5424,15 @@ namespace Wedol.SteelSeries.Sonar
 
         /// <returns>OK</returns>
         /// <exception cref="SonarApiException">A server side error occurred.</exception>
-        public virtual System.Threading.Tasks.Task OnboardingPOSTAsync(OnboardingDevices? body)
+        public virtual System.Threading.Tasks.Task PostOnboardingAsync(OnboardingDevices? body)
         {
-            return OnboardingPOSTAsync(body, System.Threading.CancellationToken.None);
+            return PostOnboardingAsync(body, System.Threading.CancellationToken.None);
         }
 
         /// <param name="cancellationToken">A cancellation token that can be used by other objects or threads to receive notice of cancellation.</param>
         /// <returns>OK</returns>
         /// <exception cref="SonarApiException">A server side error occurred.</exception>
-        public virtual async System.Threading.Tasks.Task OnboardingPOSTAsync(OnboardingDevices? body, System.Threading.CancellationToken cancellationToken)
+        public virtual async System.Threading.Tasks.Task PostOnboardingAsync(OnboardingDevices? body, System.Threading.CancellationToken cancellationToken)
         {
             var client_ = _httpClient;
             var disposeClient_ = false;
@@ -5500,15 +5500,15 @@ namespace Wedol.SteelSeries.Sonar
 
         /// <returns>OK</returns>
         /// <exception cref="SonarApiException">A server side error occurred.</exception>
-        public virtual System.Threading.Tasks.Task<SteelSeriesAudioDevice> PreferredDeviceAsync(string deviceName)
+        public virtual System.Threading.Tasks.Task<SteelSeriesAudioDevice> GetOnboardingPreferreddeviceByDevicenameAsync(string deviceName)
         {
-            return PreferredDeviceAsync(deviceName, System.Threading.CancellationToken.None);
+            return GetOnboardingPreferreddeviceByDevicenameAsync(deviceName, System.Threading.CancellationToken.None);
         }
 
         /// <param name="cancellationToken">A cancellation token that can be used by other objects or threads to receive notice of cancellation.</param>
         /// <returns>OK</returns>
         /// <exception cref="SonarApiException">A server side error occurred.</exception>
-        public virtual async System.Threading.Tasks.Task<SteelSeriesAudioDevice> PreferredDeviceAsync(string deviceName, System.Threading.CancellationToken cancellationToken)
+        public virtual async System.Threading.Tasks.Task<SteelSeriesAudioDevice> GetOnboardingPreferreddeviceByDevicenameAsync(string deviceName, System.Threading.CancellationToken cancellationToken)
         {
             if (deviceName == null)
                 throw new System.ArgumentNullException("deviceName");
@@ -5582,15 +5582,15 @@ namespace Wedol.SteelSeries.Sonar
 
         /// <returns>OK</returns>
         /// <exception cref="SonarApiException">A server side error occurred.</exception>
-        public virtual System.Threading.Tasks.Task ConfigureAsync()
+        public virtual System.Threading.Tasks.Task PutOnboardingConfigureAsync()
         {
-            return ConfigureAsync(System.Threading.CancellationToken.None);
+            return PutOnboardingConfigureAsync(System.Threading.CancellationToken.None);
         }
 
         /// <param name="cancellationToken">A cancellation token that can be used by other objects or threads to receive notice of cancellation.</param>
         /// <returns>OK</returns>
         /// <exception cref="SonarApiException">A server side error occurred.</exception>
-        public virtual async System.Threading.Tasks.Task ConfigureAsync(System.Threading.CancellationToken cancellationToken)
+        public virtual async System.Threading.Tasks.Task PutOnboardingConfigureAsync(System.Threading.CancellationToken cancellationToken)
         {
             var client_ = _httpClient;
             var disposeClient_ = false;
@@ -5655,15 +5655,15 @@ namespace Wedol.SteelSeries.Sonar
 
         /// <returns>OK</returns>
         /// <exception cref="SonarApiException">A server side error occurred.</exception>
-        public virtual System.Threading.Tasks.Task Configure2Async()
+        public virtual System.Threading.Tasks.Task PutV1OnboardingConfigureAsync()
         {
-            return Configure2Async(System.Threading.CancellationToken.None);
+            return PutV1OnboardingConfigureAsync(System.Threading.CancellationToken.None);
         }
 
         /// <param name="cancellationToken">A cancellation token that can be used by other objects or threads to receive notice of cancellation.</param>
         /// <returns>OK</returns>
         /// <exception cref="SonarApiException">A server side error occurred.</exception>
-        public virtual async System.Threading.Tasks.Task Configure2Async(System.Threading.CancellationToken cancellationToken)
+        public virtual async System.Threading.Tasks.Task PutV1OnboardingConfigureAsync(System.Threading.CancellationToken cancellationToken)
         {
             var client_ = _httpClient;
             var disposeClient_ = false;
@@ -5728,15 +5728,15 @@ namespace Wedol.SteelSeries.Sonar
 
         /// <returns>OK</returns>
         /// <exception cref="SonarApiException">A server side error occurred.</exception>
-        public virtual System.Threading.Tasks.Task<OverlaysSettings> OverlaysAsync()
+        public virtual System.Threading.Tasks.Task<OverlaysSettings> GetOverlaysAsync()
         {
-            return OverlaysAsync(System.Threading.CancellationToken.None);
+            return GetOverlaysAsync(System.Threading.CancellationToken.None);
         }
 
         /// <param name="cancellationToken">A cancellation token that can be used by other objects or threads to receive notice of cancellation.</param>
         /// <returns>OK</returns>
         /// <exception cref="SonarApiException">A server side error occurred.</exception>
-        public virtual async System.Threading.Tasks.Task<OverlaysSettings> OverlaysAsync(System.Threading.CancellationToken cancellationToken)
+        public virtual async System.Threading.Tasks.Task<OverlaysSettings> GetOverlaysAsync(System.Threading.CancellationToken cancellationToken)
         {
             var client_ = _httpClient;
             var disposeClient_ = false;
@@ -5806,15 +5806,15 @@ namespace Wedol.SteelSeries.Sonar
 
         /// <returns>OK</returns>
         /// <exception cref="SonarApiException">A server side error occurred.</exception>
-        public virtual System.Threading.Tasks.Task<bool> IsHardwareTriggeredEnabledGETAsync()
+        public virtual System.Threading.Tasks.Task<bool> GetOverlaysIshardwaretriggeredenabledAsync()
         {
-            return IsHardwareTriggeredEnabledGETAsync(System.Threading.CancellationToken.None);
+            return GetOverlaysIshardwaretriggeredenabledAsync(System.Threading.CancellationToken.None);
         }
 
         /// <param name="cancellationToken">A cancellation token that can be used by other objects or threads to receive notice of cancellation.</param>
         /// <returns>OK</returns>
         /// <exception cref="SonarApiException">A server side error occurred.</exception>
-        public virtual async System.Threading.Tasks.Task<bool> IsHardwareTriggeredEnabledGETAsync(System.Threading.CancellationToken cancellationToken)
+        public virtual async System.Threading.Tasks.Task<bool> GetOverlaysIshardwaretriggeredenabledAsync(System.Threading.CancellationToken cancellationToken)
         {
             var client_ = _httpClient;
             var disposeClient_ = false;
@@ -5884,15 +5884,15 @@ namespace Wedol.SteelSeries.Sonar
 
         /// <returns>OK</returns>
         /// <exception cref="SonarApiException">A server side error occurred.</exception>
-        public virtual System.Threading.Tasks.Task<bool> IsHardwareTriggeredEnabledPUTAsync(bool isEnabled)
+        public virtual System.Threading.Tasks.Task<bool> PutOverlaysIshardwaretriggeredenabledByIsenabledAsync(bool isEnabled)
         {
-            return IsHardwareTriggeredEnabledPUTAsync(isEnabled, System.Threading.CancellationToken.None);
+            return PutOverlaysIshardwaretriggeredenabledByIsenabledAsync(isEnabled, System.Threading.CancellationToken.None);
         }
 
         /// <param name="cancellationToken">A cancellation token that can be used by other objects or threads to receive notice of cancellation.</param>
         /// <returns>OK</returns>
         /// <exception cref="SonarApiException">A server side error occurred.</exception>
-        public virtual async System.Threading.Tasks.Task<bool> IsHardwareTriggeredEnabledPUTAsync(bool isEnabled, System.Threading.CancellationToken cancellationToken)
+        public virtual async System.Threading.Tasks.Task<bool> PutOverlaysIshardwaretriggeredenabledByIsenabledAsync(bool isEnabled, System.Threading.CancellationToken cancellationToken)
         {
             if (isEnabled == null)
                 throw new System.ArgumentNullException("isEnabled");
@@ -5967,15 +5967,15 @@ namespace Wedol.SteelSeries.Sonar
 
         /// <returns>OK</returns>
         /// <exception cref="SonarApiException">A server side error occurred.</exception>
-        public virtual System.Threading.Tasks.Task<bool> IsEnabledPUT4Async(bool isEnabled)
+        public virtual System.Threading.Tasks.Task<bool> PutOverlaysIsenabledByIsenabledAsync(bool isEnabled)
         {
-            return IsEnabledPUT4Async(isEnabled, System.Threading.CancellationToken.None);
+            return PutOverlaysIsenabledByIsenabledAsync(isEnabled, System.Threading.CancellationToken.None);
         }
 
         /// <param name="cancellationToken">A cancellation token that can be used by other objects or threads to receive notice of cancellation.</param>
         /// <returns>OK</returns>
         /// <exception cref="SonarApiException">A server side error occurred.</exception>
-        public virtual async System.Threading.Tasks.Task<bool> IsEnabledPUT4Async(bool isEnabled, System.Threading.CancellationToken cancellationToken)
+        public virtual async System.Threading.Tasks.Task<bool> PutOverlaysIsenabledByIsenabledAsync(bool isEnabled, System.Threading.CancellationToken cancellationToken)
         {
             if (isEnabled == null)
                 throw new System.ArgumentNullException("isEnabled");
@@ -6050,15 +6050,15 @@ namespace Wedol.SteelSeries.Sonar
 
         /// <returns>OK</returns>
         /// <exception cref="SonarApiException">A server side error occurred.</exception>
-        public virtual System.Threading.Tasks.Task<bool> IsEnabledPUT5Async(string overlayName, bool isEnabled)
+        public virtual System.Threading.Tasks.Task<bool> PutOverlaysByOverlaynameIsenabledByIsenabledAsync(string overlayName, bool isEnabled)
         {
-            return IsEnabledPUT5Async(overlayName, isEnabled, System.Threading.CancellationToken.None);
+            return PutOverlaysByOverlaynameIsenabledByIsenabledAsync(overlayName, isEnabled, System.Threading.CancellationToken.None);
         }
 
         /// <param name="cancellationToken">A cancellation token that can be used by other objects or threads to receive notice of cancellation.</param>
         /// <returns>OK</returns>
         /// <exception cref="SonarApiException">A server side error occurred.</exception>
-        public virtual async System.Threading.Tasks.Task<bool> IsEnabledPUT5Async(string overlayName, bool isEnabled, System.Threading.CancellationToken cancellationToken)
+        public virtual async System.Threading.Tasks.Task<bool> PutOverlaysByOverlaynameIsenabledByIsenabledAsync(string overlayName, bool isEnabled, System.Threading.CancellationToken cancellationToken)
         {
             if (overlayName == null)
                 throw new System.ArgumentNullException("overlayName");
@@ -6138,15 +6138,15 @@ namespace Wedol.SteelSeries.Sonar
 
         /// <returns>OK</returns>
         /// <exception cref="SonarApiException">A server side error occurred.</exception>
-        public virtual System.Threading.Tasks.Task<int> PositionAsync(OverlayPosition position)
+        public virtual System.Threading.Tasks.Task<int> PutOverlaysPositionByPositionAsync(OverlayPosition position)
         {
-            return PositionAsync(position, System.Threading.CancellationToken.None);
+            return PutOverlaysPositionByPositionAsync(position, System.Threading.CancellationToken.None);
         }
 
         /// <param name="cancellationToken">A cancellation token that can be used by other objects or threads to receive notice of cancellation.</param>
         /// <returns>OK</returns>
         /// <exception cref="SonarApiException">A server side error occurred.</exception>
-        public virtual async System.Threading.Tasks.Task<int> PositionAsync(OverlayPosition position, System.Threading.CancellationToken cancellationToken)
+        public virtual async System.Threading.Tasks.Task<int> PutOverlaysPositionByPositionAsync(OverlayPosition position, System.Threading.CancellationToken cancellationToken)
         {
             if (position == null)
                 throw new System.ArgumentNullException("position");
@@ -6221,15 +6221,15 @@ namespace Wedol.SteelSeries.Sonar
 
         /// <returns>OK</returns>
         /// <exception cref="SonarApiException">A server side error occurred.</exception>
-        public virtual System.Threading.Tasks.Task<System.Collections.Generic.ICollection<Preset>> PresetsAsync(VirtualAudioDevice vad)
+        public virtual System.Threading.Tasks.Task<System.Collections.Generic.ICollection<Preset>> GetPresetsByVadAsync(VirtualAudioDevice vad)
         {
-            return PresetsAsync(vad, System.Threading.CancellationToken.None);
+            return GetPresetsByVadAsync(vad, System.Threading.CancellationToken.None);
         }
 
         /// <param name="cancellationToken">A cancellation token that can be used by other objects or threads to receive notice of cancellation.</param>
         /// <returns>OK</returns>
         /// <exception cref="SonarApiException">A server side error occurred.</exception>
-        public virtual async System.Threading.Tasks.Task<System.Collections.Generic.ICollection<Preset>> PresetsAsync(VirtualAudioDevice vad, System.Threading.CancellationToken cancellationToken)
+        public virtual async System.Threading.Tasks.Task<System.Collections.Generic.ICollection<Preset>> GetPresetsByVadAsync(VirtualAudioDevice vad, System.Threading.CancellationToken cancellationToken)
         {
             if (vad == null)
                 throw new System.ArgumentNullException("vad");
@@ -6303,15 +6303,15 @@ namespace Wedol.SteelSeries.Sonar
 
         /// <returns>OK</returns>
         /// <exception cref="SonarApiException">A server side error occurred.</exception>
-        public virtual System.Threading.Tasks.Task<bool> IsEnabledGET2Async()
+        public virtual System.Threading.Tasks.Task<bool> GetQuicksetIsenabledAsync()
         {
-            return IsEnabledGET2Async(System.Threading.CancellationToken.None);
+            return GetQuicksetIsenabledAsync(System.Threading.CancellationToken.None);
         }
 
         /// <param name="cancellationToken">A cancellation token that can be used by other objects or threads to receive notice of cancellation.</param>
         /// <returns>OK</returns>
         /// <exception cref="SonarApiException">A server side error occurred.</exception>
-        public virtual async System.Threading.Tasks.Task<bool> IsEnabledGET2Async(System.Threading.CancellationToken cancellationToken)
+        public virtual async System.Threading.Tasks.Task<bool> GetQuicksetIsenabledAsync(System.Threading.CancellationToken cancellationToken)
         {
             var client_ = _httpClient;
             var disposeClient_ = false;
@@ -6381,15 +6381,15 @@ namespace Wedol.SteelSeries.Sonar
 
         /// <returns>OK</returns>
         /// <exception cref="SonarApiException">A server side error occurred.</exception>
-        public virtual System.Threading.Tasks.Task<Profile> SelectedAsync()
+        public virtual System.Threading.Tasks.Task<Profile> GetQuicksetSelectedAsync()
         {
-            return SelectedAsync(System.Threading.CancellationToken.None);
+            return GetQuicksetSelectedAsync(System.Threading.CancellationToken.None);
         }
 
         /// <param name="cancellationToken">A cancellation token that can be used by other objects or threads to receive notice of cancellation.</param>
         /// <returns>OK</returns>
         /// <exception cref="SonarApiException">A server side error occurred.</exception>
-        public virtual async System.Threading.Tasks.Task<Profile> SelectedAsync(System.Threading.CancellationToken cancellationToken)
+        public virtual async System.Threading.Tasks.Task<Profile> GetQuicksetSelectedAsync(System.Threading.CancellationToken cancellationToken)
         {
             var client_ = _httpClient;
             var disposeClient_ = false;
@@ -6459,15 +6459,15 @@ namespace Wedol.SteelSeries.Sonar
 
         /// <returns>OK</returns>
         /// <exception cref="SonarApiException">A server side error occurred.</exception>
-        public virtual System.Threading.Tasks.Task<System.Collections.Generic.ICollection<Profile>> ProfilesAsync()
+        public virtual System.Threading.Tasks.Task<System.Collections.Generic.ICollection<Profile>> GetQuicksetProfilesAsync()
         {
-            return ProfilesAsync(System.Threading.CancellationToken.None);
+            return GetQuicksetProfilesAsync(System.Threading.CancellationToken.None);
         }
 
         /// <param name="cancellationToken">A cancellation token that can be used by other objects or threads to receive notice of cancellation.</param>
         /// <returns>OK</returns>
         /// <exception cref="SonarApiException">A server side error occurred.</exception>
-        public virtual async System.Threading.Tasks.Task<System.Collections.Generic.ICollection<Profile>> ProfilesAsync(System.Threading.CancellationToken cancellationToken)
+        public virtual async System.Threading.Tasks.Task<System.Collections.Generic.ICollection<Profile>> GetQuicksetProfilesAsync(System.Threading.CancellationToken cancellationToken)
         {
             var client_ = _httpClient;
             var disposeClient_ = false;
@@ -6537,15 +6537,15 @@ namespace Wedol.SteelSeries.Sonar
 
         /// <returns>OK</returns>
         /// <exception cref="SonarApiException">A server side error occurred.</exception>
-        public virtual System.Threading.Tasks.Task TargetAsync(string deviceName, DeviceDataFlow dataflow)
+        public virtual System.Threading.Tasks.Task PutV1RedirectionTargetByDevicenameByDataflowAsync(string deviceName, DeviceDataFlow dataflow)
         {
-            return TargetAsync(deviceName, dataflow, System.Threading.CancellationToken.None);
+            return PutV1RedirectionTargetByDevicenameByDataflowAsync(deviceName, dataflow, System.Threading.CancellationToken.None);
         }
 
         /// <param name="cancellationToken">A cancellation token that can be used by other objects or threads to receive notice of cancellation.</param>
         /// <returns>OK</returns>
         /// <exception cref="SonarApiException">A server side error occurred.</exception>
-        public virtual async System.Threading.Tasks.Task TargetAsync(string deviceName, DeviceDataFlow dataflow, System.Threading.CancellationToken cancellationToken)
+        public virtual async System.Threading.Tasks.Task PutV1RedirectionTargetByDevicenameByDataflowAsync(string deviceName, DeviceDataFlow dataflow, System.Threading.CancellationToken cancellationToken)
         {
             if (deviceName == null)
                 throw new System.ArgumentNullException("deviceName");
@@ -6619,15 +6619,15 @@ namespace Wedol.SteelSeries.Sonar
 
         /// <returns>OK</returns>
         /// <exception cref="SonarApiException">A server side error occurred.</exception>
-        public virtual System.Threading.Tasks.Task<bool> ShouldShowTargetDeviceAsync()
+        public virtual System.Threading.Tasks.Task<bool> GetSnoozablealertShouldshowtargetdeviceAsync()
         {
-            return ShouldShowTargetDeviceAsync(System.Threading.CancellationToken.None);
+            return GetSnoozablealertShouldshowtargetdeviceAsync(System.Threading.CancellationToken.None);
         }
 
         /// <param name="cancellationToken">A cancellation token that can be used by other objects or threads to receive notice of cancellation.</param>
         /// <returns>OK</returns>
         /// <exception cref="SonarApiException">A server side error occurred.</exception>
-        public virtual async System.Threading.Tasks.Task<bool> ShouldShowTargetDeviceAsync(System.Threading.CancellationToken cancellationToken)
+        public virtual async System.Threading.Tasks.Task<bool> GetSnoozablealertShouldshowtargetdeviceAsync(System.Threading.CancellationToken cancellationToken)
         {
             var client_ = _httpClient;
             var disposeClient_ = false;
@@ -6697,15 +6697,15 @@ namespace Wedol.SteelSeries.Sonar
 
         /// <returns>OK</returns>
         /// <exception cref="SonarApiException">A server side error occurred.</exception>
-        public virtual System.Threading.Tasks.Task SnoozeTargetDeviceAsync()
+        public virtual System.Threading.Tasks.Task PutSnoozablealertSnoozetargetdeviceAsync()
         {
-            return SnoozeTargetDeviceAsync(System.Threading.CancellationToken.None);
+            return PutSnoozablealertSnoozetargetdeviceAsync(System.Threading.CancellationToken.None);
         }
 
         /// <param name="cancellationToken">A cancellation token that can be used by other objects or threads to receive notice of cancellation.</param>
         /// <returns>OK</returns>
         /// <exception cref="SonarApiException">A server side error occurred.</exception>
-        public virtual async System.Threading.Tasks.Task SnoozeTargetDeviceAsync(System.Threading.CancellationToken cancellationToken)
+        public virtual async System.Threading.Tasks.Task PutSnoozablealertSnoozetargetdeviceAsync(System.Threading.CancellationToken cancellationToken)
         {
             var client_ = _httpClient;
             var disposeClient_ = false;
@@ -6770,15 +6770,15 @@ namespace Wedol.SteelSeries.Sonar
 
         /// <returns>OK</returns>
         /// <exception cref="SonarApiException">A server side error occurred.</exception>
-        public virtual System.Threading.Tasks.Task<VolumeInfo> ClassicAsync()
+        public virtual System.Threading.Tasks.Task<VolumeInfo> GetVolumesettingsClassicAsync()
         {
-            return ClassicAsync(System.Threading.CancellationToken.None);
+            return GetVolumesettingsClassicAsync(System.Threading.CancellationToken.None);
         }
 
         /// <param name="cancellationToken">A cancellation token that can be used by other objects or threads to receive notice of cancellation.</param>
         /// <returns>OK</returns>
         /// <exception cref="SonarApiException">A server side error occurred.</exception>
-        public virtual async System.Threading.Tasks.Task<VolumeInfo> ClassicAsync(System.Threading.CancellationToken cancellationToken)
+        public virtual async System.Threading.Tasks.Task<VolumeInfo> GetVolumesettingsClassicAsync(System.Threading.CancellationToken cancellationToken)
         {
             var client_ = _httpClient;
             var disposeClient_ = false;
@@ -6848,15 +6848,15 @@ namespace Wedol.SteelSeries.Sonar
 
         /// <returns>OK</returns>
         /// <exception cref="SonarApiException">A server side error occurred.</exception>
-        public virtual System.Threading.Tasks.Task<VolumeInfo> VolumeAsync(float masterVolume)
+        public virtual System.Threading.Tasks.Task<VolumeInfo> PutVolumesettingsClassicMasterVolumeByMastervolumeAsync(float masterVolume)
         {
-            return VolumeAsync(masterVolume, System.Threading.CancellationToken.None);
+            return PutVolumesettingsClassicMasterVolumeByMastervolumeAsync(masterVolume, System.Threading.CancellationToken.None);
         }
 
         /// <param name="cancellationToken">A cancellation token that can be used by other objects or threads to receive notice of cancellation.</param>
         /// <returns>OK</returns>
         /// <exception cref="SonarApiException">A server side error occurred.</exception>
-        public virtual async System.Threading.Tasks.Task<VolumeInfo> VolumeAsync(float masterVolume, System.Threading.CancellationToken cancellationToken)
+        public virtual async System.Threading.Tasks.Task<VolumeInfo> PutVolumesettingsClassicMasterVolumeByMastervolumeAsync(float masterVolume, System.Threading.CancellationToken cancellationToken)
         {
             if (masterVolume == null)
                 throw new System.ArgumentNullException("masterVolume");
@@ -6931,15 +6931,15 @@ namespace Wedol.SteelSeries.Sonar
 
         /// <returns>OK</returns>
         /// <exception cref="SonarApiException">A server side error occurred.</exception>
-        public virtual System.Threading.Tasks.Task<VolumeInfo> MuteAsync(bool masterMute)
+        public virtual System.Threading.Tasks.Task<VolumeInfo> PutVolumesettingsClassicMasterMuteByMastermuteAsync(bool masterMute)
         {
-            return MuteAsync(masterMute, System.Threading.CancellationToken.None);
+            return PutVolumesettingsClassicMasterMuteByMastermuteAsync(masterMute, System.Threading.CancellationToken.None);
         }
 
         /// <param name="cancellationToken">A cancellation token that can be used by other objects or threads to receive notice of cancellation.</param>
         /// <returns>OK</returns>
         /// <exception cref="SonarApiException">A server side error occurred.</exception>
-        public virtual async System.Threading.Tasks.Task<VolumeInfo> MuteAsync(bool masterMute, System.Threading.CancellationToken cancellationToken)
+        public virtual async System.Threading.Tasks.Task<VolumeInfo> PutVolumesettingsClassicMasterMuteByMastermuteAsync(bool masterMute, System.Threading.CancellationToken cancellationToken)
         {
             if (masterMute == null)
                 throw new System.ArgumentNullException("masterMute");
@@ -7014,15 +7014,15 @@ namespace Wedol.SteelSeries.Sonar
 
         /// <returns>OK</returns>
         /// <exception cref="SonarApiException">A server side error occurred.</exception>
-        public virtual System.Threading.Tasks.Task<VolumeInfo> Volume2Async(DeviceRole role, float volume)
+        public virtual System.Threading.Tasks.Task<VolumeInfo> PutVolumesettingsClassicByRoleVolumeByVolumeAsync(DeviceRole role, float volume)
         {
-            return Volume2Async(role, volume, System.Threading.CancellationToken.None);
+            return PutVolumesettingsClassicByRoleVolumeByVolumeAsync(role, volume, System.Threading.CancellationToken.None);
         }
 
         /// <param name="cancellationToken">A cancellation token that can be used by other objects or threads to receive notice of cancellation.</param>
         /// <returns>OK</returns>
         /// <exception cref="SonarApiException">A server side error occurred.</exception>
-        public virtual async System.Threading.Tasks.Task<VolumeInfo> Volume2Async(DeviceRole role, float volume, System.Threading.CancellationToken cancellationToken)
+        public virtual async System.Threading.Tasks.Task<VolumeInfo> PutVolumesettingsClassicByRoleVolumeByVolumeAsync(DeviceRole role, float volume, System.Threading.CancellationToken cancellationToken)
         {
             if (role == null)
                 throw new System.ArgumentNullException("role");
@@ -7102,15 +7102,15 @@ namespace Wedol.SteelSeries.Sonar
 
         /// <returns>OK</returns>
         /// <exception cref="SonarApiException">A server side error occurred.</exception>
-        public virtual System.Threading.Tasks.Task<VolumeInfo> Mute2Async(DeviceRole role, bool mute)
+        public virtual System.Threading.Tasks.Task<VolumeInfo> PutVolumesettingsClassicByRoleMuteByMuteAsync(DeviceRole role, bool mute)
         {
-            return Mute2Async(role, mute, System.Threading.CancellationToken.None);
+            return PutVolumesettingsClassicByRoleMuteByMuteAsync(role, mute, System.Threading.CancellationToken.None);
         }
 
         /// <param name="cancellationToken">A cancellation token that can be used by other objects or threads to receive notice of cancellation.</param>
         /// <returns>OK</returns>
         /// <exception cref="SonarApiException">A server side error occurred.</exception>
-        public virtual async System.Threading.Tasks.Task<VolumeInfo> Mute2Async(DeviceRole role, bool mute, System.Threading.CancellationToken cancellationToken)
+        public virtual async System.Threading.Tasks.Task<VolumeInfo> PutVolumesettingsClassicByRoleMuteByMuteAsync(DeviceRole role, bool mute, System.Threading.CancellationToken cancellationToken)
         {
             if (role == null)
                 throw new System.ArgumentNullException("role");
@@ -7190,15 +7190,15 @@ namespace Wedol.SteelSeries.Sonar
 
         /// <returns>OK</returns>
         /// <exception cref="SonarApiException">A server side error occurred.</exception>
-        public virtual System.Threading.Tasks.Task<VolumeInfo> StreamerAsync()
+        public virtual System.Threading.Tasks.Task<VolumeInfo> GetVolumesettingsStreamerAsync()
         {
-            return StreamerAsync(System.Threading.CancellationToken.None);
+            return GetVolumesettingsStreamerAsync(System.Threading.CancellationToken.None);
         }
 
         /// <param name="cancellationToken">A cancellation token that can be used by other objects or threads to receive notice of cancellation.</param>
         /// <returns>OK</returns>
         /// <exception cref="SonarApiException">A server side error occurred.</exception>
-        public virtual async System.Threading.Tasks.Task<VolumeInfo> StreamerAsync(System.Threading.CancellationToken cancellationToken)
+        public virtual async System.Threading.Tasks.Task<VolumeInfo> GetVolumesettingsStreamerAsync(System.Threading.CancellationToken cancellationToken)
         {
             var client_ = _httpClient;
             var disposeClient_ = false;
@@ -7268,15 +7268,15 @@ namespace Wedol.SteelSeries.Sonar
 
         /// <returns>OK</returns>
         /// <exception cref="SonarApiException">A server side error occurred.</exception>
-        public virtual System.Threading.Tasks.Task<VolumeInfo> VolumePUT2Async(StreamRedirectionId id, float masterVolume)
+        public virtual System.Threading.Tasks.Task<VolumeInfo> PutVolumesettingsStreamerByIdMasterVolumeByMastervolumeAsync(StreamRedirectionId id, float masterVolume)
         {
-            return VolumePUT2Async(id, masterVolume, System.Threading.CancellationToken.None);
+            return PutVolumesettingsStreamerByIdMasterVolumeByMastervolumeAsync(id, masterVolume, System.Threading.CancellationToken.None);
         }
 
         /// <param name="cancellationToken">A cancellation token that can be used by other objects or threads to receive notice of cancellation.</param>
         /// <returns>OK</returns>
         /// <exception cref="SonarApiException">A server side error occurred.</exception>
-        public virtual async System.Threading.Tasks.Task<VolumeInfo> VolumePUT2Async(StreamRedirectionId id, float masterVolume, System.Threading.CancellationToken cancellationToken)
+        public virtual async System.Threading.Tasks.Task<VolumeInfo> PutVolumesettingsStreamerByIdMasterVolumeByMastervolumeAsync(StreamRedirectionId id, float masterVolume, System.Threading.CancellationToken cancellationToken)
         {
             if (id == null)
                 throw new System.ArgumentNullException("id");
@@ -7356,15 +7356,15 @@ namespace Wedol.SteelSeries.Sonar
 
         /// <returns>OK</returns>
         /// <exception cref="SonarApiException">A server side error occurred.</exception>
-        public virtual System.Threading.Tasks.Task<VolumeInfo> IsMutedAsync(StreamRedirectionId id, bool masterMute)
+        public virtual System.Threading.Tasks.Task<VolumeInfo> PutVolumesettingsStreamerByIdMasterIsmutedByMastermuteAsync(StreamRedirectionId id, bool masterMute)
         {
-            return IsMutedAsync(id, masterMute, System.Threading.CancellationToken.None);
+            return PutVolumesettingsStreamerByIdMasterIsmutedByMastermuteAsync(id, masterMute, System.Threading.CancellationToken.None);
         }
 
         /// <param name="cancellationToken">A cancellation token that can be used by other objects or threads to receive notice of cancellation.</param>
         /// <returns>OK</returns>
         /// <exception cref="SonarApiException">A server side error occurred.</exception>
-        public virtual async System.Threading.Tasks.Task<VolumeInfo> IsMutedAsync(StreamRedirectionId id, bool masterMute, System.Threading.CancellationToken cancellationToken)
+        public virtual async System.Threading.Tasks.Task<VolumeInfo> PutVolumesettingsStreamerByIdMasterIsmutedByMastermuteAsync(StreamRedirectionId id, bool masterMute, System.Threading.CancellationToken cancellationToken)
         {
             if (id == null)
                 throw new System.ArgumentNullException("id");
@@ -7444,15 +7444,15 @@ namespace Wedol.SteelSeries.Sonar
 
         /// <returns>OK</returns>
         /// <exception cref="SonarApiException">A server side error occurred.</exception>
-        public virtual System.Threading.Tasks.Task<VolumeInfo> VolumePUT3Async(StreamRedirectionId id, DeviceRole role, float value)
+        public virtual System.Threading.Tasks.Task<VolumeInfo> PutVolumesettingsStreamerByIdByRoleVolumeByValueAsync(StreamRedirectionId id, DeviceRole role, float value)
         {
-            return VolumePUT3Async(id, role, value, System.Threading.CancellationToken.None);
+            return PutVolumesettingsStreamerByIdByRoleVolumeByValueAsync(id, role, value, System.Threading.CancellationToken.None);
         }
 
         /// <param name="cancellationToken">A cancellation token that can be used by other objects or threads to receive notice of cancellation.</param>
         /// <returns>OK</returns>
         /// <exception cref="SonarApiException">A server side error occurred.</exception>
-        public virtual async System.Threading.Tasks.Task<VolumeInfo> VolumePUT3Async(StreamRedirectionId id, DeviceRole role, float value, System.Threading.CancellationToken cancellationToken)
+        public virtual async System.Threading.Tasks.Task<VolumeInfo> PutVolumesettingsStreamerByIdByRoleVolumeByValueAsync(StreamRedirectionId id, DeviceRole role, float value, System.Threading.CancellationToken cancellationToken)
         {
             if (id == null)
                 throw new System.ArgumentNullException("id");
@@ -7537,15 +7537,15 @@ namespace Wedol.SteelSeries.Sonar
 
         /// <returns>OK</returns>
         /// <exception cref="SonarApiException">A server side error occurred.</exception>
-        public virtual System.Threading.Tasks.Task<VolumeInfo> IsMuted2Async(StreamRedirectionId id, DeviceRole role, bool value)
+        public virtual System.Threading.Tasks.Task<VolumeInfo> PutVolumesettingsStreamerByIdByRoleIsmutedByValueAsync(StreamRedirectionId id, DeviceRole role, bool value)
         {
-            return IsMuted2Async(id, role, value, System.Threading.CancellationToken.None);
+            return PutVolumesettingsStreamerByIdByRoleIsmutedByValueAsync(id, role, value, System.Threading.CancellationToken.None);
         }
 
         /// <param name="cancellationToken">A cancellation token that can be used by other objects or threads to receive notice of cancellation.</param>
         /// <returns>OK</returns>
         /// <exception cref="SonarApiException">A server side error occurred.</exception>
-        public virtual async System.Threading.Tasks.Task<VolumeInfo> IsMuted2Async(StreamRedirectionId id, DeviceRole role, bool value, System.Threading.CancellationToken cancellationToken)
+        public virtual async System.Threading.Tasks.Task<VolumeInfo> PutVolumesettingsStreamerByIdByRoleIsmutedByValueAsync(StreamRedirectionId id, DeviceRole role, bool value, System.Threading.CancellationToken cancellationToken)
         {
             if (id == null)
                 throw new System.ArgumentNullException("id");
@@ -7630,15 +7630,15 @@ namespace Wedol.SteelSeries.Sonar
 
         /// <returns>OK</returns>
         /// <exception cref="SonarApiException">A server side error occurred.</exception>
-        public virtual System.Threading.Tasks.Task<AppStatus> StatusAsync()
+        public virtual System.Threading.Tasks.Task<AppStatus> GetV1StatusAsync()
         {
-            return StatusAsync(System.Threading.CancellationToken.None);
+            return GetV1StatusAsync(System.Threading.CancellationToken.None);
         }
 
         /// <param name="cancellationToken">A cancellation token that can be used by other objects or threads to receive notice of cancellation.</param>
         /// <returns>OK</returns>
         /// <exception cref="SonarApiException">A server side error occurred.</exception>
-        public virtual async System.Threading.Tasks.Task<AppStatus> StatusAsync(System.Threading.CancellationToken cancellationToken)
+        public virtual async System.Threading.Tasks.Task<AppStatus> GetV1StatusAsync(System.Threading.CancellationToken cancellationToken)
         {
             var client_ = _httpClient;
             var disposeClient_ = false;
@@ -7708,15 +7708,15 @@ namespace Wedol.SteelSeries.Sonar
 
         /// <returns>OK</returns>
         /// <exception cref="SonarApiException">A server side error occurred.</exception>
-        public virtual System.Threading.Tasks.Task<System.Collections.Generic.ICollection<StreamRedirection>> StreamRedirectionsAsync()
+        public virtual System.Threading.Tasks.Task<System.Collections.Generic.ICollection<StreamRedirection>> GetStreamredirectionsAsync()
         {
-            return StreamRedirectionsAsync(System.Threading.CancellationToken.None);
+            return GetStreamredirectionsAsync(System.Threading.CancellationToken.None);
         }
 
         /// <param name="cancellationToken">A cancellation token that can be used by other objects or threads to receive notice of cancellation.</param>
         /// <returns>OK</returns>
         /// <exception cref="SonarApiException">A server side error occurred.</exception>
-        public virtual async System.Threading.Tasks.Task<System.Collections.Generic.ICollection<StreamRedirection>> StreamRedirectionsAsync(System.Threading.CancellationToken cancellationToken)
+        public virtual async System.Threading.Tasks.Task<System.Collections.Generic.ICollection<StreamRedirection>> GetStreamredirectionsAsync(System.Threading.CancellationToken cancellationToken)
         {
             var client_ = _httpClient;
             var disposeClient_ = false;
@@ -7786,15 +7786,15 @@ namespace Wedol.SteelSeries.Sonar
 
         /// <returns>OK</returns>
         /// <exception cref="SonarApiException">A server side error occurred.</exception>
-        public virtual System.Threading.Tasks.Task<StreamRedirection> DeviceIdPUT2Async(StreamRedirectionId id, string deviceId)
+        public virtual System.Threading.Tasks.Task<StreamRedirection> PutStreamredirectionsByIdDeviceidByDeviceidAsync(StreamRedirectionId id, string deviceId)
         {
-            return DeviceIdPUT2Async(id, deviceId, System.Threading.CancellationToken.None);
+            return PutStreamredirectionsByIdDeviceidByDeviceidAsync(id, deviceId, System.Threading.CancellationToken.None);
         }
 
         /// <param name="cancellationToken">A cancellation token that can be used by other objects or threads to receive notice of cancellation.</param>
         /// <returns>OK</returns>
         /// <exception cref="SonarApiException">A server side error occurred.</exception>
-        public virtual async System.Threading.Tasks.Task<StreamRedirection> DeviceIdPUT2Async(StreamRedirectionId id, string deviceId, System.Threading.CancellationToken cancellationToken)
+        public virtual async System.Threading.Tasks.Task<StreamRedirection> PutStreamredirectionsByIdDeviceidByDeviceidAsync(StreamRedirectionId id, string deviceId, System.Threading.CancellationToken cancellationToken)
         {
             if (id == null)
                 throw new System.ArgumentNullException("id");
@@ -7874,15 +7874,15 @@ namespace Wedol.SteelSeries.Sonar
 
         /// <returns>OK</returns>
         /// <exception cref="SonarApiException">A server side error occurred.</exception>
-        public virtual System.Threading.Tasks.Task<StreamRedirection> DeviceIdDELETE2Async(StreamRedirectionId id)
+        public virtual System.Threading.Tasks.Task<StreamRedirection> DeleteStreamredirectionsByIdDeviceidAsync(StreamRedirectionId id)
         {
-            return DeviceIdDELETE2Async(id, System.Threading.CancellationToken.None);
+            return DeleteStreamredirectionsByIdDeviceidAsync(id, System.Threading.CancellationToken.None);
         }
 
         /// <param name="cancellationToken">A cancellation token that can be used by other objects or threads to receive notice of cancellation.</param>
         /// <returns>OK</returns>
         /// <exception cref="SonarApiException">A server side error occurred.</exception>
-        public virtual async System.Threading.Tasks.Task<StreamRedirection> DeviceIdDELETE2Async(StreamRedirectionId id, System.Threading.CancellationToken cancellationToken)
+        public virtual async System.Threading.Tasks.Task<StreamRedirection> DeleteStreamredirectionsByIdDeviceidAsync(StreamRedirectionId id, System.Threading.CancellationToken cancellationToken)
         {
             if (id == null)
                 throw new System.ArgumentNullException("id");
@@ -7957,15 +7957,15 @@ namespace Wedol.SteelSeries.Sonar
 
         /// <returns>OK</returns>
         /// <exception cref="SonarApiException">A server side error occurred.</exception>
-        public virtual System.Threading.Tasks.Task<StreamRedirection> IsEnabledPUT6Async(StreamRedirectionId id, DeviceRole role, bool isEnabled)
+        public virtual System.Threading.Tasks.Task<StreamRedirection> PutStreamredirectionsByIdRedirectionsByRoleIsenabledByIsenabledAsync(StreamRedirectionId id, DeviceRole role, bool isEnabled)
         {
-            return IsEnabledPUT6Async(id, role, isEnabled, System.Threading.CancellationToken.None);
+            return PutStreamredirectionsByIdRedirectionsByRoleIsenabledByIsenabledAsync(id, role, isEnabled, System.Threading.CancellationToken.None);
         }
 
         /// <param name="cancellationToken">A cancellation token that can be used by other objects or threads to receive notice of cancellation.</param>
         /// <returns>OK</returns>
         /// <exception cref="SonarApiException">A server side error occurred.</exception>
-        public virtual async System.Threading.Tasks.Task<StreamRedirection> IsEnabledPUT6Async(StreamRedirectionId id, DeviceRole role, bool isEnabled, System.Threading.CancellationToken cancellationToken)
+        public virtual async System.Threading.Tasks.Task<StreamRedirection> PutStreamredirectionsByIdRedirectionsByRoleIsenabledByIsenabledAsync(StreamRedirectionId id, DeviceRole role, bool isEnabled, System.Threading.CancellationToken cancellationToken)
         {
             if (id == null)
                 throw new System.ArgumentNullException("id");
@@ -8050,15 +8050,15 @@ namespace Wedol.SteelSeries.Sonar
 
         /// <returns>OK</returns>
         /// <exception cref="SonarApiException">A server side error occurred.</exception>
-        public virtual System.Threading.Tasks.Task<bool> IsStreamMonitoringEnabledGETAsync()
+        public virtual System.Threading.Tasks.Task<bool> GetStreamredirectionsIsstreammonitoringenabledAsync()
         {
-            return IsStreamMonitoringEnabledGETAsync(System.Threading.CancellationToken.None);
+            return GetStreamredirectionsIsstreammonitoringenabledAsync(System.Threading.CancellationToken.None);
         }
 
         /// <param name="cancellationToken">A cancellation token that can be used by other objects or threads to receive notice of cancellation.</param>
         /// <returns>OK</returns>
         /// <exception cref="SonarApiException">A server side error occurred.</exception>
-        public virtual async System.Threading.Tasks.Task<bool> IsStreamMonitoringEnabledGETAsync(System.Threading.CancellationToken cancellationToken)
+        public virtual async System.Threading.Tasks.Task<bool> GetStreamredirectionsIsstreammonitoringenabledAsync(System.Threading.CancellationToken cancellationToken)
         {
             var client_ = _httpClient;
             var disposeClient_ = false;
@@ -8128,15 +8128,15 @@ namespace Wedol.SteelSeries.Sonar
 
         /// <returns>OK</returns>
         /// <exception cref="SonarApiException">A server side error occurred.</exception>
-        public virtual System.Threading.Tasks.Task<bool> IsStreamMonitoringEnabledPUTAsync(bool isStreamMonitoringEnabled)
+        public virtual System.Threading.Tasks.Task<bool> PutStreamredirectionsIsstreammonitoringenabledByIsstreammonitoringenabledAsync(bool isStreamMonitoringEnabled)
         {
-            return IsStreamMonitoringEnabledPUTAsync(isStreamMonitoringEnabled, System.Threading.CancellationToken.None);
+            return PutStreamredirectionsIsstreammonitoringenabledByIsstreammonitoringenabledAsync(isStreamMonitoringEnabled, System.Threading.CancellationToken.None);
         }
 
         /// <param name="cancellationToken">A cancellation token that can be used by other objects or threads to receive notice of cancellation.</param>
         /// <returns>OK</returns>
         /// <exception cref="SonarApiException">A server side error occurred.</exception>
-        public virtual async System.Threading.Tasks.Task<bool> IsStreamMonitoringEnabledPUTAsync(bool isStreamMonitoringEnabled, System.Threading.CancellationToken cancellationToken)
+        public virtual async System.Threading.Tasks.Task<bool> PutStreamredirectionsIsstreammonitoringenabledByIsstreammonitoringenabledAsync(bool isStreamMonitoringEnabled, System.Threading.CancellationToken cancellationToken)
         {
             if (isStreamMonitoringEnabled == null)
                 throw new System.ArgumentNullException("isStreamMonitoringEnabled");
@@ -8211,15 +8211,15 @@ namespace Wedol.SteelSeries.Sonar
 
         /// <returns>OK</returns>
         /// <exception cref="SonarApiException">A server side error occurred.</exception>
-        public virtual System.Threading.Tasks.Task<bool> IsStreamMonitoringLockedAsync()
+        public virtual System.Threading.Tasks.Task<bool> GetStreamredirectionsIsstreammonitoringlockedAsync()
         {
-            return IsStreamMonitoringLockedAsync(System.Threading.CancellationToken.None);
+            return GetStreamredirectionsIsstreammonitoringlockedAsync(System.Threading.CancellationToken.None);
         }
 
         /// <param name="cancellationToken">A cancellation token that can be used by other objects or threads to receive notice of cancellation.</param>
         /// <returns>OK</returns>
         /// <exception cref="SonarApiException">A server side error occurred.</exception>
-        public virtual async System.Threading.Tasks.Task<bool> IsStreamMonitoringLockedAsync(System.Threading.CancellationToken cancellationToken)
+        public virtual async System.Threading.Tasks.Task<bool> GetStreamredirectionsIsstreammonitoringlockedAsync(System.Threading.CancellationToken cancellationToken)
         {
             var client_ = _httpClient;
             var disposeClient_ = false;
@@ -8289,15 +8289,15 @@ namespace Wedol.SteelSeries.Sonar
 
         /// <returns>OK</returns>
         /// <exception cref="SonarApiException">A server side error occurred.</exception>
-        public virtual System.Threading.Tasks.Task<System.Collections.Generic.ICollection<DeviceVolume>> VolumesAsync()
+        public virtual System.Threading.Tasks.Task<System.Collections.Generic.ICollection<DeviceVolume>> GetVolumesettingsDevicesVolumesAsync()
         {
-            return VolumesAsync(System.Threading.CancellationToken.None);
+            return GetVolumesettingsDevicesVolumesAsync(System.Threading.CancellationToken.None);
         }
 
         /// <param name="cancellationToken">A cancellation token that can be used by other objects or threads to receive notice of cancellation.</param>
         /// <returns>OK</returns>
         /// <exception cref="SonarApiException">A server side error occurred.</exception>
-        public virtual async System.Threading.Tasks.Task<System.Collections.Generic.ICollection<DeviceVolume>> VolumesAsync(System.Threading.CancellationToken cancellationToken)
+        public virtual async System.Threading.Tasks.Task<System.Collections.Generic.ICollection<DeviceVolume>> GetVolumesettingsDevicesVolumesAsync(System.Threading.CancellationToken cancellationToken)
         {
             var client_ = _httpClient;
             var disposeClient_ = false;
@@ -8367,15 +8367,15 @@ namespace Wedol.SteelSeries.Sonar
 
         /// <returns>OK</returns>
         /// <exception cref="SonarApiException">A server side error occurred.</exception>
-        public virtual System.Threading.Tasks.Task<float> VolumePUT4Async(string deviceId, float volume)
+        public virtual System.Threading.Tasks.Task<float> PutVolumesettingsDevicesByDeviceidVolumeByVolumeAsync(string deviceId, float volume)
         {
-            return VolumePUT4Async(deviceId, volume, System.Threading.CancellationToken.None);
+            return PutVolumesettingsDevicesByDeviceidVolumeByVolumeAsync(deviceId, volume, System.Threading.CancellationToken.None);
         }
 
         /// <param name="cancellationToken">A cancellation token that can be used by other objects or threads to receive notice of cancellation.</param>
         /// <returns>OK</returns>
         /// <exception cref="SonarApiException">A server side error occurred.</exception>
-        public virtual async System.Threading.Tasks.Task<float> VolumePUT4Async(string deviceId, float volume, System.Threading.CancellationToken cancellationToken)
+        public virtual async System.Threading.Tasks.Task<float> PutVolumesettingsDevicesByDeviceidVolumeByVolumeAsync(string deviceId, float volume, System.Threading.CancellationToken cancellationToken)
         {
             if (deviceId == null)
                 throw new System.ArgumentNullException("deviceId");

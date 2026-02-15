@@ -14,6 +14,10 @@
 		<PackageReference Include="System.Text.Json" Version="10.0.3" />
 	</ItemGroup>
 
+	<Target Name="PrepareSwagger" BeforeTargets="PreBuildEvent" Condition=" '$(Configuration)' == 'Debug' ">
+		<Exec WorkingDirectory="$(ProjectDir)" Command="dotnet run --file PreprocessSwagger.csx" />
+	</Target>
+
 	<Target Name="NSwag" BeforeTargets="PreBuildEvent" Condition=" '$(Configuration)' == 'Debug' ">
 		<Exec WorkingDirectory="$(ProjectDir)" Command="$(NSwagExe) run nswag.json /variables:Configuration=$(Configuration)" />
 	</Target>

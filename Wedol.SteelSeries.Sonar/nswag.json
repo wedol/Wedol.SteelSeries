@@ -3,7 +3,7 @@
   "defaultVariables": null,
   "documentGenerator": {
     "fromDocument": {
-      "url": "swagger.json",
+      "url": "swagger.processed.json",
       "output": null,
       "newLineBehavior": "Auto"
     }
