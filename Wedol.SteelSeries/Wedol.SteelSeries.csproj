@@ -7,7 +7,7 @@
 		<PackageId>Wedol.SteelSeries</PackageId>
 		<Title>Wedol.SteelSeries</Title>
 		<Authors>Wedol</Authors>
-		<Description>Library for SteelSeries GG Sonar integration</Description>
+		<Description>Library for SteelSeries GG integration</Description>
 		<PackageProjectUrl>https://github.com/wedol/Wedol.SteelSeries</PackageProjectUrl>
 		<PackageLicenseExpression>MIT</PackageLicenseExpression>
 		<RepositoryUrl>https://github.com/wedol/Wedol.SteelSeries</RepositoryUrl>
