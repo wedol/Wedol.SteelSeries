@@ -9,4 +9,6 @@
     <File Path="version.json" />
   </Folder>
   <Project Path="Wedol.SteelSeries.Sonar/Wedol.SteelSeries.Sonar.csproj" />
+  <Project Path="Wedol.SteelSeries.TestApp/Wedol.SteelSeries.TestApp.csproj" Id="4661f0f3-b348-4c89-ac1f-201073db9688" />
+  <Project Path="Wedol.SteelSeries/Wedol.SteelSeries.csproj" Id="22624dec-2cd1-471c-9be4-598a8848fe9d" />
 </Solution>

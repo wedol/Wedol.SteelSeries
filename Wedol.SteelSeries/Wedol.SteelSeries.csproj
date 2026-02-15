@@ -1,0 +1,24 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<TargetFramework>netstandard2.1</TargetFramework>
+		<Nullable>enable</Nullable>
+		<GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+		<PackageId>Wedol.SteelSeries</PackageId>
+		<Title>Wedol.SteelSeries</Title>
+		<Authors>Wedol</Authors>
+		<Description>Library for SteelSeries GG Sonar integration</Description>
+		<PackageProjectUrl>https://github.com/wedol/Wedol.SteelSeries</PackageProjectUrl>
+		<PackageLicenseExpression>MIT</PackageLicenseExpression>
+		<RepositoryUrl>https://github.com/wedol/Wedol.SteelSeries</RepositoryUrl>
+		<RepositoryType>git</RepositoryType>
+		<PublishRepositoryUrl>true</PublishRepositoryUrl>
+		<EmbedUntrackedSources>true</EmbedUntrackedSources>
+		<MinVerVerbosity>warn</MinVerVerbosity>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<ProjectReference Include="..\Wedol.SteelSeries.Sonar\Wedol.SteelSeries.Sonar.csproj" />
+	</ItemGroup>
+
+</Project>
