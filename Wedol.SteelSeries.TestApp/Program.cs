@@ -1,11 +1,22 @@
-﻿namespace Wedol.SteelSeries.TestApp;
+﻿using System.Text.Json;
+using Wedol.SteelSeries.Sonar;
+
+namespace Wedol.SteelSeries.TestApp;
 
 internal class Program
 {
-    static void Main(string[] args)
+    static async Task Main(string[] args)
     {
+        JsonSerializerOptions jsonOptions = new JsonSerializerOptions
+        {
+            WriteIndented = true
+        };
+
         SteelSeriesGG ssgg = new SteelSeriesGG();
 
-        Console.WriteLine(ssgg.SteelSeriesGGProgramDataPath);
+        SonarClient sonarClient = await ssgg.GetSonarClientAsync();
+
+        var volumes = await sonarClient.GetVolumesettingsClassicAsync();
+        Console.WriteLine(JsonSerializer.Serialize(volumes, jsonOptions));
     }
 }
