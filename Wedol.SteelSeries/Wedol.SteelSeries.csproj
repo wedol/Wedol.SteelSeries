@@ -22,7 +22,7 @@
 	</ItemGroup>
 
 	<ItemGroup>
-		<ProjectReference Include="..\Wedol.SteelSeries.Sonar\Wedol.SteelSeries.Sonar.csproj" />
+		<ProjectReference Include="..\Wedol.SteelSeries.Sonar\Wedol.SteelSeries.Sonar.csproj" PrivateAssets="none" />
 	</ItemGroup>
 
 </Project>
