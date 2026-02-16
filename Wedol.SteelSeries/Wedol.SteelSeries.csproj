@@ -3,19 +3,17 @@
 	<PropertyGroup>
 		<TargetFramework>netstandard2.1</TargetFramework>
 		<Nullable>enable</Nullable>
-		<GeneratePackageOnBuild>false</GeneratePackageOnBuild>
-		<NuspecFile>Wedol.SteelSeries.nuspec</NuspecFile>
-		<NuspecProperties>version=$(Version)</NuspecProperties>
+		<GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+		
+		<!-- Package metadata -->
 		<PackageId>Wedol.SteelSeries</PackageId>
 		<Title>Wedol.SteelSeries</Title>
 		<Authors>Wedol</Authors>
 		<Description>Library for SteelSeries GG integration</Description>
 		<PackageProjectUrl>https://github.com/wedol/Wedol.SteelSeries</PackageProjectUrl>
 		<PackageLicenseExpression>MIT</PackageLicenseExpression>
-		<RepositoryUrl>https://github.com/wedol/Wedol.SteelSeries</RepositoryUrl>
 		<RepositoryType>git</RepositoryType>
-		<PublishRepositoryUrl>true</PublishRepositoryUrl>
-		<EmbedUntrackedSources>true</EmbedUntrackedSources>
+		<RepositoryUrl>https://github.com/wedol/Wedol.SteelSeries</RepositoryUrl>
 	</PropertyGroup>
 
 	<ItemGroup>
@@ -23,7 +21,13 @@
 	</ItemGroup>
 
 	<ItemGroup>
-		<ProjectReference Include="..\Wedol.SteelSeries.Sonar\Wedol.SteelSeries.Sonar.csproj" />
+		<ProjectReference Include="..\Wedol.SteelSeries.Sonar\Wedol.SteelSeries.Sonar.csproj" PrivateAssets="All" />
 	</ItemGroup>
+
+	<Target Name="IncludeSonarAssembly" BeforeTargets="_GetPackageFiles">
+		<ItemGroup>
+			<None Include="$(OutputPath)Wedol.SteelSeries.Sonar.dll" Pack="true" PackagePath="lib\netstandard2.1\" />
+		</ItemGroup>
+	</Target>
 
 </Project>

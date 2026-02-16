@@ -9,6 +9,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Wedol.SteelSeries\Wedol.SteelSeries.csproj" />
+    <ProjectReference Include="..\Wedol.SteelSeries.Sonar\Wedol.SteelSeries.Sonar.csproj" />
   </ItemGroup>
 
 </Project>
