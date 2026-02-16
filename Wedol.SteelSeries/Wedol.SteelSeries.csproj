@@ -3,7 +3,9 @@
 	<PropertyGroup>
 		<TargetFramework>netstandard2.1</TargetFramework>
 		<Nullable>enable</Nullable>
-		<GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+		<GeneratePackageOnBuild>false</GeneratePackageOnBuild>
+		<NuspecFile>Wedol.SteelSeries.nuspec</NuspecFile>
+		<NuspecProperties>version=$(Version)</NuspecProperties>
 		<PackageId>Wedol.SteelSeries</PackageId>
 		<Title>Wedol.SteelSeries</Title>
 		<Authors>Wedol</Authors>
@@ -14,7 +16,6 @@
 		<RepositoryType>git</RepositoryType>
 		<PublishRepositoryUrl>true</PublishRepositoryUrl>
 		<EmbedUntrackedSources>true</EmbedUntrackedSources>
-		<MinVerVerbosity>warn</MinVerVerbosity>
 	</PropertyGroup>
 
 	<ItemGroup>
@@ -22,7 +23,7 @@
 	</ItemGroup>
 
 	<ItemGroup>
-		<ProjectReference Include="..\Wedol.SteelSeries.Sonar\Wedol.SteelSeries.Sonar.csproj" PrivateAssets="none" />
+		<ProjectReference Include="..\Wedol.SteelSeries.Sonar\Wedol.SteelSeries.Sonar.csproj" />
 	</ItemGroup>
 
 </Project>
