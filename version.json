@@ -1,6 +1,6 @@
 {
   "$schema": "https://raw.githubusercontent.com/dotnet/Nerdbank.GitVersioning/main/src/NerdBank.GitVersioning/version.schema.json",
-  "version": "104.7",
+  "version": "104.8",
   "assemblyVersion": {
     "precision": "minor"
   },
@@ -11,7 +11,8 @@
     "^refs/heads/master$",
     "^refs/heads/main$",
     "^refs/heads/v\\d+(?:\\.\\d+)?$",
-    "^refs/heads/v\\d+\\.\\d+$"
+    "^refs/heads/v\\d+\\.\\d+$",
+    "^refs/tags/v\\d+\\.\\d+$"
   ],
   "cloudBuild": {
     "buildNumber": {
